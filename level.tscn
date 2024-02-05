@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://dd5qhft0n4k62"]
+
+[ext_resource type="PackedScene" uid="uid://c07b07n1r3a3p" path="res://player.tscn" id="1_wv5gt"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_uldx1"]
+vertices = PackedVector3Array(-9.5, 0.0779401, -9.5, -9.5, 0.0779401, 9.5, 9.5, 0.0779401, 9.5, 9.5, 0.0779401, -9.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+cell_height = 0.05
+agent_max_climb = 0.05
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ob5gh"]
+size = Vector2(20, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_in528"]
+data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
+
+[node name="world" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11626, 0.0710781, 0.0118914)
+
+[node name="player" parent="." instance=ExtResource("1_wv5gt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06411, 0)
+top_level = true
+linear_damp = 3.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999328, -1.80792e-09, 0.0366437, -0.0237899, 0.760599, 0.648786, -0.0278712, -0.649222, 0.760088, 0, 4.02192, 3.83844)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_uldx1")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="NavigationRegion3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11626, 0.0490182, 0.0118914)
+mesh = SubResource("PlaneMesh_ob5gh")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/WorldEnvironment/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/WorldEnvironment/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_in528")
