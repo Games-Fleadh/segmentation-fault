@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx8mbljujxpad"]
+
+[ext_resource type="Script" path="res://default.gd" id="1_ndu7j"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_porr4"]
+
+[sub_resource type="Sky" id="Sky_eiii0"]
+sky_material = SubResource("ProceduralSkyMaterial_porr4")
+
+[sub_resource type="Environment" id="Environment_dcbpr"]
+background_mode = 2
+sky = SubResource("Sky_eiii0")
+
+[node name="RootCanvas" type="CanvasLayer"]
+script = ExtResource("1_ndu7j")
+
+[node name="Root3D" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Root3D"]
+environment = SubResource("Environment_dcbpr")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Root3D"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="Root3D/SubViewportContainer"]
+size = Vector2i(1200, 1080)
+
+[node name="XROrigin3D" type="XROrigin3D" parent="Root3D/SubViewportContainer/SubViewport"]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="Root3D/SubViewportContainer/SubViewport/XROrigin3D"]
