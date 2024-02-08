@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://bsmthpa3dc3py"]
+
+[ext_resource type="Texture2D" uid="uid://cwvnk6nksufrh" path="res://textures/696.jpg" id="1_ihjji"]
+[ext_resource type="PackedScene" uid="uid://s7oujqx14m4y" path="res://chaser.tscn" id="2_2wsae"]
+[ext_resource type="PackedScene" uid="uid://ctqic1mycxcnh" path="res://player.tscn" id="3_48qmf"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_b7f64"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_kmudh"]
+size = Vector2(100, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qwb40"]
+albedo_texture = ExtResource("1_ihjji")
+uv1_triplanar = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_b4fu1"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2o20l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7off6"]
+
+[sub_resource type="Environment" id="Environment_q4soi"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bynpt"]
+
+[node name="World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14721, 0.413587, 1.36639)
+
+[node name="map" type="Node3D" parent="."]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93327, 0.266174, -0.339853)
+navigation_mesh = SubResource("NavigationMesh_b7f64")
+
+[node name="Ground" type="StaticBody3D" parent="map/NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="map/NavigationRegion3D/Ground"]
+custom_aabb = AABB(2.08165e-12, 2.08165e-12, 2.08165e-12, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+mesh = SubResource("PlaneMesh_kmudh")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_qwb40")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/NavigationRegion3D/Ground"]
+shape = SubResource("WorldBoundaryShape3D_b4fu1")
+
+[node name="box" type="StaticBody3D" parent="map/NavigationRegion3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 2.87445, 1.39428, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="map/NavigationRegion3D/box"]
+mesh = SubResource("BoxMesh_2o20l")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="map/NavigationRegion3D/box"]
+shape = SubResource("BoxShape3D_7off6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 0.329757, 0.944066, 0, -0.944066, 0.329757, 0, 6.80968, -0.0284113)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="map"]
+environment = SubResource("Environment_q4soi")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="map"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 1.91555, 0, 3.62775)
+mesh = SubResource("CylinderMesh_bynpt")
+
+[node name="chaser" parent="map" instance=ExtResource("2_2wsae")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.065, 1.25, 3.739)
+
+[node name="chaser2" parent="map" instance=ExtResource("2_2wsae")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.962, 1.2, 3.623)
+
+[node name="Player" parent="." instance=ExtResource("3_48qmf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007, 1.2, 2.08165e-12)
