@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cxum4swcuoq72"]
+
+[ext_resource type="Texture2D" uid="uid://cx4vvj5j274tx" path="res://game/zones/space_test/hall_Window/Window - Albedo.png" id="1_jef4r"]
+[ext_resource type="Texture2D" uid="uid://deqflg10jj5tr" path="res://game/zones/space_test/hall_Window/Window - Metallic.png" id="2_8jp2u"]
+[ext_resource type="Texture2D" uid="uid://bp0yx201p0pyc" path="res://game/zones/space_test/hall_Window/Window - Normal.png" id="3_ujo5u"]
+[ext_resource type="Texture2D" uid="uid://051of3lln5y6" path="res://game/zones/space_test/hall_Window/Window - Roughness.png" id="4_kxk4v"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+depth_draw_mode = 1
+albedo_texture = ExtResource("1_jef4r")
+metallic = 1.0
+metallic_texture = ExtResource("2_8jp2u")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("4_kxk4v")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("3_ujo5u")
