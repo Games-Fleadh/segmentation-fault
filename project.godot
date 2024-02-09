@@ -15,10 +15,6 @@ run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-PlayerVariables="*res://scripts/player_variables.gd"
-
 [input]
 
 move_right={

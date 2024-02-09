@@ -4,7 +4,7 @@ extends CharacterBody3D
 
 var player = null
 
-const SPEED = 1.0
+const SPEED : float = 1.0
 
 @export var player_path : NodePath
 
@@ -21,10 +21,10 @@ func _process(_delta):
 	velocity = Vector3.ZERO
 	
 	nav_agent.set_target_position(player.global_position)
-	var next_nav_point = nav_agent.get_next_path_position()
-	velocity = (next_nav_point - global_position).normalized() * SPEED
+	var next_nav_point  = nav_agent.get_next_path_position()
+	self.velocity = (player.global_position - self.global_position).normalized() * SPEED
+	push_warning(next_nav_point, self.global_position, velocity)
 	move_and_slide()
+	
+	
 		
-	
-	
-	
