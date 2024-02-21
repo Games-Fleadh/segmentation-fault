@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://cxghu0u3fyl8r"]
+
+[ext_resource type="PackedScene" uid="uid://cro2pxohrchpa" path="res://game/corridors/hall_DefaultLight/Hall - Default_Light - Texture.gltf" id="1_diqsg"]
+[ext_resource type="Material" uid="uid://cuoqcljdrwmx8" path="res://game/corridors/hall_DefaultLight/Corridor_DefaultLight.tres" id="2_8oyl3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rq0xg"]
+size = Vector3(2.01782, 0.0603027, 2.508)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_svoh7"]
+size = Vector3(2.01782, 0.0603027, 2.49702)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mvvcs"]
+size = Vector3(2.01782, 0.0603027, 1.51093)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hoxeq"]
+size = Vector3(2.01782, 0.0603027, 1.50861)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_svky4"]
+size = Vector3(2.01782, 0.0603027, 0.630562)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mg8h3"]
+size = Vector3(2.01782, 0.0603027, 0.644722)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ycu71"]
+size = Vector3(2.01782, 0.0603027, 0.625231)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gvnep"]
+size = Vector3(2.01782, 0.0603027, 0.631599)
+
+[node name="Hall - Default_Light" instance=ExtResource("1_diqsg")]
+
+[node name="Default_L" parent="." index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = ExtResource("2_8oyl3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00256348, 1.01951, -0.00266647)
+shape = SubResource("BoxShape3D_rq0xg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00256348, -1.01194, 0.00019455)
+shape = SubResource("BoxShape3D_svoh7")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.003, 0.00927573, 1.517)
+shape = SubResource("BoxShape3D_mvvcs")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.003, 0.00750571, -1.517)
+shape = SubResource("BoxShape3D_hoxeq")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D" index="4"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0.003, 0.851672, 1.34688)
+shape = SubResource("BoxShape3D_svky4")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D" index="5"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0.003, -0.840047, -1.34781)
+shape = SubResource("BoxShape3D_mg8h3")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D" index="6"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, 0.849433, -1.34912)
+shape = SubResource("BoxShape3D_ycu71")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="StaticBody3D" index="7"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
+shape = SubResource("BoxShape3D_gvnep")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52448, 2.61394)
+light_color = Color(1, 0.988235, 0.890196, 1)
+omni_range = 10.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." index="4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.524, -2.614)
+light_color = Color(1, 0.988235, 0.890196, 1)
+omni_range = 10.0

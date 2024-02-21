@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://copf0iiqkauf4"]
+
+[ext_resource type="Texture2D" uid="uid://dci42uap2vdec" path="res://game/corridors/hall_Doors/DoorBody - Albedo.png" id="1_sc7el"]
+[ext_resource type="Texture2D" uid="uid://c5eh1vqecxqdr" path="res://game/corridors/hall_Doors/DoorBody - Metallic.png" id="2_r361t"]
+[ext_resource type="Texture2D" uid="uid://e1ljj5rvuwma" path="res://game/corridors/hall_Doors/DoorBody - Normal.png" id="3_3tydw"]
+[ext_resource type="Texture2D" uid="uid://qrud6tacemgq" path="res://game/corridors/hall_Doors/DoorBody - Roughness.png" id="4_4gshp"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_sc7el")
+metallic = 1.0
+metallic_texture = ExtResource("2_r361t")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("4_4gshp")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("3_3tydw")

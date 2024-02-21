@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://ba3mic245rfos"]
+
+[ext_resource type="Texture2D" uid="uid://fjpppb7lic3t" path="res://game/corridors/hall_Default/Hall - Default - Albedo.png" id="1_tas8a"]
+[ext_resource type="Texture2D" uid="uid://br62fjwj5mfw4" path="res://game/corridors/hall_Default/Default - Metallic.png" id="2_mylei"]
+[ext_resource type="Texture2D" uid="uid://0w44pguqr67f" path="res://game/corridors/hall_Default/Default - Normal.png" id="3_8m21j"]
+[ext_resource type="Texture2D" uid="uid://qiri3ftslke7" path="res://game/corridors/hall_Default/Default - Roughness.png" id="4_swyvj"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_tas8a")
+metallic = 1.0
+metallic_texture = ExtResource("2_mylei")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("4_swyvj")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("3_8m21j")
