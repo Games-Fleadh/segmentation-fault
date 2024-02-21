@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://cuoqcljdrwmx8"]
+
+[ext_resource type="Texture2D" uid="uid://u3j25642aecp" path="res://game/corridors/hall_DefaultLight/Default_Light - Albedo.png" id="1_usikg"]
+[ext_resource type="Texture2D" uid="uid://maa0ggcopvcb" path="res://game/corridors/hall_DefaultLight/Default_Light - Emission.png" id="2_w6ihx"]
+[ext_resource type="Texture2D" uid="uid://deysfocsnfgd1" path="res://game/corridors/hall_DefaultLight/Default_Light - Metallic.png" id="3_eww5k"]
+[ext_resource type="Texture2D" uid="uid://c6smb6d8ceeow" path="res://game/corridors/hall_DefaultLight/Default_Light - Normal.png" id="4_hcbcn"]
+[ext_resource type="Texture2D" uid="uid://bqek3ptk1lpew" path="res://game/corridors/hall_DefaultLight/Default_Light - Roughness.png" id="5_7hl3p"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_usikg")
+metallic = 1.0
+metallic_texture = ExtResource("3_eww5k")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("5_7hl3p")
+roughness_texture_channel = 4
+emission_enabled = true
+emission_texture = ExtResource("2_w6ihx")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("4_hcbcn")

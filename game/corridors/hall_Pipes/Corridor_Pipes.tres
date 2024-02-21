@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cxxay3qaide26"]
+
+[ext_resource type="Texture2D" uid="uid://cmvqv7yttr7sr" path="res://game/corridors/hall_Pipes/Pipes - Albedo.png" id="1_3bcio"]
+[ext_resource type="Texture2D" uid="uid://cgkc0q6mn0e1o" path="res://game/corridors/hall_Pipes/Pipes - Metallic.png" id="2_y8anb"]
+[ext_resource type="Texture2D" uid="uid://c0unqtqeknuup" path="res://game/corridors/hall_Pipes/Pipes - Normal.png" id="3_55lkv"]
+[ext_resource type="Texture2D" uid="uid://bhp8matosku5h" path="res://game/corridors/hall_Pipes/Pipes - Rougness.png" id="4_qceb2"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_3bcio")
+metallic = 1.0
+metallic_texture = ExtResource("2_y8anb")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("4_qceb2")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("3_55lkv")

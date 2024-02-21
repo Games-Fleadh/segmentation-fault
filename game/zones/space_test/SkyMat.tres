@@ -1,0 +1,6 @@
+[gd_resource type="PanoramaSkyMaterial" load_steps=2 format=3 uid="uid://e4on5glexim0"]
+
+[ext_resource type="Texture2D" uid="uid://c6cxmrrnfp7xe" path="res://game/zones/space_test/Space5.exr" id="1_cxgib"]
+
+[resource]
+panorama = ExtResource("1_cxgib")
