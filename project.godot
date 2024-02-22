@@ -35,6 +35,7 @@ input/default_snap_turning=false
 
 [gui]
 
+theme/custom_font="res://UbuntuMono.tres"
 common/drop_mouse_on_gui_input_disabled=true
 
 [layer_names]
