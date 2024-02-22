@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bgldknl8rr34i"
-path="res://.godot/imported/Crate - Texture.gltf-7a95c44e52d010acfe1417d0e5731aad.scn"
+uid="uid://2t81bjh31grb"
+path="res://.godot/imported/Crate - Texture.gltf-0f37fda5350421553f8c79a05915b1a1.scn"
 
 [deps]
 
-source_file="res://game/items/storageCrate/Crate - Texture.gltf"
-dest_files=["res://.godot/imported/Crate - Texture.gltf-7a95c44e52d010acfe1417d0e5731aad.scn"]
+source_file="res://game/items/Crate - Texture.gltf"
+dest_files=["res://.godot/imported/Crate - Texture.gltf-0f37fda5350421553f8c79a05915b1a1.scn"]
 
 [params]
 

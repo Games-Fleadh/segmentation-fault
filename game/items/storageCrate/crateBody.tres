@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://bdqjpqcwkcjhu"]
+
+[ext_resource type="Texture2D" uid="uid://dfwv3s2lwwxna" path="res://game/items/storageCrate/Crate - Albedo.png" id="1_31h4l"]
+[ext_resource type="Texture2D" uid="uid://dxfdodog6mvh7" path="res://game/items/storageCrate/Crate - Emission.png" id="2_w1j7n"]
+[ext_resource type="Texture2D" uid="uid://cfiu2tqe1760x" path="res://game/items/storageCrate/Crate - Metallic.png" id="3_i43vm"]
+[ext_resource type="Texture2D" uid="uid://dtsej26iuc4ms" path="res://game/items/storageCrate/Crate - Normal.png" id="4_pixvy"]
+[ext_resource type="Texture2D" uid="uid://b170bmahrq3ym" path="res://game/items/storageCrate/Crate - Roughness.png" id="5_8feb8"]
+
+[resource]
+albedo_texture = ExtResource("1_31h4l")
+metallic = 1.0
+metallic_texture = ExtResource("3_i43vm")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("5_8feb8")
+roughness_texture_channel = 4
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("2_w1j7n")
+normal_enabled = true
+normal_scale = 0.35
+normal_texture = ExtResource("4_pixvy")
