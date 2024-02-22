@@ -6,7 +6,7 @@
 ![GitHub](https://img.shields.io/github/license/godotvr/godot-xr-template?style=plastic)
 
 This repository contains a template Godot project for building a simple VR game.
-
+ 
 
 ## Versions
 
