@@ -1,7 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://jqmq8clpa4m0"]
+[gd_scene load_steps=19 format=3 uid="uid://jqmq8clpa4m0"]
 
 [ext_resource type="PackedScene" uid="uid://bnnp8cjrobqa8" path="res://game/items/storageCrate/Lid - Texture.gltf" id="1_uqfjc"]
 [ext_resource type="Material" uid="uid://d305b63hl7758" path="res://game/items/storageCrate/crateLid.tres" id="2_8jod6"]
+[ext_resource type="Script" path="res://components/persistent/persistent_item.gd" id="2_j1c4v"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_312fm"]
+[ext_resource type="Animation" uid="uid://bediglpx0rj7i" path="res://addons/godot-xr-tools/hands/animations/left/Grip 5.res" id="5_bkcpk"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="6_jmggb"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="7_xhi0t"]
+[ext_resource type="Animation" uid="uid://s1vqcxyqcvea" path="res://addons/godot-xr-tools/hands/animations/right/Grip 5.res" id="8_8te5c"]
+[ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="9_nexv7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vuex"]
 
@@ -24,7 +31,18 @@ size = Vector3(1.14558, 0.399384, 0.0982361)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1mmsr"]
 size = Vector3(1.14551, 0.399384, 0.0982361)
 
-[node name="Lid - Texture" instance=ExtResource("1_uqfjc")]
+[sub_resource type="Resource" id="Resource_pmcgc"]
+script = ExtResource("6_jmggb")
+open_pose = ExtResource("5_bkcpk")
+closed_pose = ExtResource("5_bkcpk")
+
+[sub_resource type="Resource" id="Resource_0rip8"]
+script = ExtResource("6_jmggb")
+open_pose = ExtResource("8_8te5c")
+closed_pose = ExtResource("8_8te5c")
+
+[node name="Lid - Texture" groups=["persistent"] instance=ExtResource("1_uqfjc")]
+script = ExtResource("2_j1c4v")
 
 [node name="Cube_001" parent="." index="0"]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
@@ -84,3 +102,31 @@ shape = SubResource("BoxShape3D_1mmsr")
 [node name="CollisionShape3D10" type="CollisionShape3D" parent="RigidBody3D" index="12"]
 transform = Transform3D(0.901832, 0.432086, 0, -0.432086, 0.901832, 0, 0, 0, 1, -0.156, 0.354, 0.601)
 shape = SubResource("BoxShape3D_6g4mf")
+
+[node name="GrabPointHandLeft" parent="." index="3" instance=ExtResource("4_312fm")]
+transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 1.91069e-15, 0.549394, 0.507782, 0.161619)
+hand_pose = SubResource("Resource_pmcgc")
+
+[node name="GrabPointHandRight" parent="." index="4" instance=ExtResource("7_xhi0t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, 0.549394, 0.507782, -0.158381)
+hand_pose = SubResource("Resource_0rip8")
+
+[node name="HighlightRing" parent="." index="5" instance=ExtResource("9_nexv7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.615823, 0.514042, -0.225607)
+
+[node name="HighlightRing2" parent="." index="6" instance=ExtResource("9_nexv7")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.615823, 0.514042, 0.217657)
+
+[node name="GrabPointHandLeft2" parent="." index="7" instance=ExtResource("4_312fm")]
+transform = Transform3D(4.37114e-08, 8.74228e-08, -1, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 8.74228e-08, -0.550915, 0.507782, -0.163975)
+hand_pose = SubResource("Resource_pmcgc")
+
+[node name="GrabPointHandRight2" parent="." index="8" instance=ExtResource("7_xhi0t")]
+transform = Transform3D(4.37114e-08, -8.74228e-08, -1, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 8.74228e-08, -0.550915, 0.507782, 0.156025)
+hand_pose = SubResource("Resource_0rip8")
+
+[node name="HighlightRing3" parent="." index="9" instance=ExtResource("9_nexv7")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -0.616, 0.514042, 0.223251)
+
+[node name="HighlightRing4" parent="." index="10" instance=ExtResource("9_nexv7")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -0.616, 0.514042, -0.220013)
