@@ -1,7 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://jqmq8clpa4m0"]
+[gd_scene load_steps=29 format=3 uid="uid://jqmq8clpa4m0"]
 
+[ext_resource type="Resource" uid="uid://dag4mhfys4x5d" path="res://game/items/crate/crate_type.tres" id="2_5rtgy"]
 [ext_resource type="Material" uid="uid://d305b63hl7758" path="res://game/items/storageCrate/crateLid.tres" id="2_8jod6"]
-[ext_resource type="Script" path="res://components/persistent/persistent_item_type.gd" id="2_63xml"]
 [ext_resource type="Script" path="res://components/persistent/persistent_item.gd" id="2_j1c4v"]
 [ext_resource type="Texture2D" uid="uid://bfn3ycqas083f" path="res://game/items/storageCrate/Lid - Albedo.png" id="4_8f1y8"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_312fm"]
@@ -12,11 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="7_xhi0t"]
 [ext_resource type="Animation" uid="uid://s1vqcxyqcvea" path="res://addons/godot-xr-tools/hands/animations/right/Grip 5.res" id="8_8te5c"]
 [ext_resource type="PackedScene" uid="uid://da2qgxxwwitl6" path="res://addons/godot-xr-tools/objects/highlight/highlight_ring.tscn" id="9_nexv7"]
-
-[sub_resource type="Resource" id="Resource_ndyll"]
-script = ExtResource("2_63xml")
-type_id = "lidType"
-instance_scene = "res://game/items/storageCrate/crateLid.tscn"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7foic"]
 resource_name = "Material.003"
@@ -110,10 +105,12 @@ size = Vector3(1.14558, 0.0511399, 0.0943832)
 size = Vector3(1.14551, 0.0519944, 0.0959702)
 
 [node name="Lid - Texture" type="RigidBody3D" groups=["persistent"]]
+collision_layer = 4
+collision_mask = 7
 freeze_mode = 1
 script = ExtResource("2_j1c4v")
 item_id = "crateLid"
-item_type = SubResource("Resource_ndyll")
+item_type = ExtResource("2_5rtgy")
 second_hand_grab = 2
 
 [node name="Cube_001" type="MeshInstance3D" parent="."]
