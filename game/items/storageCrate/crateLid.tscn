@@ -125,11 +125,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0vuex")
 [node name="Material_Preview_Dummy" type="Node3D" parent="."]
 
 [node name="GrabPointHandLeft" parent="." instance=ExtResource("4_312fm")]
-transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 1.91069e-15, 0.549394, 0.507782, 0.161619)
+transform = Transform3D(-0.574248, -2.51012e-08, 0.818681, -0.818681, -3.57857e-08, -0.574248, 4.37114e-08, -1, 1.91069e-15, 0.612968, 0.581365, 0.161619)
 hand_pose = SubResource("Resource_pmcgc")
 
 [node name="GrabPointHandRight" parent="." instance=ExtResource("7_xhi0t")]
-transform = Transform3D(-4.37114e-08, 0, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, 1.91069e-15, 0.549394, 0.507782, -0.158381)
+transform = Transform3D(0.574248, -2.51012e-08, 0.818681, 0.818681, -3.57857e-08, -0.574248, 4.37114e-08, 1, 1.91069e-15, 0.612968, 0.581365, -0.158381)
 hand_pose = SubResource("Resource_0rip8")
 
 [node name="HighlightRing" parent="." instance=ExtResource("9_nexv7")]
@@ -139,11 +139,11 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.6158
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.615823, 0.514042, 0.217657)
 
 [node name="GrabPointHandLeft2" parent="." instance=ExtResource("4_312fm")]
-transform = Transform3D(4.37114e-08, 8.74228e-08, -1, -1, -4.37114e-08, -4.37114e-08, -4.37114e-08, 1, 8.74228e-08, -0.550915, 0.507782, -0.163975)
+transform = Transform3D(0.573576, 1.0057e-07, -0.819152, -0.819152, -3.58063e-08, -0.573576, -8.70152e-08, 1, 6.18443e-08, -0.618066, 0.581, -0.163975)
 hand_pose = SubResource("Resource_pmcgc")
 
 [node name="GrabPointHandRight2" parent="." instance=ExtResource("7_xhi0t")]
-transform = Transform3D(4.37114e-08, -8.74228e-08, -1, 1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 8.74228e-08, -0.550915, 0.507782, 0.156025)
+transform = Transform3D(-0.573576, -5.04261e-08, -0.819152, 0.819152, -3.58063e-08, -0.573576, -4.07571e-10, -1, 6.18443e-08, -0.618066, 0.581, 0.156025)
 hand_pose = SubResource("Resource_0rip8")
 
 [node name="HighlightRing3" parent="." instance=ExtResource("9_nexv7")]
