@@ -1,23 +1,23 @@
-[gd_scene load_steps=13 format=3 uid="uid://uaxljmwu51xn"]
+[gd_scene load_steps=13 format=3 uid="uid://ccld7nho8yi4p"]
 
-[ext_resource type="Material" uid="uid://bdqjpqcwkcjhu" path="res://game/items/storageCrate/crateBody.tres" id="2_1qimw"]
-[ext_resource type="Texture2D" uid="uid://dfwv3s2lwwxna" path="res://game/items/storageCrate/Crate - Albedo.png" id="2_a5fho"]
-[ext_resource type="Texture2D" uid="uid://dxfdodog6mvh7" path="res://game/items/storageCrate/Crate - Emission.png" id="3_1m1wv"]
-[ext_resource type="Texture2D" uid="uid://dtsej26iuc4ms" path="res://game/items/storageCrate/Crate - Normal.png" id="4_nig8b"]
+[ext_resource type="Material" uid="uid://bdqjpqcwkcjhu" path="res://game/items/storageCrate/crateBody.tres" id="1_7d3pg"]
+[ext_resource type="Texture2D" uid="uid://dfwv3s2lwwxna" path="res://game/items/storageCrate/Crate - Albedo.png" id="2_blqj1"]
+[ext_resource type="Texture2D" uid="uid://dxfdodog6mvh7" path="res://game/items/storageCrate/Crate - Emission.png" id="3_srtar"]
+[ext_resource type="Texture2D" uid="uid://dtsej26iuc4ms" path="res://game/items/storageCrate/Crate - Normal.png" id="4_226l3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_klbt5"]
 resource_name = "Material"
 cull_mode = 2
-albedo_texture = ExtResource("2_a5fho")
+albedo_texture = ExtResource("2_blqj1")
 metallic = 1.0
 metallic_texture_channel = 2
 roughness_texture_channel = 1
 emission_enabled = true
 emission_energy_multiplier = 12.0
-emission_texture = ExtResource("3_1m1wv")
+emission_texture = ExtResource("3_srtar")
 normal_enabled = true
 normal_scale = 0.2
-normal_texture = ExtResource("4_nig8b")
+normal_texture = ExtResource("4_226l3")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_y57ru"]
 _surfaces = [{
@@ -68,11 +68,11 @@ size = Vector3(0.848969, 0.103607, 0.219166)
 [sub_resource type="BoxShape3D" id="BoxShape3D_40wrv"]
 size = Vector3(0.131201, 0.0983581, 0.305768)
 
-[node name="Crate - Texture" type="RigidBody3D"]
+[node name="Crate - Texture Static" type="StaticBody3D"]
 
 [node name="Cube" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
-material_override = ExtResource("2_1qimw")
+material_override = ExtResource("1_7d3pg")
 mesh = SubResource("ArrayMesh_p0n0i")
 skeleton = NodePath("")
 
