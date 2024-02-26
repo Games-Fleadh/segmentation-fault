@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=10 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
@@ -63,6 +63,9 @@ MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk0rb"]
+bg_color = Color(0, 0, 0, 0.737255)
+
 [node name="ExampleBalloon" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_36de5")
@@ -78,6 +81,8 @@ grow_vertical = 2
 theme = SubResource("Theme_qq3yp")
 
 [node name="Panel" type="Panel" parent="Balloon"]
+modulate = Color(0, 0.905882, 0.905882, 1)
+self_modulate = Color(0.411765, 0.701961, 0.843137, 1)
 clip_children = 2
 layout_mode = 1
 anchors_preset = 12
@@ -86,17 +91,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 21.0
 offset_top = -183.0
-offset_right = -19.0
-offset_bottom = -19.0
+offset_right = -338.0
+offset_bottom = -58.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxFlat_xk0rb")
 
 [node name="Dialogue" type="MarginContainer" parent="Balloon/Panel"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_right = 0.929
+anchor_bottom = 0.73
+offset_left = -26.0
+offset_top = -10.0
+offset_right = -36.75
+offset_bottom = 45.49
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -105,7 +115,7 @@ layout_mode = 2
 
 [node name="CharacterLabel" type="RichTextLabel" parent="Balloon/Panel/Dialogue/VBoxContainer"]
 unique_name_in_owner = true
-modulate = Color(1, 1, 1, 0.501961)
+modulate = Color(1, 1, 1, 0.776471)
 layout_mode = 2
 mouse_filter = 1
 bbcode_enabled = true

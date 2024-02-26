@@ -14,22 +14,22 @@
 
 # (screen is black, it is silent in the cryopod. You are alone)
 # (Text appears on screen)
-Pal: Hello? Hello? [wait = 1] Oh! Hello! Welcome back to consciousness.\nIt is most fortunate that your brain is firing as normal. 
+Pal: Hello? Hello? [wait = 1.5] Oh! Hello! Welcome back to consciousness.\nIt is most fortunate that your brain is firing as normal. 
 Pal: Do try not to panic, you haven't quite got the energy for that.
-Pal: I'm reading confusion in your brain waves, this is normal. Very normal. 
-Pal: Memory loss and disorientation are common symptoms of cryogenesis. Especially for someone who has been frozen as long as you have.
+# RETHINK THIS LINE Pal: I'm reading confusion in your brain waves, this is normal. Very normal. 
+Pal: Memory loss, disorientation and ⍰⍰⍰⍰⍰ are common symptoms of cryogenesis. Especially for someone who has been frozen as long as you have.
 
 # (Pause)
 Pal: Can you turn on your visor?
 
-# (*PROMPT*: Turn on your visor using [MAIN BUTTON HERE])
+(*PROMPT* >> Turn on your visor using [A])
 
 Pal: Wonderful!
 
 # (The room is revealed to you. Filled with medical equipment and empty pods, it is not very inviting. A table with a few items is across from you.)
 
 Pal: Please make use of the health accelerants provided in this pod. 
-Your body does not yet meet regulation standards
+Pal: Your body does not yet meet regulation standards
 
 Pal: Apologies, it appears that you have no mobility in your arms yet. 
 Pal: I am permitted to administer a single dose, you will have to administer the rest.
@@ -42,9 +42,9 @@ Pal: I am permitted to administer a single dose, you will have to administer the
 
 # (Outlines around health accelerants are highlighted)
 
-# (*PROMPT*: Pick up the accelerant using [BUTTON]) 
+(*PROMPT* >> Pick up the accelerant using [TRIGGER BUTTON] ) 
 
-# (*PROMPT*: Refill your health bar using [BUTTON])
+(*PROMPT* >> Refill your health bar using [A] )
 
 #(You inject yourself with the accelerant using the same port from before)
 
@@ -62,16 +62,16 @@ HEARING = . . .
 # (Nothing happens)
 
 Pal: It appears that the audio software license in your suit has expired. 
-The disk on the table contains a new version of the software, insert the disk into your suit's reader. 
-If that doesn't work, your eardrums may have disintegrated.
+Pal: The disk on the table contains a new version of the software, insert the disk into your suit's reader. 
+Pal: If that doesn't work, your eardrums may have disintegrated.
 
 # (An outline appears around the disk on the table. There is a note attached saying Old audio software license expired. This version is pirated permanent <3)
 
-# (*PROMPT*: Insert disk in reader)
+(*PROMPT* >> Insert disk in reader)
 
 # (Disk reader on your suit is outlined in a highlight)
 
-# (*PROMPT*: Read using [BUTTON] )
+(*PROMPT* >> Read using [A] )
 
 # (The disk is read and you can now hear the sounds of the spaceship around you. Pistons, the creaking and groaning of the mass of metal suspended in the void. In the distance, faint sirens. Close to you, far closer than it should be, is a rhythmic banging. Is it coming from the door?)
 
