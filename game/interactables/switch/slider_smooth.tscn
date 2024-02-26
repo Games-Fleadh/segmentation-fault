@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://e02yhmvy178a"]
+[gd_scene load_steps=29 format=3 uid="uid://e02yhmvy178a"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/interactables/interactable_slider.gd" id="1_anw5d"]
+[ext_resource type="Material" uid="uid://bmkt6kjshgpa2" path="res://game/interactables/switch/SwitchBody.tres" id="1_fu85j"]
 [ext_resource type="Texture2D" uid="uid://dvw8qjquqn1nn" path="res://game/interactables/switch/switchBase - Albedo.png" id="1_ktt3k"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_6b3ab"]
 [ext_resource type="Texture2D" uid="uid://c7qru7m4bigro" path="res://game/interactables/switch/switchBase - Emmission.png" id="2_774b1"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_6b8ni"]
 [ext_resource type="Animation" uid="uid://db62hs5s4n2b3" path="res://addons/godot-xr-tools/hands/animations/left/Grip 4.res" id="5_23n5x"]
 [ext_resource type="Texture2D" uid="uid://bk18s7bsc2b6g" path="res://game/interactables/switch/switchHandle - Albedo.png" id="5_g1bj0"]
+[ext_resource type="Material" uid="uid://d1r28kkot7tj6" path="res://game/interactables/switch/SwitchHandle.tres" id="6_3yqsx"]
 [ext_resource type="Texture2D" uid="uid://q8jjkcq0ahxj" path="res://game/interactables/switch/switchHandle - Emmission.png" id="6_5e0ki"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/hands/poses/hand_pose_settings.gd" id="6_cjolq"]
 [ext_resource type="Texture2D" uid="uid://mle1lwv4i8rg" path="res://game/interactables/switch/switchHandle - Normal.png" id="7_1ylh2"]
@@ -122,8 +124,11 @@ closed_pose = ExtResource("8_ouv7a")
 height = 0.145402
 radius = 0.018
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_kfd02"]
-radius = 0.0603785
+[sub_resource type="BoxShape3D" id="BoxShape3D_r0s1w"]
+size = Vector3(0.0628052, 0.0129852, 0.266632)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6v4j5"]
+size = Vector3(0.0894318, 0.0476303, 0.227242)
 
 [node name="SliderSmooth" type="Node3D"]
 
@@ -131,6 +136,7 @@ radius = 0.0603785
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Frame"]
 transform = Transform3D(-6.77527e-09, 0, -0.155, 0, 0.155, 0, 0.155, 0, -6.77527e-09, 0, 0, 0.00799423)
+material_override = ExtResource("1_fu85j")
 mesh = SubResource("ArrayMesh_hq5q4")
 skeleton = NodePath("")
 
@@ -142,34 +148,46 @@ shape = SubResource("BoxShape3D_iggvr")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="XRToolsInteractableSlider" type="Node3D" parent="SliderOrigin"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 0)
 script = ExtResource("1_anw5d")
 slider_limit_max = 0.4
-slider_position = 0.2
+slider_position = 0.4
 default_position = 0.2
 
 [node name="SliderBody" type="StaticBody3D" parent="SliderOrigin/XRToolsInteractableSlider"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.213511, 9.33288e-09, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00387768, -1.69485e-10, 0)
 
 [node name="HandleMesh" type="MeshInstance3D" parent="SliderOrigin/XRToolsInteractableSlider/SliderBody"]
 transform = Transform3D(1.77636e-15, 0.155, 1.35505e-08, 4.44089e-16, -1.35505e-08, 0.155, 0.155, -8.88178e-16, -1.47933e-16, 0.0145681, -6.3679e-10, 0.008)
+material_override = ExtResource("6_3yqsx")
 mesh = SubResource("ArrayMesh_7e5qf")
 skeleton = NodePath("")
 
 [node name="GrabPointHandLeft" parent="SliderOrigin/XRToolsInteractableSlider/SliderBody/HandleMesh" instance=ExtResource("2_6b3ab")]
-transform = Transform3D(-4.30508, -1.72724e-07, 4.80517, -4.80517, -2.09614e-07, -4.30508, 2.71377e-07, -6.45161, 1.12297e-08, 1.01978, 0.591968, -0.317297)
+transform = Transform3D(-4.30508, -1.72724e-07, 4.80517, -4.80517, -2.09614e-07, -4.30508, 2.71377e-07, -6.45161, 1.12297e-08, 0.998812, -1.07093, -0.317297)
 hand_pose = SubResource("Resource_1opo5")
 
 [node name="GrabPointHandRight" parent="SliderOrigin/XRToolsInteractableSlider/SliderBody/HandleMesh" instance=ExtResource("5_6b8ni")]
-transform = Transform3D(4.30508, -2.03638e-07, 4.80517, 4.80517, -2.10464e-07, -4.30508, 2.92639e-07, 6.45161, 1.12291e-08, 1.01978, 0.591968, 0.330036)
+transform = Transform3D(4.30508, -2.03638e-07, 4.80517, 4.80517, -2.10464e-07, -4.30508, 2.92639e-07, 6.45161, 1.12291e-08, 0.998812, -1.07093, 0.330036)
 hand_pose = SubResource("Resource_5w8g7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SliderOrigin/XRToolsInteractableSlider/SliderBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.203628, 8.90086e-09, 0.210474)
 shape = SubResource("CylinderShape3D_is1yw")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="SliderOrigin/XRToolsInteractableSlider/SliderBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20372, 0.0725479, 0.0977268)
+shape = SubResource("BoxShape3D_r0s1w")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="SliderOrigin/XRToolsInteractableSlider/SliderBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.204, -0.073, 0.098)
+shape = SubResource("BoxShape3D_r0s1w")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="SliderOrigin/XRToolsInteractableSlider/SliderBody"]
+transform = Transform3D(1, -4.37114e-08, 4.37114e-08, -4.37114e-08, -4.37114e-08, 1, -4.37114e-08, -1, -4.37114e-08, -0.203794, -0.000461581, 0.0658309)
+shape = SubResource("BoxShape3D_6v4j5")
+
 [node name="HandleOrigin" type="Node3D" parent="SliderOrigin/XRToolsInteractableSlider"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
 
 [node name="XRToolsInteractableHandle" type="RigidBody3D" parent="SliderOrigin/XRToolsInteractableSlider/HandleOrigin"]
 collision_layer = 262144
@@ -179,13 +197,15 @@ script = ExtResource("7_se44d")
 picked_up_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SliderOrigin/XRToolsInteractableSlider/HandleOrigin/XRToolsInteractableHandle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.200048, 1.88329e-08, 0.200778)
-shape = SubResource("SphereShape3D_kfd02")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.203628, 8.90086e-09, 0.210474)
+shape = SubResource("CylinderShape3D_is1yw")
 
 [node name="XRToolsGrabPointRedirectLeft" type="Marker3D" parent="SliderOrigin/XRToolsInteractableSlider/HandleOrigin/XRToolsInteractableHandle/CollisionShape3D" node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00358, 9.93204e-09, -0.00969601)
 script = ExtResource("8_470te")
 target = NodePath("../../../../SliderBody/HandleMesh/GrabPointHandLeft")
 
 [node name="XRToolsGrabPointRedirectRight" type="Marker3D" parent="SliderOrigin/XRToolsInteractableSlider/HandleOrigin/XRToolsInteractableHandle/CollisionShape3D" node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00358, 9.93204e-09, -0.00969601)
 script = ExtResource("8_470te")
 target = NodePath("../../../../SliderBody/HandleMesh/GrabPointHandRight")
