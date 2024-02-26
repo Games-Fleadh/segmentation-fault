@@ -1,0 +1,22 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://cvw43s26ewegg"]
+
+[ext_resource type="Texture2D" uid="uid://bqeyfx84fl0rr" path="res://game/corridors/hall_CurveLight/CurvedLight - Albedo.png" id="1_xe2rp"]
+[ext_resource type="Texture2D" uid="uid://ctle6hf2ojlcy" path="res://game/corridors/hall_CurveLight/CurvedLight - Emission.png" id="2_diqj2"]
+[ext_resource type="Texture2D" uid="uid://b16kv5numabrw" path="res://game/corridors/hall_CurveLight/CurvedLight - Metallic.png" id="3_3yw0q"]
+[ext_resource type="Texture2D" uid="uid://bx7sa5jgqdwi0" path="res://game/corridors/hall_CurveLight/CurvedLight - Normal.png" id="4_l8i0l"]
+[ext_resource type="Texture2D" uid="uid://c4k63hd8awsr4" path="res://game/corridors/hall_CurveLight/CurvedLight - Roughness.png" id="5_stdnu"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_xe2rp")
+metallic = 1.0
+metallic_texture = ExtResource("3_3yw0q")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("5_stdnu")
+roughness_texture_channel = 4
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("2_diqj2")
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("4_l8i0l")

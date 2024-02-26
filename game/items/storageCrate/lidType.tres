@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PersistentItemType" load_steps=2 format=3 uid="uid://bx725pc56c5iw"]
+
+[ext_resource type="Script" path="res://components/persistent/persistent_item_type.gd" id="1_nsxgf"]
+
+[resource]
+script = ExtResource("1_nsxgf")
+type_id = ""
+instance_scene = ""

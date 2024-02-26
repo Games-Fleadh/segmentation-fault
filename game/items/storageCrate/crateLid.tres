@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://d305b63hl7758"]
+
+[ext_resource type="Texture2D" uid="uid://bfn3ycqas083f" path="res://game/items/storageCrate/Lid - Albedo.png" id="1_dgbp3"]
+[ext_resource type="Texture2D" uid="uid://bgqboi5kx3c8o" path="res://game/items/storageCrate/Lid - Emmission.png" id="2_6myn6"]
+[ext_resource type="Texture2D" uid="uid://ns70xbger0lo" path="res://game/items/storageCrate/Lid - Metallic.png" id="3_gielr"]
+[ext_resource type="Texture2D" uid="uid://wkqcvhne7pvn" path="res://game/items/storageCrate/Lid - Normal.png" id="4_7blw2"]
+[ext_resource type="Texture2D" uid="uid://cw5uytv7y7wsv" path="res://game/items/storageCrate/Lid - Roughness.png" id="5_0blrm"]
+
+[resource]
+albedo_texture = ExtResource("1_dgbp3")
+metallic = 1.0
+metallic_texture = ExtResource("3_gielr")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("5_0blrm")
+roughness_texture_channel = 4
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("2_6myn6")
+normal_enabled = true
+normal_scale = 0.5
+normal_texture = ExtResource("4_7blw2")
