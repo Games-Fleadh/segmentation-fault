@@ -3503,6 +3503,7 @@ script = ExtResource("126_iu8d2")
 
 [node name="ambient" type="AudioStreamPlayer" parent="." index="36"]
 stream = ExtResource("127_0rhg2")
+autoplay = true
 script = ExtResource("128_oeyiy")
 
 [node name="combat music" type="AudioStreamPlayer" parent="." index="37"]
