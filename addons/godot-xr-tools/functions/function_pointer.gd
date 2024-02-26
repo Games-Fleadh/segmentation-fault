@@ -124,7 +124,7 @@ var _active_controller : XRController3D
 
 var is_grabbing = false
 
-var offset = Vector3()
+var initial_offset = Vector3()
 
 
 ## Add support for is_xr_class on XRTools classes
@@ -256,10 +256,12 @@ func _process(_delta):
 	last_target = new_target
 	last_collided_at = new_at
 	
+	# %1%
 	if is_grabbing and target:
-		target.global_transform.origin = _active_controller.global_transform.origin
-		var target_position = _active_controller.global_transform.origin + offset
-		target.global_transform.origin = target_position
+		# target.global_transform.origin = _active_controller.global_transform.origin
+		# var transform_offset = _active_controller.global_transform.xform(offset)
+		# var target_position = transformed_offset
+		target.global_transform = _active_controller.global_transform * initial_offset
 
 
 # Set pointer enabled property
@@ -426,11 +428,12 @@ func _update_pointer() -> void:
 func _button_pressed() -> void:
 	if $RayCast.is_colliding():
 		# Report pressed
+		# %2%
 		target = $RayCast.get_collider()
 		last_collided_at = $RayCast.get_collision_point()
 		# XRToolsPointerEvent.pressed(self, target, last_collided_at)
 		is_grabbing = true
-		offset = target.global_transform.origin - _active_controller.global_transform.origin
+		initial_offset = _active_controller.global_transform.affine_inverse() * target.global_transform
 
 
 # Pointer-activation button released handler
