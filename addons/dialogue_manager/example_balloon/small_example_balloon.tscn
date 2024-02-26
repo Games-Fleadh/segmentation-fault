@@ -89,7 +89,7 @@ MarginContainer/constants/margin_right = 8
 MarginContainer/constants/margin_top = 4
 Panel/styles/panel = SubResource("StyleBoxFlat_uy0d5")
 
-[node name="ExampleBalloon" type="CanvasLayer"]
+[node name="ExampleBalloon2" type="CanvasLayer"]
 layer = 100
 script = ExtResource("1_s2gbs")
 
