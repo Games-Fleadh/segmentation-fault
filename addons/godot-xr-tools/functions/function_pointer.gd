@@ -122,6 +122,8 @@ var _controller  : XRController3D
 # The currently active controller
 var _active_controller : XRController3D
 
+var is_grabbing = false
+
 
 ## Add support for is_xr_class on XRTools classes
 func is_xr_class(name : String) -> bool:
@@ -251,6 +253,9 @@ func _process(_delta):
 	# Update last values
 	last_target = new_target
 	last_collided_at = new_at
+	
+	if is_grabbing and target:
+		target.global_transform.origin = _active_controller.global_transform.origin
 
 
 # Set pointer enabled property
@@ -419,15 +424,17 @@ func _button_pressed() -> void:
 		# Report pressed
 		target = $RayCast.get_collider()
 		last_collided_at = $RayCast.get_collision_point()
-		XRToolsPointerEvent.pressed(self, target, last_collided_at)
+		# XRToolsPointerEvent.pressed(self, target, last_collided_at)
+		is_grabbing = true
 
 
 # Pointer-activation button released handler
 func _button_released() -> void:
 	if target:
 		# Report release
-		XRToolsPointerEvent.released(self, target, last_collided_at)
+		# XRToolsPointerEvent.released(self, target, last_collided_at)
 		target = null
+		is_grabbing = false
 		last_collided_at = Vector3(0, 0, 0)
 
 

@@ -1185,7 +1185,7 @@ suppress_mask = 4194304
 [node name="FunctionPointer" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="2" instance=ExtResource("6_gh13s")]
 show_laser = 2
 laser_length = 1
-collision_mask = 5242880
+collision_mask = 3226468352
 suppress_mask = 4194304
 
 [node name="FunctionPickup" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="3" instance=ExtResource("7_i1pcu")]
