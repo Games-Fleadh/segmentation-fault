@@ -37,6 +37,14 @@ input/default_snap_turning=false
 
 common/drop_mouse_on_gui_input_disabled=true
 
+[input]
+
+grab={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":4,"axis_value":1.0,"script":null)
+]
+}
+
 [layer_names]
 
 3d_physics/layer_1="Static World"
