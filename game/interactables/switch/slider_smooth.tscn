@@ -53,7 +53,7 @@ mesh = SubResource("BoxMesh_rxj3w")
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="XRToolsInteractableSlider" type="Node3D" parent="SliderOrigin"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 7.58761e-09, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0)
 script = ExtResource("1_anw5d")
 slider_limit_max = 0.4
 slider_position = 0.2
