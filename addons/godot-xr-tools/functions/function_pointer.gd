@@ -33,10 +33,10 @@ enum LaserLength {
 
 
 ## Default pointer collision mask of 21:pointable and 23:ui-objects
-const DEFAULT_MASK := 0b0000_0000_0101_0000_0000_0000_0000_0000
+const DEFAULT_MASK := 0b11 << 30
 
 ## Default pointer collision mask of 23:ui-objects
-const SUPPRESS_MASK := 0b0000_0000_0100_0000_0000_0000_0000_0000
+const SUPPRESS_MASK := 0b11 << 30
 
 
 @export_group("General")

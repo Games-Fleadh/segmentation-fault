@@ -98,8 +98,8 @@ size = Vector3(1.14551, 0.399384, 0.0318833)
 size = Vector3(1.14551, 0.0519944, 0.0959702)
 
 [node name="Lid - Texture" type="RigidBody3D" groups=["persistent"]]
-collision_layer = 67108868
-collision_mask = 67108871
+collision_layer = 3288334340
+collision_mask = 3288334343
 mass = 25.0
 freeze_mode = 1
 script = ExtResource("2_j1c4v")
