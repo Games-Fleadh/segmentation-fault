@@ -1,4 +1,4 @@
-[gd_scene load_steps=290 format=3 uid="uid://dulkchxbis8v2"]
+[gd_scene load_steps=292 format=3 uid="uid://dulkchxbis8v2"]
 
 [ext_resource type="PackedScene" uid="uid://di1bu0tceg332" path="res://components/persistent/persistent_zone.tscn" id="1_x6cjj"]
 [ext_resource type="Script" path="res://components/persistent/persistent_zone_info.gd" id="2_fssw7"]
@@ -128,6 +128,8 @@
 [ext_resource type="Script" path="res://game/zones/space_test/main background music.gd" id="126_iu8d2"]
 [ext_resource type="AudioStream" uid="uid://god73o6vehuw" path="res://ambient.mp3" id="127_0rhg2"]
 [ext_resource type="Script" path="res://game/zones/space_test/ambient.gd" id="128_oeyiy"]
+[ext_resource type="Script" path="res://game/zones/space_test/combat music.gd" id="129_txhl0"]
+[ext_resource type="AudioStream" uid="uid://cw8mgit1fqw6e" path="res://combat.mp3" id="129_w4n0a"]
 
 [sub_resource type="Resource" id="Resource_tdw4r"]
 script = ExtResource("2_fssw7")
@@ -3499,9 +3501,13 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6, -0.
 stream = ExtResource("125_74655")
 script = ExtResource("126_iu8d2")
 
-[node name="ambient" type="AudioStreamPlayer" parent="main background music" index="0"]
+[node name="ambient" type="AudioStreamPlayer" parent="." index="36"]
 stream = ExtResource("127_0rhg2")
 script = ExtResource("128_oeyiy")
+
+[node name="combat music" type="AudioStreamPlayer" parent="." index="37"]
+stream = ExtResource("129_w4n0a")
+script = ExtResource("129_txhl0")
 
 [editable path="XROrigin3D/LeftHand/CollisionHandLeft/LeftHand"]
 [editable path="XROrigin3D/LeftHand/CollisionHandLeft/LeftHand/Hand_Nails_low_L"]
