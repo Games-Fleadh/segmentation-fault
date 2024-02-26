@@ -14,16 +14,13 @@
 
 # (screen is black, it is silent in the cryopod. You are alone)
 # (Text appears on screen)
-Pal: Hello . . . Hello! Welcome back to consciousness.
-It is most fortunate that your brain is firing as normal. 
-Do try not to panic, you haven't quite got the energy for that.
-I'm reading confusion in your brain waves, this is normal. 
-Very normal. 
-Memory loss and disorientation are common symptoms of cryogenesis. 
-Especially for someone who has been frozen as long as you have.
+Pal: Hello? Hello? [wait = 1] Oh! Hello! Welcome back to consciousness.\nIt is most fortunate that your brain is firing as normal. 
+Pal: Do try not to panic, you haven't quite got the energy for that.
+Pal: I'm reading confusion in your brain waves, this is normal. Very normal. 
+Pal: Memory loss and disorientation are common symptoms of cryogenesis. Especially for someone who has been frozen as long as you have.
 
 # (Pause)
-Pal: Can you please turn on your visor?
+Pal: Can you turn on your visor?
 
 # (*PROMPT*: Turn on your visor using [MAIN BUTTON HERE])
 
