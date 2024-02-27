@@ -3,12 +3,12 @@
 importer="dialogue_manager_compiler_11"
 type="Resource"
 uid="uid://bbwonggput87i"
-path="res://.godot/imported/intro.dialogue-08b00d4804bcd923141832e287be24ba.tres"
+path="res://.godot/imported/Intro.dialogue-cf48db088fb38cd1040ddda95ae29960.tres"
 
 [deps]
 
-source_file="res://writing/intro.dialogue"
-dest_files=["res://.godot/imported/intro.dialogue-08b00d4804bcd923141832e287be24ba.tres"]
+source_file="res://writing/Intro.dialogue"
+dest_files=["res://.godot/imported/Intro.dialogue-cf48db088fb38cd1040ddda95ae29960.tres"]
 
 [params]
 
