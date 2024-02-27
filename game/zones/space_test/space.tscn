@@ -1,4 +1,4 @@
-[gd_scene load_steps=288 format=3 uid="uid://dulkchxbis8v2"]
+[gd_scene load_steps=287 format=3 uid="uid://dulkchxbis8v2"]
 
 [ext_resource type="PackedScene" uid="uid://di1bu0tceg332" path="res://components/persistent/persistent_zone.tscn" id="1_x6cjj"]
 [ext_resource type="Script" path="res://components/persistent/persistent_zone_info.gd" id="2_fssw7"]
@@ -125,7 +125,6 @@
 [ext_resource type="Texture2D" uid="uid://cw6fcci6yfub6" path="res://game/corridors/hall_JunctionLight/JunctionLight - Emmission.png" id="122_albqm"]
 [ext_resource type="Texture2D" uid="uid://dei52k6yrl1bg" path="res://game/corridors/hall_JunctionLight/JunctionLight - Normal.png" id="123_8odgo"]
 [ext_resource type="PackedScene" uid="uid://e02yhmvy178a" path="res://game/interactables/switch/slider_smooth.tscn" id="124_6gakm"]
-[ext_resource type="Script" path="res://components/persistent/persistent_item.gd" id="124_omlei"]
 
 [sub_resource type="Resource" id="Resource_tdw4r"]
 script = ExtResource("2_fssw7")
@@ -1184,7 +1183,9 @@ tree_root = SubResource("AnimationNodeBlendTree_fl5hk")
 
 [node name="FunctionPickup" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="2" instance=ExtResource("7_i1pcu")]
 grab_distance = 0.15
+grab_collision_mask = 360452
 ranged_angle = 15.0
+ranged_collision_mask = 98308
 
 [node name="MovementDirect" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="3" instance=ExtResource("8_bun5x")]
 strafe = true
@@ -1211,6 +1212,9 @@ show_laser = 2
 laser_length = 1
 collision_mask = 3221225472
 suppress_mask = 3221225472
+
+[node name="RightHand" parent="XROrigin3D" index="2"]
+script = ExtResource("5_ojd62")
 
 [node name="CollisionHandRight" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("13_7svyg")]
 
@@ -3503,14 +3507,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.31629, -4)
 collision_layer = 3221225473
 collision_mask = 3221225473
 mass = 50.0
-script = ExtResource("124_omlei")
-picked_up_layer = 3221225472
 
 [node name="Lid - Texture" parent="." index="33" instance=ExtResource("114_tokwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.05457, -4)
+collision_layer = 3288432644
 enabled = false
 press_to_hold = false
-picked_up_layer = 3288399872
+picked_up_layer = 98308
 second_hand_grab = 0
 
 [node name="SliderSmooth" parent="." index="34" instance=ExtResource("124_6gakm")]
