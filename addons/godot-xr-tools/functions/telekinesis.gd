@@ -3,6 +3,7 @@
 class_name XRToolsFunctionPointer
 extends Node3D
 
+
 ## XR Tools Function Pointer Script
 ##
 ## This script implements a pointer function for a players controller. Pointer
@@ -32,10 +33,10 @@ enum LaserLength {
 
 
 ## Default pointer collision mask of 21:pointable and 23:ui-objects
-const DEFAULT_MASK := 0b0000_0000_0101_0000_0000_0000_0000_0000
+const DEFAULT_MASK := 0b11 << 30
 
 ## Default pointer collision mask of 23:ui-objects
-const SUPPRESS_MASK := 0b0000_0000_0100_0000_0000_0000_0000_0000
+const SUPPRESS_MASK := 0b11 << 30
 
 
 @export_group("General")
@@ -120,6 +121,10 @@ var _controller  : XRController3D
 
 # The currently active controller
 var _active_controller : XRController3D
+
+var is_grabbing = false
+
+var initial_offset = Vector3()
 
 
 ## Add support for is_xr_class on XRTools classes
@@ -250,6 +255,13 @@ func _process(_delta):
 	# Update last values
 	last_target = new_target
 	last_collided_at = new_at
+	
+	# %1%
+	if is_grabbing and target:
+		# target.global_transform.origin = _active_controller.global_transform.origin
+		# var transform_offset = _active_controller.global_transform.xform(offset)
+		# var target_position = transformed_offset
+		target.global_transform = _active_controller.global_transform * initial_offset
 
 
 # Set pointer enabled property
@@ -416,17 +428,21 @@ func _update_pointer() -> void:
 func _button_pressed() -> void:
 	if $RayCast.is_colliding():
 		# Report pressed
+		# %2%
 		target = $RayCast.get_collider()
 		last_collided_at = $RayCast.get_collision_point()
-		XRToolsPointerEvent.pressed(self, target, last_collided_at)
+		# XRToolsPointerEvent.pressed(self, target, last_collided_at)
+		is_grabbing = true
+		initial_offset = _active_controller.global_transform.affine_inverse() * target.global_transform
 
 
 # Pointer-activation button released handler
 func _button_released() -> void:
 	if target:
 		# Report release
-		XRToolsPointerEvent.released(self, target, last_collided_at)
+		# XRToolsPointerEvent.released(self, target, last_collided_at)
 		target = null
+		is_grabbing = false
 		last_collided_at = Vector3(0, 0, 0)
 
 

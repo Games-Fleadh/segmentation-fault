@@ -18,14 +18,14 @@ size = Vector3(12, 4, 1)
 resource_local_to_scene = true
 size = Vector2(3, 2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_yjhor"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_f7isw"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vly6j"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05gs7"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_yjhor")
+albedo_texture = SubResource("ViewportTexture_f7isw")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iru2p"]
@@ -42,12 +42,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 [node name="FunctionPointer" parent="XROrigin3D/LeftHand" index="1" instance=ExtResource("3_du2hn")]
 show_laser = 2
 laser_length = 1
+collision_mask = 3221225472
+suppress_mask = 3221225472
 
 [node name="RightHand" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("5_5cr7c")]
 
 [node name="FunctionPointer" parent="XROrigin3D/RightHand" index="1" instance=ExtResource("3_du2hn")]
 show_laser = 2
 laser_length = 1
+collision_mask = 3221225472
+suppress_mask = 3221225472
 
 [node name="World" type="Node3D" parent="." index="1"]
 
@@ -109,7 +113,7 @@ unshaded = true
 
 [node name="Screen" parent="Screen" index="1"]
 mesh = SubResource("QuadMesh_44p7b")
-surface_material_override/0 = SubResource("StandardMaterial3D_vly6j")
+surface_material_override/0 = SubResource("StandardMaterial3D_05gs7")
 
 [node name="CollisionShape3D" parent="Screen/StaticBody3D" index="0"]
 shape = SubResource("BoxShape3D_iru2p")
