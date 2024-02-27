@@ -1,7 +1,7 @@
 @tool
 @icon("res://addons/godot-xr-tools/editor/icons/function.svg")
 class_name SegFaultTelekinesis
-extends XRController3D
+extends Node3D
 
 ## XR Tools Function Pointer Script
 ##
@@ -127,8 +127,8 @@ var initial_offset = Vector3()
 
 
 ## Add support for is_xr_class on XRTools classes
-func is_xr_class(name : String) -> bool:
-	return name == "SegFaultTelekinesis"
+##func is_xr_class(name : String) -> bool:
+##	return name == "SegFaultTelekinesis"
 
 
 # Called when the node enters the scene tree for the first time.
