@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bwjm04wpopshb"
+path="res://.godot/imported/AboutThatBanging.dialogue-b8fcbbf710694d2f0cc463456f53f934.tres"
+
+[deps]
+
+source_file="res://writing/AboutThatBanging.dialogue"
+dest_files=["res://.godot/imported/AboutThatBanging.dialogue-b8fcbbf710694d2f0cc463456f53f934.tres"]
+
+[params]
+
+defaults=true
