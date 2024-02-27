@@ -240,34 +240,34 @@ _data = {
 "Thumb": ExtResource("85_thr5d")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i5ffi"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_26dhj"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s4ej0"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b3on1"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_icij2"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_0tdlo"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Little_Distal_R", "Armature/Skeleton3D:Little_Intermediate_R", "Armature/Skeleton3D:Little_Metacarpal_R", "Armature/Skeleton3D:Little_Proximal_R", "Armature/Skeleton3D:Middle_Distal_R", "Armature/Skeleton3D:Middle_Intermediate_R", "Armature/Skeleton3D:Middle_Metacarpal_R", "Armature/Skeleton3D:Middle_Proximal_R", "Armature/Skeleton3D:Ring_Distal_R", "Armature/Skeleton3D:Ring_Intermediate_R", "Armature/Skeleton3D:Ring_Metacarpal_R", "Armature/Skeleton3D:Ring_Proximal_R", "Armature/Skeleton3D:Thumb_Distal_R", "Armature/Skeleton3D:Thumb_Metacarpal_R", "Armature/Skeleton3D:Thumb_Proximal_R", "Armature/Skeleton:Little_Distal_R", "Armature/Skeleton:Little_Intermediate_R", "Armature/Skeleton:Little_Proximal_R", "Armature/Skeleton:Middle_Distal_R", "Armature/Skeleton:Middle_Intermediate_R", "Armature/Skeleton:Middle_Proximal_R", "Armature/Skeleton:Ring_Distal_R", "Armature/Skeleton:Ring_Intermediate_R", "Armature/Skeleton:Ring_Proximal_R", "Armature/Skeleton:Thumb_Distal_R", "Armature/Skeleton:Thumb_Proximal_R"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b6nwx"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b1jfy"]
 animation = &"Grip 5"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_vsv65"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_byyyl"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_R", "Armature/Skeleton3D:Index_Intermediate_R", "Armature/Skeleton3D:Index_Metacarpal_R", "Armature/Skeleton3D:Index_Proximal_R", "Armature/Skeleton:Index_Distal_R", "Armature/Skeleton:Index_Intermediate_R", "Armature/Skeleton:Index_Proximal_R"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_2hv6t"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_2kvme"]
 graph_offset = Vector2(-552.664, 107.301)
-nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_i5ffi")
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_26dhj")
 nodes/ClosedHand1/position = Vector2(-600, 300)
-nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_s4ej0")
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_b3on1")
 nodes/ClosedHand2/position = Vector2(-360, 300)
-nodes/Grip/node = SubResource("AnimationNodeBlend2_icij2")
+nodes/Grip/node = SubResource("AnimationNodeBlend2_0tdlo")
 nodes/Grip/position = Vector2(0, 40)
-nodes/OpenHand/node = SubResource("AnimationNodeAnimation_b6nwx")
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_b1jfy")
 nodes/OpenHand/position = Vector2(-600, 100)
-nodes/Trigger/node = SubResource("AnimationNodeBlend2_vsv65")
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_byyyl")
 nodes/Trigger/position = Vector2(-360, 40)
 node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
 
@@ -1133,26 +1133,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.866059, 0)
 current = true
 near = 0.03
 
+[node name="LeftHand" parent="XROrigin3D" index="1"]
+script = ExtResource("5_ojd62")
+
 [node name="CollisionHandLeft" parent="XROrigin3D/LeftHand" index="0" instance=ExtResource("3_7dimt")]
 
 [node name="LeftHand" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="1" instance=ExtResource("4_0e4qa")]
-script = ExtResource("5_ojd62")
-enabled = true
-y_offset = -0.013
-distance = 10.0
-active_button_action = "trigger_click"
-show_laser = 1
-laser_length = 0
-laser_material = null
-laser_hit_material = null
-show_target = false
-target_radius = 0.05
-target_material = null
-collision_mask = 3221225472
-collide_with_bodies = true
-collide_with_areas = false
-suppress_radius = 0.2
-suppress_mask = 3221225472
+script = null
 
 [node name="Skeleton3D" parent="XROrigin3D/LeftHand/CollisionHandLeft/LeftHand/Hand_Nails_low_L/Armature" index="0"]
 bones/1/rotation = Quaternion(0.323537, -2.56577e-05, -0.0272204, 0.945824)
@@ -1194,32 +1181,20 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeBlendTree_fl5hk")
 
-[node name="FunctionPointer" parent="XROrigin3D/LeftHand/CollisionHandLeft/LeftHand" index="2" instance=ExtResource("6_gh13s")]
-show_laser = 2
-laser_length = 1
-collision_mask = 3221225472
-suppress_mask = 3221225472
-
-[node name="FunctionPointer" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="2" instance=ExtResource("6_gh13s")]
-show_laser = 2
-laser_length = 1
-collision_mask = 3226468352
-suppress_mask = 3221225472
-
-[node name="FunctionPickup" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="3" instance=ExtResource("7_i1pcu")]
+[node name="FunctionPickup" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="2" instance=ExtResource("7_i1pcu")]
 grab_distance = 0.15
 ranged_angle = 15.0
 
-[node name="MovementDirect" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="4" instance=ExtResource("8_bun5x")]
+[node name="MovementDirect" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="3" instance=ExtResource("8_bun5x")]
 strafe = true
 
-[node name="MovementJump" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="5" instance=ExtResource("9_q7e5d")]
+[node name="MovementJump" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="4" instance=ExtResource("9_q7e5d")]
 jump_button_action = "ax_button"
 
-[node name="MovementCrouch" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="6" instance=ExtResource("10_vedne")]
+[node name="MovementCrouch" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="5" instance=ExtResource("10_vedne")]
 crouch_button_action = "by_button"
 
-[node name="WristUI" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="7" instance=ExtResource("11_dxxxl")]
+[node name="WristUI" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="6" instance=ExtResource("11_dxxxl")]
 transform = Transform3D(1.30801e-07, -1, 7.6194e-09, -0.0871558, -3.8097e-09, 0.996195, -0.996195, -1.30968e-07, -0.0871558, -0.03, 0, 0.3)
 screen_size = Vector2(0.16, 0.08)
 collision_layer = 4194304
@@ -1229,6 +1204,12 @@ update_mode = 2
 throttle_fps = 15.0
 transparent = 0
 unshaded = true
+
+[node name="FunctionPointer" parent="XROrigin3D/LeftHand" index="1" instance=ExtResource("6_gh13s")]
+show_laser = 2
+laser_length = 1
+collision_mask = 3221225472
+suppress_mask = 3221225472
 
 [node name="CollisionHandRight" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("13_7svyg")]
 
@@ -1271,7 +1252,7 @@ root_node = NodePath("../Hand_Nails_low_R")
 libraries = {
 "": SubResource("AnimationLibrary_reqae")
 }
-tree_root = SubResource("AnimationNodeBlendTree_2hv6t")
+tree_root = SubResource("AnimationNodeBlendTree_2kvme")
 
 [node name="FunctionPointer" parent="XROrigin3D/RightHand/CollisionHandRight" index="2" instance=ExtResource("6_gh13s")]
 show_laser = 2
