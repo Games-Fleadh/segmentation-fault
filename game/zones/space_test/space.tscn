@@ -1,4 +1,4 @@
-[gd_scene load_steps=287 format=3 uid="uid://dulkchxbis8v2"]
+[gd_scene load_steps=288 format=3 uid="uid://dulkchxbis8v2"]
 
 [ext_resource type="PackedScene" uid="uid://di1bu0tceg332" path="res://components/persistent/persistent_zone.tscn" id="1_x6cjj"]
 [ext_resource type="Script" path="res://components/persistent/persistent_zone_info.gd" id="2_fssw7"]
@@ -125,6 +125,7 @@
 [ext_resource type="Texture2D" uid="uid://cw6fcci6yfub6" path="res://game/corridors/hall_JunctionLight/JunctionLight - Emmission.png" id="122_albqm"]
 [ext_resource type="Texture2D" uid="uid://dei52k6yrl1bg" path="res://game/corridors/hall_JunctionLight/JunctionLight - Normal.png" id="123_8odgo"]
 [ext_resource type="PackedScene" uid="uid://e02yhmvy178a" path="res://game/interactables/switch/slider_smooth.tscn" id="124_6gakm"]
+[ext_resource type="Script" path="res://components/persistent/persistent_item.gd" id="124_omlei"]
 
 [sub_resource type="Resource" id="Resource_tdw4r"]
 script = ExtResource("2_fssw7")
@@ -3501,9 +3502,16 @@ shape = SubResource("BoxShape3D_0ts0f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.31629, -4)
 collision_layer = 3221225473
 collision_mask = 3221225473
+mass = 50.0
+script = ExtResource("124_omlei")
+picked_up_layer = 3221225472
 
 [node name="Lid - Texture" parent="." index="33" instance=ExtResource("114_tokwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.05457, -4)
+enabled = false
+press_to_hold = false
+picked_up_layer = 3288399872
+second_hand_grab = 0
 
 [node name="SliderSmooth" parent="." index="34" instance=ExtResource("124_6gakm")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6, -0.318159, 2.94658)
