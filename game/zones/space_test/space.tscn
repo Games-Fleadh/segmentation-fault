@@ -1,4 +1,4 @@
-[gd_scene load_steps=294 format=3 uid="uid://dulkchxbis8v2"]
+[gd_scene load_steps=257 format=3 uid="uid://dulkchxbis8v2"]
 
 [ext_resource type="PackedScene" uid="uid://di1bu0tceg332" path="res://components/persistent/persistent_zone.tscn" id="1_x6cjj"]
 [ext_resource type="Script" path="res://components/persistent/persistent_zone_info.gd" id="2_fssw7"]
@@ -8,52 +8,17 @@
 [ext_resource type="Material" uid="uid://dtjit3g58yk0t" path="res://game/player_versions/handModel/handMat.tres" id="5_hpwr2"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="6_gh13s"]
 [ext_resource type="ArrayMesh" uid="uid://cntdp0ekwj2hr" path="res://game/player_versions/handModel/leftHandMesh.tres" id="6_ljei4"]
-[ext_resource type="Animation" uid="uid://dgfeikrugfewi" path="res://addons/godot-xr-tools/hands/animations/left/Cup.res" id="7_643mt"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="7_i1pcu"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="8_bun5x"]
-[ext_resource type="Animation" uid="uid://dlxa6f6hwurka" path="res://addons/godot-xr-tools/hands/animations/left/Default pose.res" id="8_yf1al"]
-[ext_resource type="Animation" uid="uid://plad1r85f7ws" path="res://addons/godot-xr-tools/hands/animations/left/Grip.res" id="9_g4bs0"]
 [ext_resource type="PackedScene" uid="uid://c2q5phg8w08o" path="res://addons/godot-xr-tools/functions/movement_jump.tscn" id="9_q7e5d"]
-[ext_resource type="Animation" uid="uid://dqa0h82y3qn1t" path="res://addons/godot-xr-tools/hands/animations/left/Grip 1.res" id="10_bled0"]
 [ext_resource type="PackedScene" uid="uid://clt88d5d1dje4" path="res://addons/godot-xr-tools/functions/movement_crouch.tscn" id="10_vedne"]
-[ext_resource type="Animation" uid="uid://di384xtde8ydf" path="res://addons/godot-xr-tools/hands/animations/left/Grip 2.res" id="11_3pnkq"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="11_dxxxl"]
 [ext_resource type="PackedScene" uid="uid://b3bubdytjn523" path="res://game/zones/zone_wrist_ui.tscn" id="12_13clr"]
-[ext_resource type="Animation" uid="uid://dd67rufxwj2u" path="res://addons/godot-xr-tools/hands/animations/left/Grip 3.res" id="12_52gn7"]
 [ext_resource type="PackedScene" uid="uid://c3uoohvnshach" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_right.tscn" id="13_7svyg"]
-[ext_resource type="Animation" uid="uid://db62hs5s4n2b3" path="res://addons/godot-xr-tools/hands/animations/left/Grip 4.res" id="13_d58xq"]
-[ext_resource type="Animation" uid="uid://bediglpx0rj7i" path="res://addons/godot-xr-tools/hands/animations/left/Grip 5.res" id="14_84im2"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="14_btatg"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="15_abi2u"]
-[ext_resource type="Animation" uid="uid://nq3xh1olqipq" path="res://addons/godot-xr-tools/hands/animations/left/Grip Shaft.res" id="15_uh0x0"]
-[ext_resource type="Animation" uid="uid://bi1l6lre2w2lp" path="res://addons/godot-xr-tools/hands/animations/left/Hold.res" id="16_oaiw5"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="16_prrg1"]
-[ext_resource type="Animation" uid="uid://c3e6h0rv2uw2d" path="res://addons/godot-xr-tools/hands/animations/left/Horns.res" id="17_tb5ga"]
 [ext_resource type="PackedScene" uid="uid://drs4eeq721ojn" path="res://addons/godot-xr-tools/functions/movement_sprint.tscn" id="18_8cr1g"]
-[ext_resource type="Animation" uid="uid://dfekure1r6q13" path="res://addons/godot-xr-tools/hands/animations/left/Metal.res" id="18_bcjg8"]
-[ext_resource type="Animation" uid="uid://b0rhk4r0r0t32" path="res://addons/godot-xr-tools/hands/animations/left/Middle.res" id="19_wbwu2"]
-[ext_resource type="Animation" uid="uid://f5k0gh4qnmv5" path="res://addons/godot-xr-tools/hands/animations/left/OK.res" id="20_c1we4"]
-[ext_resource type="Animation" uid="uid://1nlkfvitq7ku" path="res://addons/godot-xr-tools/hands/animations/left/Peace.res" id="21_likqd"]
-[ext_resource type="Animation" uid="uid://dhjb0e334tfwl" path="res://addons/godot-xr-tools/hands/animations/left/Pinch Flat.res" id="22_pvpdy"]
-[ext_resource type="Animation" uid="uid://dkjsnihi81b7p" path="res://addons/godot-xr-tools/hands/animations/left/Pinch Large.res" id="23_1l0cw"]
-[ext_resource type="Animation" uid="uid://bn0fdhe2jwq3h" path="res://addons/godot-xr-tools/hands/animations/left/Pinch Middle.res" id="24_rem7m"]
-[ext_resource type="Animation" uid="uid://bo1b8w0s4ci81" path="res://addons/godot-xr-tools/hands/animations/left/Pinch Ring.res" id="25_bvkua"]
-[ext_resource type="Animation" uid="uid://m5x2m8x3tcel" path="res://addons/godot-xr-tools/hands/animations/left/Pinch Tight.res" id="26_5pabs"]
-[ext_resource type="Animation" uid="uid://fi23m6i7orhw" path="res://addons/godot-xr-tools/hands/animations/left/Pinch Up.res" id="27_6mwgs"]
-[ext_resource type="Animation" uid="uid://c8qmcuyaltdnw" path="res://addons/godot-xr-tools/hands/animations/left/PingPong.res" id="28_v2j66"]
-[ext_resource type="Animation" uid="uid://bqnoubqq7ogwu" path="res://addons/godot-xr-tools/hands/animations/left/Pinky.res" id="29_wwyqg"]
-[ext_resource type="Animation" uid="uid://ddbo6ioa282en" path="res://addons/godot-xr-tools/hands/animations/left/Pistol.res" id="30_rwk5l"]
-[ext_resource type="Animation" uid="uid://brkptjihht3ae" path="res://addons/godot-xr-tools/hands/animations/left/Ring.res" id="31_ec4k2"]
-[ext_resource type="Animation" uid="uid://cnng6xumhw7cx" path="res://addons/godot-xr-tools/hands/animations/left/Rounded.res" id="32_41qlh"]
-[ext_resource type="Animation" uid="uid://cevirj0eagdrq" path="res://addons/godot-xr-tools/hands/animations/left/Sign 1.res" id="33_r38c7"]
-[ext_resource type="Animation" uid="uid://cc6phxovf1ban" path="res://addons/godot-xr-tools/hands/animations/left/Sign 2.res" id="34_fjtwx"]
-[ext_resource type="Animation" uid="uid://ohthjp8qbcc4" path="res://addons/godot-xr-tools/hands/animations/left/Sign 3.res" id="35_kywhl"]
-[ext_resource type="Animation" uid="uid://dmx42g64577g5" path="res://addons/godot-xr-tools/hands/animations/left/Sign 4.res" id="36_ks3xo"]
-[ext_resource type="Animation" uid="uid://dhsoxntrktx0p" path="res://addons/godot-xr-tools/hands/animations/left/Sign 5.res" id="37_qp7dq"]
-[ext_resource type="Animation" uid="uid://c0u2a3yc2vhg8" path="res://addons/godot-xr-tools/hands/animations/left/Sign_Point.res" id="38_hdl7y"]
-[ext_resource type="Animation" uid="uid://4g211my0hoiw" path="res://addons/godot-xr-tools/hands/animations/left/Straight.res" id="39_a14c4"]
-[ext_resource type="Animation" uid="uid://d06l7hygl4qt3" path="res://addons/godot-xr-tools/hands/animations/left/Surfer.res" id="40_54w3k"]
-[ext_resource type="Animation" uid="uid://bxei4oebd4hu3" path="res://addons/godot-xr-tools/hands/animations/left/Thumb.res" id="41_e7gds"]
 [ext_resource type="Animation" uid="uid://do01jton6rk42" path="res://addons/godot-xr-tools/hands/animations/right/Cup.res" id="51_eiyrn"]
 [ext_resource type="ArrayMesh" uid="uid://bxr3pm0i3jhvn" path="res://game/player_versions/handModel/rightHandMesh.tres" id="52_0wm7r"]
 [ext_resource type="Animation" uid="uid://ky28birj4su6" path="res://addons/godot-xr-tools/hands/animations/right/Default pose.res" id="52_xk3jk"]
@@ -91,7 +56,6 @@
 [ext_resource type="Animation" uid="uid://bq7cjxdn28jcv" path="res://addons/godot-xr-tools/hands/animations/right/Surfer.res" id="84_migud"]
 [ext_resource type="Animation" uid="uid://d2ukhr3n2r1u8" path="res://addons/godot-xr-tools/hands/animations/right/Thumb.res" id="85_thr5d"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="91_ig6ey"]
-[ext_resource type="Script" path="res://game/zones/space_test/footsteps.gd" id="91_n8s83"]
 [ext_resource type="Material" uid="uid://clxasphfdvcao" path="res://game/corridors/hall_Junction/Corridor_Junction.tres" id="92_h8ihm"]
 [ext_resource type="Material" uid="uid://bonuvq0w1wjfj" path="res://game/corridors/hall_Curve/Corridor_Curve.tres" id="93_20ohn"]
 [ext_resource type="Texture2D" uid="uid://83plq6cq1s55" path="res://game/corridors/hall_Junction/Junction - Albedo.png" id="93_owcpw"]
@@ -138,73 +102,34 @@ script = ExtResource("2_fssw7")
 zone_id = "zone_space"
 instance_scene = "res://game/zones/space_test/space.tscn"
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_kw48d"]
-_data = {
-"Cup": ExtResource("7_643mt"),
-"Default pose": ExtResource("8_yf1al"),
-"Grip": ExtResource("9_g4bs0"),
-"Grip 1": ExtResource("10_bled0"),
-"Grip 2": ExtResource("11_3pnkq"),
-"Grip 3": ExtResource("12_52gn7"),
-"Grip 4": ExtResource("13_d58xq"),
-"Grip 5": ExtResource("14_84im2"),
-"Grip Shaft": ExtResource("15_uh0x0"),
-"Hold": ExtResource("16_oaiw5"),
-"Horns": ExtResource("17_tb5ga"),
-"Metal": ExtResource("18_bcjg8"),
-"Middle": ExtResource("19_wbwu2"),
-"OK": ExtResource("20_c1we4"),
-"Peace": ExtResource("21_likqd"),
-"Pinch Flat": ExtResource("22_pvpdy"),
-"Pinch Large": ExtResource("23_1l0cw"),
-"Pinch Middle": ExtResource("24_rem7m"),
-"Pinch Ring": ExtResource("25_bvkua"),
-"Pinch Tight": ExtResource("26_5pabs"),
-"Pinch Up": ExtResource("27_6mwgs"),
-"PingPong": ExtResource("28_v2j66"),
-"Pinky": ExtResource("29_wwyqg"),
-"Pistol": ExtResource("30_rwk5l"),
-"Ring": ExtResource("31_ec4k2"),
-"Rounded": ExtResource("32_41qlh"),
-"Sign 1": ExtResource("33_r38c7"),
-"Sign 2": ExtResource("34_fjtwx"),
-"Sign 3": ExtResource("35_kywhl"),
-"Sign 4": ExtResource("36_ks3xo"),
-"Sign 5": ExtResource("37_qp7dq"),
-"Sign_Point": ExtResource("38_hdl7y"),
-"Straight": ExtResource("39_a14c4"),
-"Surfer": ExtResource("40_54w3k"),
-"Thumb": ExtResource("41_e7gds")
-}
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o0qe3"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pgpgg"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u6sxb"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v6pw3"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_u16jq"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_0l742"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Little_Distal_L", "Armature/Skeleton3D:Little_Intermediate_L", "Armature/Skeleton3D:Little_Metacarpal_L", "Armature/Skeleton3D:Little_Proximal_L", "Armature/Skeleton3D:Middle_Distal_L", "Armature/Skeleton3D:Middle_Intermediate_L", "Armature/Skeleton3D:Middle_Metacarpal_L", "Armature/Skeleton3D:Middle_Proximal_L", "Armature/Skeleton3D:Ring_Distal_L", "Armature/Skeleton3D:Ring_Intermediate_L", "Armature/Skeleton3D:Ring_Metacarpal_L", "Armature/Skeleton3D:Ring_Proximal_L", "Armature/Skeleton3D:Thumb_Distal_L", "Armature/Skeleton3D:Thumb_Metacarpal_L", "Armature/Skeleton3D:Thumb_Proximal_L", "Armature/Skeleton:Little_Distal_L", "Armature/Skeleton:Little_Intermediate_L", "Armature/Skeleton:Little_Proximal_L", "Armature/Skeleton:Middle_Distal_L", "Armature/Skeleton:Middle_Intermediate_L", "Armature/Skeleton:Middle_Proximal_L", "Armature/Skeleton:Ring_Distal_L", "Armature/Skeleton:Ring_Intermediate_L", "Armature/Skeleton:Ring_Proximal_L", "Armature/Skeleton:Thumb_Distal_L", "Armature/Skeleton:Thumb_Proximal_L"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wn3f4"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kmxeu"]
 animation = &"Grip 5"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_v61fh"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_c5k4t"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_L", "Armature/Skeleton3D:Index_Intermediate_L", "Armature/Skeleton3D:Index_Metacarpal_L", "Armature/Skeleton3D:Index_Proximal_L", "Armature/Skeleton:Index_Distal_L", "Armature/Skeleton:Index_Intermediate_L", "Armature/Skeleton:Index_Proximal_L"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_tt6le"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_k0xyt"]
 graph_offset = Vector2(-536, 11)
-nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_o0qe3")
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_pgpgg")
 nodes/ClosedHand1/position = Vector2(-600, 300)
-nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_u6sxb")
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_v6pw3")
 nodes/ClosedHand2/position = Vector2(-360, 300)
-nodes/Grip/node = SubResource("AnimationNodeBlend2_u16jq")
+nodes/Grip/node = SubResource("AnimationNodeBlend2_0l742")
 nodes/Grip/position = Vector2(0, 20)
-nodes/OpenHand/node = SubResource("AnimationNodeAnimation_wn3f4")
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_kmxeu")
 nodes/OpenHand/position = Vector2(-600, 100)
-nodes/Trigger/node = SubResource("AnimationNodeBlend2_v61fh")
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_c5k4t")
 nodes/Trigger/position = Vector2(-360, 20)
 node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
 
@@ -247,34 +172,34 @@ _data = {
 "Thumb": ExtResource("85_thr5d")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tci3l"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i0p1q"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5ybr0"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ljgva"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_tfgux"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_s5gdo"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Little_Distal_R", "Armature/Skeleton3D:Little_Intermediate_R", "Armature/Skeleton3D:Little_Metacarpal_R", "Armature/Skeleton3D:Little_Proximal_R", "Armature/Skeleton3D:Middle_Distal_R", "Armature/Skeleton3D:Middle_Intermediate_R", "Armature/Skeleton3D:Middle_Metacarpal_R", "Armature/Skeleton3D:Middle_Proximal_R", "Armature/Skeleton3D:Ring_Distal_R", "Armature/Skeleton3D:Ring_Intermediate_R", "Armature/Skeleton3D:Ring_Metacarpal_R", "Armature/Skeleton3D:Ring_Proximal_R", "Armature/Skeleton3D:Thumb_Distal_R", "Armature/Skeleton3D:Thumb_Metacarpal_R", "Armature/Skeleton3D:Thumb_Proximal_R", "Armature/Skeleton:Little_Distal_R", "Armature/Skeleton:Little_Intermediate_R", "Armature/Skeleton:Little_Proximal_R", "Armature/Skeleton:Middle_Distal_R", "Armature/Skeleton:Middle_Intermediate_R", "Armature/Skeleton:Middle_Proximal_R", "Armature/Skeleton:Ring_Distal_R", "Armature/Skeleton:Ring_Intermediate_R", "Armature/Skeleton:Ring_Proximal_R", "Armature/Skeleton:Thumb_Distal_R", "Armature/Skeleton:Thumb_Proximal_R"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uk468"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j74i5"]
 animation = &"Grip 5"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_vytli"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_ppsbn"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_R", "Armature/Skeleton3D:Index_Intermediate_R", "Armature/Skeleton3D:Index_Metacarpal_R", "Armature/Skeleton3D:Index_Proximal_R", "Armature/Skeleton:Index_Distal_R", "Armature/Skeleton:Index_Intermediate_R", "Armature/Skeleton:Index_Proximal_R"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_fe4io"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_cmi53"]
 graph_offset = Vector2(-552.664, 107.301)
-nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_tci3l")
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_i0p1q")
 nodes/ClosedHand1/position = Vector2(-600, 300)
-nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_5ybr0")
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_ljgva")
 nodes/ClosedHand2/position = Vector2(-360, 300)
-nodes/Grip/node = SubResource("AnimationNodeBlend2_tfgux")
+nodes/Grip/node = SubResource("AnimationNodeBlend2_s5gdo")
 nodes/Grip/position = Vector2(0, 40)
-nodes/OpenHand/node = SubResource("AnimationNodeAnimation_uk468")
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_j74i5")
 nodes/OpenHand/position = Vector2(-600, 100)
-nodes/Trigger/node = SubResource("AnimationNodeBlend2_vytli")
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_ppsbn")
 nodes/Trigger/position = Vector2(-360, 40)
 node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
 
@@ -1144,27 +1069,6 @@ near = 0.03
 
 [node name="LeftHand" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="1" instance=ExtResource("4_0e4qa")]
 
-[node name="Skeleton3D" parent="XROrigin3D/LeftHand/CollisionHandLeft/LeftHand/Hand_Nails_low_L/Armature" index="0"]
-bones/1/rotation = Quaternion(0.323537, -2.56577e-05, -0.0272204, 0.945824)
-bones/2/rotation = Quaternion(-0.0904441, -0.0415175, -0.166293, 0.981042)
-bones/3/rotation = Quaternion(-0.0466199, 0.020971, 0.0103276, 0.998639)
-bones/5/rotation = Quaternion(-0.00128455, -0.0116081, -0.0168259, 0.99979)
-bones/6/rotation = Quaternion(0.102925, -0.00993208, -0.00794417, 0.994608)
-bones/7/rotation = Quaternion(-0.012859, -0.0236108, -0.323258, 0.945929)
-bones/8/rotation = Quaternion(0.0120575, -0.00929194, -0.247472, 0.968775)
-bones/10/rotation = Quaternion(-0.0357539, -0.000400032, 0.00636764, 0.99934)
-bones/11/rotation = Quaternion(-0.00264964, -0.00114471, -0.125992, 0.992027)
-bones/12/rotation = Quaternion(0.0394225, 0.00193393, -0.228074, 0.972843)
-bones/13/rotation = Quaternion(-0.0123395, -0.00881294, -0.280669, 0.959685)
-bones/15/rotation = Quaternion(-0.0702656, 0.0101908, -0.0243307, 0.99718)
-bones/16/rotation = Quaternion(-0.0320634, -0.00223624, -0.0686366, 0.997124)
-bones/17/rotation = Quaternion(0.0253452, 0.00812462, -0.249005, 0.968136)
-bones/18/rotation = Quaternion(0.00252232, 0.00788073, -0.243204, 0.96994)
-bones/20/rotation = Quaternion(-0.0917369, 0.0203027, -0.010183, 0.995524)
-bones/21/rotation = Quaternion(-0.0625182, -0.00022572, -0.115393, 0.991351)
-bones/22/rotation = Quaternion(0.0585786, 0.0216483, -0.269905, 0.96086)
-bones/23/rotation = Quaternion(0.00687177, -0.00357275, -0.211953, 0.977249)
-
 [node name="mesh_Hand_Nails_low_L" parent="XROrigin3D/LeftHand/CollisionHandLeft/LeftHand/Hand_Nails_low_L/Armature/Skeleton3D" index="0"]
 mesh = ExtResource("6_ljei4")
 surface_material_override/0 = ExtResource("5_hpwr2")
@@ -1178,11 +1082,7 @@ bone_idx = 9
 transform = Transform3D(0.54083, -0.0826267, 0.837064, 0.840813, 0.0805243, -0.535303, -0.0231736, 0.993322, 0.113024, 0, 0, 0)
 
 [node name="AnimationTree" parent="XROrigin3D/LeftHand/CollisionHandLeft/LeftHand" index="1"]
-root_node = NodePath("../Hand_Nails_low_L")
-libraries = {
-"": SubResource("AnimationLibrary_kw48d")
-}
-tree_root = SubResource("AnimationNodeBlendTree_tt6le")
+tree_root = SubResource("AnimationNodeBlendTree_k0xyt")
 
 [node name="FunctionPointer" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="2" instance=ExtResource("6_gh13s")]
 show_laser = 2
@@ -1253,7 +1153,7 @@ root_node = NodePath("../Hand_Nails_low_R")
 libraries = {
 "": SubResource("AnimationLibrary_reqae")
 }
-tree_root = SubResource("AnimationNodeBlendTree_fe4io")
+tree_root = SubResource("AnimationNodeBlendTree_cmi53")
 
 [node name="FunctionPointer" parent="XROrigin3D/RightHand/CollisionHandRight" index="2" instance=ExtResource("6_gh13s")]
 show_laser = 2
@@ -1276,9 +1176,6 @@ crouch_button_action = "by_button"
 [node name="PlayerBody" parent="XROrigin3D" index="3" instance=ExtResource("16_prrg1")]
 
 [node name="MovementSprint" parent="XROrigin3D" index="4" instance=ExtResource("18_8cr1g")]
-
-[node name="footsteps" type="AudioStreamPlayer" parent="XROrigin3D" index="5"]
-script = ExtResource("91_n8s83")
 
 [node name="StartXR" parent="." index="1" instance=ExtResource("91_ig6ey")]
 physics_rate_multiplier = 1
@@ -3504,6 +3401,7 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6, -0.
 
 [node name="main background music" type="AudioStreamPlayer" parent="." index="35"]
 stream = ExtResource("125_74655")
+autoplay = true
 script = ExtResource("126_iu8d2")
 
 [node name="ambient" type="AudioStreamPlayer" parent="." index="36"]
