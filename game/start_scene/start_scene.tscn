@@ -18,14 +18,14 @@ size = Vector3(12, 4, 1)
 resource_local_to_scene = true
 size = Vector2(3, 2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_yjhor"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_bsjlx"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vly6j"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3p43"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_yjhor")
+albedo_texture = SubResource("ViewportTexture_bsjlx")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iru2p"]
@@ -109,7 +109,7 @@ unshaded = true
 
 [node name="Screen" parent="Screen" index="1"]
 mesh = SubResource("QuadMesh_44p7b")
-surface_material_override/0 = SubResource("StandardMaterial3D_vly6j")
+surface_material_override/0 = SubResource("StandardMaterial3D_x3p43")
 
 [node name="CollisionShape3D" parent="Screen/StaticBody3D" index="0"]
 shape = SubResource("BoxShape3D_iru2p")
