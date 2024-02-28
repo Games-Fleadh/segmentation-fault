@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b70nrvb1cai41"
+path="res://.godot/imported/deeper step.wav-f2cc61e4b4bcec5ae7a30da6f9cc3bf3.sample"
+
+[deps]
+
+source_file="res://game/audio/sound/deeper step.wav"
+dest_files=["res://.godot/imported/deeper step.wav-f2cc61e4b4bcec5ae7a30da6f9cc3bf3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
