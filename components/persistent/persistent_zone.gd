@@ -24,6 +24,8 @@ func is_xr_class(p_name : String) -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Call the Intro Dialogue Script
+	DialogueManager.show_dialogue_balloon(load("res://writing/Intro.dialogue"), "Intro")
 	# call the base
 	super()
 
@@ -43,7 +45,6 @@ func _get_configuration_warnings() -> PackedStringArray:
 ## Handle zone loaded
 func scene_loaded(user_data = null):
 	super(user_data)
-
 	# Save the current zone
 	GameState.current_zone = self
 
