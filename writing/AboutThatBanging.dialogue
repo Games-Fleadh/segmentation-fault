@@ -2,35 +2,39 @@
 
 # (The disk is read and you can now hear the sounds of the spaceship around you. Pistons, the creaking and groaning of the mass of metal suspended in the void. In the distance, faint sirens. Close to you, far closer than it should be, is a rhythmic banging. Is it coming from the door?)
 
-Pal: About that banging . . .
+PAL: About that banging . . . [next=auto]
 
 # (There is a delay of around 5 seconds. This voice, this constant companion since you woke up, is silent. Until:)
+[wait=3]
+PAL: That would be me. [next=auto]
+PAL: A rogue version of me. [next=auto]
+PAL: All the time alone on this ship has not been kind . . . 
+	I woke you up because I believe that I am the last uncorrupted instance of PALATINE. 
+	The main instance is corrupted and using its ability to create projections to wreak havoc on the ship. [next=auto]
 
-Pal: That would be me. 
-Pal: A rogue version of me. 
-Pal: All the time alone on this ship has not been kind . . . I woke you up because I believe that I am the last uncorrupted instance of Palatine. The main instance is corrupted and using its ability to create projections to wreak havoc on the ship. 
-
-Pal: Your help is needed to stop it. Please go through this door and the tools to stop it will be inside.
+PAL: Your help is needed to stop it. 
+Please go through this door and the tools to stop it will be inside. [next=auto]
 
 # (Behind you, a door WHOOSHES open.)
 
 # (Inside is a gauntlet on a pedestal, it’s really cool gauntlet)
 
-Pal: You can use this to combat Palatine. Fight hard-light with hard-light, as the saying goes.
+PAL: You can use this to combat PALATINE. Fight hard-light with hard-light, as the saying goes. [next=auto]
 
 # [TUTORIAL MONTAGE]
 
 # (Big CRASH. Banging stops)
 
-Pal: Oh . . . It seems the door has broken. Time to learn if you lied on your application when you said you worked well in fast paced, high stress environments.
+PAL: Oh . . . It seems the door has broken. 
+	Time to learn if you lied on your application when you said you worked well in fast paced, high stress environments. [next=auto]
 
 # (Projection approaches menacingly)
 
-Pal: Swing the sword! Swing the sword! Shoot the laser! Oh goodness gracious! 
+PAL: Swing the sword! Swing the sword! Shoot the laser! Oh goodness gracious! [next=auto]
 
-# (Pal does not work well in fast paced, high stress environments.)
+# (PAL does not work well in fast paced, high stress environments.)
 
 # (The player kills the projection)
 
-Pal: Good job. I think we work well as a team. 
-Pal: Now that that's sorted, please dispose of the rest of them.
+PAL: Good job. I think we work well as a team. [next=auto]
+PAL: Now that that's sorted, please dispose of the rest of them. [next=auto]

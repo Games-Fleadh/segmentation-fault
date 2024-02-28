@@ -1,13 +1,13 @@
 ~ EyesOnEarsOff
-Pal: Wonderful!
+PAL: Wonderful! [next=auto]
 
 # (The room is revealed to you. Filled with medical equipment and empty pods, it is not very inviting. A table with a few items is across from you.)
 
-Pal: Please make use of the health accelerants provided in this pod. 
-Pal: Your body does not yet meet regulation standards
+PAL: Please make use of the health accelerants provided in this pod. [next=auto]
+PAL: Your body does not yet meet regulation standards.[next=auto]
 
-Pal: Apologies, it appears that you have no mobility in your arms yet. 
-Pal: I am permitted to administer a single dose, you will have to administer the rest.
+PAL: Apologies, it appears that you have no mobility in your arms yet. [next=auto]
+PAL: I am permitted to administer a single dose, you will have to administer the rest. [next=auto]
 
 # (Pistons whir on the side of the pod. You cannot hear them. You cannot hear anything.)
 
@@ -17,9 +17,9 @@ Pal: I am permitted to administer a single dose, you will have to administer the
 
 # (Outlines around health accelerants are highlighted)
 
-(*PROMPT* >> Pick up the accelerant using [TRIGGER BUTTON] ) 
+(*PROMPT* >> Pick up the accelerant using [TRIGGER BUTTON]) [next=auto] 
 
-(*PROMPT* >> Refill your health bar using [A] )
+(*PROMPT* >> Refill your health bar using [A]) [next=auto]
 
 #(You inject yourself with the accelerant using the same port from before)
 
@@ -27,25 +27,26 @@ Pal: I am permitted to administer a single dose, you will have to administer the
 
 # (A green light turns on above you and the pod door opens)
 
-Pal: Movement has been recovered, let me check your other functions
+PAL: Movement has been recovered, let me check your other functions [next=auto]
 
-SIGHT = OK
-OLFACTORY = REMOVED
-TOUCH = OK
-HEARING = . . . 
+SIGHT = OK [next=auto]
+OLFACTORY = REMOVED [next=auto]
+TOUCH = OK [next=auto]
+HEARING = . . . [next=auto]
 
 # (Nothing happens)
 
-Pal: It appears that the audio software license in your suit has expired. 
-Pal: The disk on the table contains a new version of the software, insert the disk into your suit's reader. 
-Pal: If that doesn't work, your eardrums may have disintegrated.
+PAL: It appears that the audio software license in your suit has expired. [next=auto]
+PAL: The disk on the table contains a new version of the software
+	insert the disk into your suit's reader. [next=auto]
+PAL: If that doesn't work, your eardrums may have disintegrated. [next=auto]
 
 # (An outline appears around the disk on the table. There is a note attached saying Old audio software license expired. This version is pirated permanent <3)
 
-(*PROMPT* >> Insert disk in reader)
+(*PROMPT* >> Insert disk in reader) [next=auto]
 
 # (Disk reader on your suit is outlined in a highlight)
 
-(*PROMPT* >> Read using [A] )
+(*PROMPT* >> Read using [A]) [next=auto]
 
 # (The disk is read and you can now hear the sounds of the spaceship around you. Pistons, the creaking and groaning of the mass of metal suspended in the void. In the distance, faint sirens. Close to you, far closer than it should be, is a rhythmic banging. Is it coming from the door?)

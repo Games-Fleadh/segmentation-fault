@@ -3,13 +3,16 @@
 
 # (screen is black, it is silent in the cryopod. You are alone)
 # (Text appears on screen)
-Pal: Hello? Hello? [wait=1.5] Oh! Hello! Welcome back to consciousness.
+PAL: Hello? Hello? [wait=1.5] Oh! Hello! Welcome back to consciousness.
 	It is most fortunate that your brain is firing as normal. [next=auto]
-Pal: Do try not to panic, you haven't quite got the energy for that. [next]
+PAL: Do try not to panic, you haven't quite got the energy for that. [next=auto]
 # RETHINK THIS LINE Pal: I'm reading confusion in your brain waves, this is normal. Very normal. 
-Pal: Memory loss, disorientation and ⍰⍰⍰⍰⍰ are common symptoms of cryonics. Especially for someone who has been frozen as long as you have.
+PAL: Memory loss, disorientation and ⍰⍰⍰⍰⍰ are common symptoms of cryonics. 
+	Especially for someone who has been frozen as long as you have. [next=auto]
 
 # (Pause)
-Pal: Can you turn on your visor?
+PAL: Can you turn on your visor? [next=auto]
 
-(*PROMPT* >> Turn on your visor using [A])
+(*PROMPT* >> Turn on your visor using [A]) [next=auto]
+
+=> END
