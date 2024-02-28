@@ -78,7 +78,7 @@ func _ready():
 	# Do not initialise if in the editor
 	if Engine.is_editor_hint():
 		return
-
+	
 	# Disconnect from parent transform as we move to it in the physics step,
 	# and boost the physics priority above any grab-drivers or hands.
 	top_level = true

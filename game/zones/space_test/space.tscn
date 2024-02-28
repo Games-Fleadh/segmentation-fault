@@ -1,4 +1,4 @@
-[gd_scene load_steps=286 format=3 uid="uid://dulkchxbis8v2"]
+[gd_scene load_steps=294 format=3 uid="uid://dulkchxbis8v2"]
 
 [ext_resource type="PackedScene" uid="uid://di1bu0tceg332" path="res://components/persistent/persistent_zone.tscn" id="1_x6cjj"]
 [ext_resource type="Script" path="res://components/persistent/persistent_zone_info.gd" id="2_fssw7"]
@@ -54,6 +54,7 @@
 [ext_resource type="Animation" uid="uid://4g211my0hoiw" path="res://addons/godot-xr-tools/hands/animations/left/Straight.res" id="39_a14c4"]
 [ext_resource type="Animation" uid="uid://d06l7hygl4qt3" path="res://addons/godot-xr-tools/hands/animations/left/Surfer.res" id="40_54w3k"]
 [ext_resource type="Animation" uid="uid://bxei4oebd4hu3" path="res://addons/godot-xr-tools/hands/animations/left/Thumb.res" id="41_e7gds"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/functions/movement_footstep.gd" id="50_g2sug"]
 [ext_resource type="Animation" uid="uid://do01jton6rk42" path="res://addons/godot-xr-tools/hands/animations/right/Cup.res" id="51_eiyrn"]
 [ext_resource type="ArrayMesh" uid="uid://bxr3pm0i3jhvn" path="res://game/player_versions/handModel/rightHandMesh.tres" id="52_0wm7r"]
 [ext_resource type="Animation" uid="uid://ky28birj4su6" path="res://addons/godot-xr-tools/hands/animations/right/Default pose.res" id="52_xk3jk"]
@@ -90,6 +91,7 @@
 [ext_resource type="Animation" uid="uid://d3h36bkauutoq" path="res://addons/godot-xr-tools/hands/animations/right/Straight.res" id="83_yaah4"]
 [ext_resource type="Animation" uid="uid://bq7cjxdn28jcv" path="res://addons/godot-xr-tools/hands/animations/right/Surfer.res" id="84_migud"]
 [ext_resource type="Animation" uid="uid://d2ukhr3n2r1u8" path="res://addons/godot-xr-tools/hands/animations/right/Thumb.res" id="85_thr5d"]
+[ext_resource type="AudioStream" uid="uid://ndpc7703ia0m" path="res://game/audio/sound/footstep 1.wav" id="90_1h816"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="91_ig6ey"]
 [ext_resource type="Material" uid="uid://clxasphfdvcao" path="res://game/corridors/hall_Junction/Corridor_Junction.tres" id="92_h8ihm"]
 [ext_resource type="Material" uid="uid://bonuvq0w1wjfj" path="res://game/corridors/hall_Curve/Corridor_Curve.tres" id="93_20ohn"]
@@ -98,12 +100,16 @@
 [ext_resource type="Material" uid="uid://cxum4swcuoq72" path="res://game/corridors/hall_Window/Corridor_Window.tres" id="94_b6f0q"]
 [ext_resource type="Texture2D" uid="uid://cs5bwn8y2sdbi" path="res://game/corridors/hall_Junction/Junction - Normal.png" id="94_tiylo"]
 [ext_resource type="Material" uid="uid://cxxay3qaide26" path="res://game/corridors/hall_Pipes/Corridor_Pipes.tres" id="95_oftld"]
+[ext_resource type="AudioStream" uid="uid://de67k36mg2oy1" path="res://game/audio/sound/metallic hum wav.wav" id="96_7ag5o"]
 [ext_resource type="Texture2D" uid="uid://cmvqv7yttr7sr" path="res://game/corridors/hall_Pipes/Pipes - Albedo.png" id="96_lwwvd"]
 [ext_resource type="Material" uid="uid://cuoqcljdrwmx8" path="res://game/corridors/hall_DefaultLight/Corridor_DefaultLight.tres" id="96_rp2oi"]
 [ext_resource type="Texture2D" uid="uid://c0unqtqeknuup" path="res://game/corridors/hall_Pipes/Pipes - Normal.png" id="97_24yso"]
 [ext_resource type="Texture2D" uid="uid://u3j25642aecp" path="res://game/corridors/hall_DefaultLight/Default_Light - Albedo.png" id="97_yoxgs"]
 [ext_resource type="Texture2D" uid="uid://maa0ggcopvcb" path="res://game/corridors/hall_DefaultLight/Default_Light - Emission.png" id="98_d27de"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/audio/surface_audio.gd" id="98_oh706"]
 [ext_resource type="Texture2D" uid="uid://c6smb6d8ceeow" path="res://game/corridors/hall_DefaultLight/Default_Light - Normal.png" id="99_rwrhg"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/audio/surface_audio_type.gd" id="99_vqshx"]
+[ext_resource type="AudioStream" uid="uid://bblr745h61wsm" path="res://game/audio/sound/footstep 2.wav" id="100_3f7ak"]
 [ext_resource type="Texture2D" uid="uid://cx4vvj5j274tx" path="res://game/corridors/hall_Window/Window - Albedo.png" id="103_rd8ce"]
 [ext_resource type="Texture2D" uid="uid://bp0yx201p0pyc" path="res://game/corridors/hall_Window/Window - Normal.png" id="104_j1qyp"]
 [ext_resource type="Texture2D" uid="uid://cms4dfyg0tx8u" path="res://game/corridors/hall_Curve/Curve - Albedo.png" id="106_538p2"]
@@ -169,34 +175,34 @@ _data = {
 "Thumb": ExtResource("41_e7gds")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3r0kl"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mvao0"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1tilw"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jssos"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_m5a3o"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_oghwl"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Little_Distal_L", "Armature/Skeleton3D:Little_Intermediate_L", "Armature/Skeleton3D:Little_Metacarpal_L", "Armature/Skeleton3D:Little_Proximal_L", "Armature/Skeleton3D:Middle_Distal_L", "Armature/Skeleton3D:Middle_Intermediate_L", "Armature/Skeleton3D:Middle_Metacarpal_L", "Armature/Skeleton3D:Middle_Proximal_L", "Armature/Skeleton3D:Ring_Distal_L", "Armature/Skeleton3D:Ring_Intermediate_L", "Armature/Skeleton3D:Ring_Metacarpal_L", "Armature/Skeleton3D:Ring_Proximal_L", "Armature/Skeleton3D:Thumb_Distal_L", "Armature/Skeleton3D:Thumb_Metacarpal_L", "Armature/Skeleton3D:Thumb_Proximal_L", "Armature/Skeleton:Little_Distal_L", "Armature/Skeleton:Little_Intermediate_L", "Armature/Skeleton:Little_Proximal_L", "Armature/Skeleton:Middle_Distal_L", "Armature/Skeleton:Middle_Intermediate_L", "Armature/Skeleton:Middle_Proximal_L", "Armature/Skeleton:Ring_Distal_L", "Armature/Skeleton:Ring_Intermediate_L", "Armature/Skeleton:Ring_Proximal_L", "Armature/Skeleton:Thumb_Distal_L", "Armature/Skeleton:Thumb_Proximal_L"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mtf7h"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g7iis"]
 animation = &"Grip 5"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_yj6mu"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_icic0"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_L", "Armature/Skeleton3D:Index_Intermediate_L", "Armature/Skeleton3D:Index_Metacarpal_L", "Armature/Skeleton3D:Index_Proximal_L", "Armature/Skeleton:Index_Distal_L", "Armature/Skeleton:Index_Intermediate_L", "Armature/Skeleton:Index_Proximal_L"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_r1stf"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_fafh6"]
 graph_offset = Vector2(-536, 11)
-nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_3r0kl")
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_mvao0")
 nodes/ClosedHand1/position = Vector2(-600, 300)
-nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_1tilw")
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_jssos")
 nodes/ClosedHand2/position = Vector2(-360, 300)
-nodes/Grip/node = SubResource("AnimationNodeBlend2_m5a3o")
+nodes/Grip/node = SubResource("AnimationNodeBlend2_oghwl")
 nodes/Grip/position = Vector2(0, 20)
-nodes/OpenHand/node = SubResource("AnimationNodeAnimation_mtf7h")
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_g7iis")
 nodes/OpenHand/position = Vector2(-600, 100)
-nodes/Trigger/node = SubResource("AnimationNodeBlend2_yj6mu")
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_icic0")
 nodes/Trigger/position = Vector2(-360, 20)
 node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
 
@@ -239,34 +245,34 @@ _data = {
 "Thumb": ExtResource("85_thr5d")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g768d"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_10nb7"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fnjtm"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_f8isd"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_vqaxb"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_0mm65"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Little_Distal_R", "Armature/Skeleton3D:Little_Intermediate_R", "Armature/Skeleton3D:Little_Metacarpal_R", "Armature/Skeleton3D:Little_Proximal_R", "Armature/Skeleton3D:Middle_Distal_R", "Armature/Skeleton3D:Middle_Intermediate_R", "Armature/Skeleton3D:Middle_Metacarpal_R", "Armature/Skeleton3D:Middle_Proximal_R", "Armature/Skeleton3D:Ring_Distal_R", "Armature/Skeleton3D:Ring_Intermediate_R", "Armature/Skeleton3D:Ring_Metacarpal_R", "Armature/Skeleton3D:Ring_Proximal_R", "Armature/Skeleton3D:Thumb_Distal_R", "Armature/Skeleton3D:Thumb_Metacarpal_R", "Armature/Skeleton3D:Thumb_Proximal_R", "Armature/Skeleton:Little_Distal_R", "Armature/Skeleton:Little_Intermediate_R", "Armature/Skeleton:Little_Proximal_R", "Armature/Skeleton:Middle_Distal_R", "Armature/Skeleton:Middle_Intermediate_R", "Armature/Skeleton:Middle_Proximal_R", "Armature/Skeleton:Ring_Distal_R", "Armature/Skeleton:Ring_Intermediate_R", "Armature/Skeleton:Ring_Proximal_R", "Armature/Skeleton:Thumb_Distal_R", "Armature/Skeleton:Thumb_Proximal_R"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dkr7c"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jhdeo"]
 animation = &"Grip 5"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_1wkml"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_f2dff"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_R", "Armature/Skeleton3D:Index_Intermediate_R", "Armature/Skeleton3D:Index_Metacarpal_R", "Armature/Skeleton3D:Index_Proximal_R", "Armature/Skeleton:Index_Distal_R", "Armature/Skeleton:Index_Intermediate_R", "Armature/Skeleton:Index_Proximal_R"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_vih6q"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_h6rwa"]
 graph_offset = Vector2(-552.664, 107.301)
-nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_g768d")
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_10nb7")
 nodes/ClosedHand1/position = Vector2(-600, 300)
-nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_fnjtm")
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_f8isd")
 nodes/ClosedHand2/position = Vector2(-360, 300)
-nodes/Grip/node = SubResource("AnimationNodeBlend2_vqaxb")
+nodes/Grip/node = SubResource("AnimationNodeBlend2_0mm65")
 nodes/Grip/position = Vector2(0, 40)
-nodes/OpenHand/node = SubResource("AnimationNodeAnimation_dkr7c")
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_jhdeo")
 nodes/OpenHand/position = Vector2(-600, 100)
-nodes/Trigger/node = SubResource("AnimationNodeBlend2_1wkml")
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_f2dff")
 nodes/Trigger/position = Vector2(-360, 40)
 node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
 
@@ -337,6 +343,16 @@ size = Vector3(2.01782, 0.0603027, 0.625231)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pifp8"]
 size = Vector3(2.01782, 0.0603027, 0.631599)
+
+[sub_resource type="Resource" id="Resource_2sgmq"]
+script = ExtResource("99_vqshx")
+name = "Metal"
+walk_sounds = Array[AudioStream]([ExtResource("90_1h816"), ExtResource("100_3f7ak")])
+walk_pitch_minimum = 0.8
+walk_pitch_maximum = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pr628"]
+size = Vector3(4.07935, 3.98126, 6.71008)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0af2s"]
 resource_name = "Material.004"
@@ -1174,7 +1190,7 @@ root_node = NodePath("../Hand_Nails_low_L")
 libraries = {
 "": SubResource("AnimationLibrary_kw48d")
 }
-tree_root = SubResource("AnimationNodeBlendTree_r1stf")
+tree_root = SubResource("AnimationNodeBlendTree_fafh6")
 
 [node name="FunctionPointer" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="2" instance=ExtResource("6_gh13s")]
 show_laser = 2
@@ -1203,6 +1219,9 @@ update_mode = 2
 throttle_fps = 15.0
 transparent = 0
 unshaded = true
+
+[node name="test" type="Node3D" parent="XROrigin3D" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.866059, 0)
 
 [node name="CollisionHandRight" parent="XROrigin3D/RightHand" index="0" instance=ExtResource("13_7svyg")]
 
@@ -1245,7 +1264,7 @@ root_node = NodePath("../Hand_Nails_low_R")
 libraries = {
 "": SubResource("AnimationLibrary_reqae")
 }
-tree_root = SubResource("AnimationNodeBlendTree_vih6q")
+tree_root = SubResource("AnimationNodeBlendTree_h6rwa")
 
 [node name="FunctionPointer" parent="XROrigin3D/RightHand/CollisionHandRight" index="2" instance=ExtResource("6_gh13s")]
 show_laser = 2
@@ -1265,9 +1284,16 @@ jump_button_action = "ax_button"
 [node name="MovementCrouch" parent="XROrigin3D/RightHand/CollisionHandRight" index="7" instance=ExtResource("10_vedne")]
 crouch_button_action = "by_button"
 
-[node name="PlayerBody" parent="XROrigin3D" index="3" instance=ExtResource("16_prrg1")]
+[node name="PlayerBody" parent="XROrigin3D" index="4" instance=ExtResource("16_prrg1")]
 
-[node name="MovementSprint" parent="XROrigin3D" index="4" instance=ExtResource("18_8cr1g")]
+[node name="MovementSprint" parent="XROrigin3D" index="5" instance=ExtResource("18_8cr1g")]
+
+[node name="XRToolsMovementFootstep" type="Node" parent="XROrigin3D" index="6" groups=["movement_providers"]]
+script = ExtResource("50_g2sug")
+
+[node name="PlayerSettings" type="AudioStreamPlayer3D" parent="XROrigin3D/XRToolsMovementFootstep" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.88647, 0)
+stream = ExtResource("90_1h816")
 
 [node name="StartXR" parent="." index="1" instance=ExtResource("91_ig6ey")]
 physics_rate_multiplier = 1
@@ -1328,6 +1354,22 @@ shape = SubResource("BoxShape3D_6li01")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_pifp8")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Pipes - Texture/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
+[node name="Area3D" type="Area3D" parent="Hall - Pipes - Texture" index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Hall - Pipes - Texture/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0233154, 0.0121765, 0.116272)
+shape = SubResource("BoxShape3D_pr628")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Hall - Pipes - Texture/Area3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00721931, 0, -1.98754)
+stream = ExtResource("96_7ag5o")
+autoplay = true
+max_distance = 10.0
+
 [node name="Hall - Pipes - Texture2" type="Node3D" parent="." index="5"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0, 0, -21)
 
@@ -1374,6 +1416,10 @@ shape = SubResource("BoxShape3D_6li01")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_pifp8")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Pipes - Texture2/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="Hall - Default_Light" type="Node3D" parent="." index="6"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -13)
 
@@ -1419,6 +1465,10 @@ shape = SubResource("BoxShape3D_ycu71")
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="Hall - Default_Light/StaticBody3D" index="7"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_gvnep")
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Default_Light/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Hall - Default_Light" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52448, 2.61394)
@@ -1476,6 +1526,10 @@ shape = SubResource("BoxShape3D_ycu71")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_gvnep")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Default_Light2/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="Hall - Default_Light2" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52448, 2.61394)
 light_color = Color(1, 0.988235, 0.890196, 1)
@@ -1531,6 +1585,10 @@ shape = SubResource("BoxShape3D_ycu71")
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="Hall - Default_Light4/StaticBody3D" index="7"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 2.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_gvnep")
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Default_Light4/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Hall - Default_Light4" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.52448, 2.61394)
@@ -1588,6 +1646,10 @@ shape = SubResource("BoxShape3D_ycu71")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_gvnep")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Default_Light5/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="Hall - Default_Light5" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52448, 2.61394)
 light_color = Color(1, 0.988235, 0.890196, 1)
@@ -1643,6 +1705,10 @@ shape = SubResource("BoxShape3D_ycu71")
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="Hall - Default_Light3/StaticBody3D" index="7"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_gvnep")
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Default_Light3/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Hall - Default_Light3" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52448, 2.61394)
@@ -1700,6 +1766,10 @@ shape = SubResource("BoxShape3D_owuu3")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_0fnje")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Window - Texture/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="Hall - Window - Texture3" type="Node3D" parent="." index="12"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -14, 0, -25)
 
@@ -1745,6 +1815,10 @@ shape = SubResource("BoxShape3D_owuu3")
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="Hall - Window - Texture3/StaticBody3D" index="7"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_0fnje")
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Window - Texture3/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
 
 [node name="Hall - Window - Texture4" type="Node3D" parent="." index="13"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -14, 0, -17)
@@ -1792,6 +1866,10 @@ shape = SubResource("BoxShape3D_owuu3")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_0fnje")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Window - Texture4/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="Hall - Window - Texture6" type="Node3D" parent="." index="14"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -14, 0, -21)
 
@@ -1837,6 +1915,10 @@ shape = SubResource("BoxShape3D_owuu3")
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="Hall - Window - Texture6/StaticBody3D" index="7"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_0fnje")
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Window - Texture6/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
 
 [node name="Hall - Window - Texture5" type="Node3D" parent="." index="15"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -14, 0, -13)
@@ -1884,6 +1966,10 @@ shape = SubResource("BoxShape3D_owuu3")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_0fnje")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Window - Texture5/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="Hall - Window - Texture2" type="Node3D" parent="." index="16"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -29)
 
@@ -1929,6 +2015,10 @@ shape = SubResource("BoxShape3D_owuu3")
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="Hall - Window - Texture2/StaticBody3D" index="7"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_0fnje")
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Window - Texture2/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
 
 [node name="Hall - Curve" type="Node3D" parent="." index="17"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5, 0, -38)
@@ -2096,6 +2186,10 @@ shape = SubResource("BoxShape3D_6vyqf")
 transform = Transform3D(0.725287, 0.680468, 0.104506, -0.685668, 0.727613, 0.0209424, -0.0617889, -0.0868453, 0.994304, -3.76062, 0.858, -3.06015)
 shape = SubResource("BoxShape3D_6vyqf")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Curve/StaticBody3D" index="38"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="Hall - Curve3" type="Node3D" parent="." index="18"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14, 0, -47)
 
@@ -2261,6 +2355,10 @@ shape = SubResource("BoxShape3D_6vyqf")
 [node name="LargeTopDiagonal7" type="CollisionShape3D" parent="Hall - Curve3/StaticBody3D" index="37"]
 transform = Transform3D(0.725287, 0.680468, 0.104506, -0.685668, 0.727613, 0.0209424, -0.0617889, -0.0868453, 0.994304, -3.76062, 0.858, -3.06015)
 shape = SubResource("BoxShape3D_6vyqf")
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Curve3/StaticBody3D" index="38"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
 
 [node name="Hall - Curve4" type="Node3D" parent="." index="19"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, -57)
@@ -2428,6 +2526,10 @@ shape = SubResource("BoxShape3D_6vyqf")
 transform = Transform3D(0.725287, 0.680468, 0.104506, -0.685668, 0.727613, 0.0209424, -0.0617889, -0.0868453, 0.994304, -3.76062, 0.858, -3.06015)
 shape = SubResource("BoxShape3D_6vyqf")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Curve4/StaticBody3D" index="38"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="Hall - Junction2" type="Node3D" parent="." index="20"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14, 0, -33)
 
@@ -2534,6 +2636,10 @@ shape = SubResource("BoxShape3D_dcjaw")
 transform = Transform3D(-0.584161, -0.415192, -0.697403, -0.56565, 0.824469, -0.0170371, 0.582061, 0.384534, -0.716476, -1.05018, 0.905537, -1.43828)
 shape = SubResource("BoxShape3D_dcjaw")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Junction2/StaticBody3D" index="23"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="Hall - Pipes - Texture3" type="Node3D" parent="." index="21"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -52)
 
@@ -2579,6 +2685,10 @@ shape = SubResource("BoxShape3D_6li01")
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="Hall - Pipes - Texture3/StaticBody3D" index="7"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_pifp8")
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Pipes - Texture3/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
 
 [node name="Hall - Pipes - Texture4" type="Node3D" parent="." index="22"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -52)
@@ -2626,6 +2736,10 @@ shape = SubResource("BoxShape3D_6li01")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_pifp8")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Pipes - Texture4/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="Hall - Pipes - Texture6" type="Node3D" parent="." index="23"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, -73)
 
@@ -2672,6 +2786,10 @@ shape = SubResource("BoxShape3D_6li01")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 2.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_pifp8")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Pipes - Texture6/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="Hall - Pipes - Texture5" type="Node3D" parent="." index="24"]
 transform = Transform3D(-4.56956e-08, 0, -1, 0, 1, 0, 1, 0, -4.56956e-08, 8, 0, -65)
 
@@ -2717,6 +2835,10 @@ shape = SubResource("BoxShape3D_6li01")
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="Hall - Pipes - Texture5/StaticBody3D" index="7"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -1.997, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_pifp8")
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Pipes - Texture5/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
 
 [node name="Hall - DoorBody - Texture" type="Node3D" parent="." index="25"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
@@ -2856,6 +2978,10 @@ shape = SubResource("BoxShape3D_bos66")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.0463966, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_734lp")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - DoorBody - Texture2/BlastDoor_003/StaticBody3D - DoorBody" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="DoorLeft" type="MeshInstance3D" parent="Hall - DoorBody - Texture2" index="1"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 8, 0, 0)
 material_override = ExtResource("111_1fwaj")
@@ -2949,6 +3075,10 @@ shape = SubResource("BoxShape3D_bos66")
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="Hall - DoorBody - Texture3/BlastDoor_003/StaticBody3D - DoorBody" index="7"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.0463966, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_734lp")
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - DoorBody - Texture3/BlastDoor_003/StaticBody3D - DoorBody" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
 
 [node name="BlastDoor_004" type="MeshInstance3D" parent="Hall - DoorBody - Texture3" index="1"]
 transform = Transform3D(2, 0, 4.76837e-07, 0, 2, 0, -4.76837e-07, 0, 2, 4, 0, 0)
@@ -3207,6 +3337,10 @@ shape = SubResource("BoxShape3D_hipve")
 transform = Transform3D(0.725287, 0.680468, 0.104506, -0.685668, 0.727613, 0.0209424, -0.0617889, -0.0868453, 0.994304, -3.76062, 0.858, -3.06015)
 shape = SubResource("BoxShape3D_hipve")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Curve_Light -  Texture/StaticBody3D" index="38"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="Hall - Curve_Light -  Texture" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0012219, 1.68597, 2.18933)
 light_color = Color(1, 0.988235, 0.890196, 1)
@@ -3345,6 +3479,10 @@ shape = SubResource("BoxShape3D_52cmv")
 transform = Transform3D(-0.584161, -0.415192, -0.697403, -0.56565, 0.824469, -0.0170371, 0.582061, 0.384534, -0.716476, -1.05018, 0.905537, -1.43828)
 shape = SubResource("BoxShape3D_52cmv")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Junction_Light/StaticBody3D" index="23"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="Hall - Junction_Light" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52448, 2.53266)
 light_color = Color(1, 0.988235, 0.890196, 1)
@@ -3426,6 +3564,10 @@ shape = SubResource("BoxShape3D_excai")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_aymeh")
 
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Default_Light6/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="Hall - Default_Light6" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52448, 2.61394)
 light_color = Color(1, 0.988235, 0.890196, 1)
@@ -3481,6 +3623,10 @@ shape = SubResource("BoxShape3D_rhcnf")
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="Hall - Pipes - Texture7/StaticBody3D" index="7"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_0ts0f")
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="Hall - Pipes - Texture7/StaticBody3D" index="8"]
+script = ExtResource("98_oh706")
+surface_audio_type = SubResource("Resource_2sgmq")
 
 [node name="Crate - Texture" parent="." index="32" instance=ExtResource("115_ksgao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.31629, -4)
