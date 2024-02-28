@@ -1,4 +1,4 @@
-[gd_scene load_steps=344 format=3 uid="uid://dulkchxbis8v2"]
+[gd_scene load_steps=345 format=3 uid="uid://dulkchxbis8v2"]
 
 [ext_resource type="PackedScene" uid="uid://di1bu0tceg332" path="res://components/persistent/persistent_zone.tscn" id="1_x6cjj"]
 [ext_resource type="Script" path="res://components/persistent/persistent_zone_info.gd" id="2_fssw7"]
@@ -140,6 +140,7 @@
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="137_xxes7"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/interactables/interactable_handle.gd" id="138_er4ny"]
 [ext_resource type="Script" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_redirect.gd" id="139_kek6r"]
+[ext_resource type="PackedScene" uid="uid://cmo3mfnrwsp2r" path="res://game/items/swords/finnsword/finnsword.tscn" id="141_2h865"]
 
 [sub_resource type="Resource" id="Resource_tdw4r"]
 script = ExtResource("2_fssw7")
@@ -185,34 +186,34 @@ _data = {
 "Thumb": ExtResource("41_e7gds")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r874f"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jj51l"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4rxs1"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_obtwi"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_8u6it"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_wegnm"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Little_Distal_L", "Armature/Skeleton3D:Little_Intermediate_L", "Armature/Skeleton3D:Little_Metacarpal_L", "Armature/Skeleton3D:Little_Proximal_L", "Armature/Skeleton3D:Middle_Distal_L", "Armature/Skeleton3D:Middle_Intermediate_L", "Armature/Skeleton3D:Middle_Metacarpal_L", "Armature/Skeleton3D:Middle_Proximal_L", "Armature/Skeleton3D:Ring_Distal_L", "Armature/Skeleton3D:Ring_Intermediate_L", "Armature/Skeleton3D:Ring_Metacarpal_L", "Armature/Skeleton3D:Ring_Proximal_L", "Armature/Skeleton3D:Thumb_Distal_L", "Armature/Skeleton3D:Thumb_Metacarpal_L", "Armature/Skeleton3D:Thumb_Proximal_L", "Armature/Skeleton:Little_Distal_L", "Armature/Skeleton:Little_Intermediate_L", "Armature/Skeleton:Little_Proximal_L", "Armature/Skeleton:Middle_Distal_L", "Armature/Skeleton:Middle_Intermediate_L", "Armature/Skeleton:Middle_Proximal_L", "Armature/Skeleton:Ring_Distal_L", "Armature/Skeleton:Ring_Intermediate_L", "Armature/Skeleton:Ring_Proximal_L", "Armature/Skeleton:Thumb_Distal_L", "Armature/Skeleton:Thumb_Proximal_L"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r6und"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_atnyk"]
 animation = &"Grip 5"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_dqu1f"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_e8vrk"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_L", "Armature/Skeleton3D:Index_Intermediate_L", "Armature/Skeleton3D:Index_Metacarpal_L", "Armature/Skeleton3D:Index_Proximal_L", "Armature/Skeleton:Index_Distal_L", "Armature/Skeleton:Index_Intermediate_L", "Armature/Skeleton:Index_Proximal_L"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_plwvh"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_cbhfd"]
 graph_offset = Vector2(-536, 11)
-nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_r874f")
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_jj51l")
 nodes/ClosedHand1/position = Vector2(-600, 300)
-nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_4rxs1")
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_obtwi")
 nodes/ClosedHand2/position = Vector2(-360, 300)
-nodes/Grip/node = SubResource("AnimationNodeBlend2_8u6it")
+nodes/Grip/node = SubResource("AnimationNodeBlend2_wegnm")
 nodes/Grip/position = Vector2(0, 20)
-nodes/OpenHand/node = SubResource("AnimationNodeAnimation_r6und")
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_atnyk")
 nodes/OpenHand/position = Vector2(-600, 100)
-nodes/Trigger/node = SubResource("AnimationNodeBlend2_dqu1f")
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_e8vrk")
 nodes/Trigger/position = Vector2(-360, 20)
 node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
 
@@ -255,34 +256,34 @@ _data = {
 "Thumb": ExtResource("85_thr5d")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c2741"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0qaaq"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3epj2"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_34211"]
 animation = &"Grip"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_pytoi"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_k1ijf"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Little_Distal_R", "Armature/Skeleton3D:Little_Intermediate_R", "Armature/Skeleton3D:Little_Metacarpal_R", "Armature/Skeleton3D:Little_Proximal_R", "Armature/Skeleton3D:Middle_Distal_R", "Armature/Skeleton3D:Middle_Intermediate_R", "Armature/Skeleton3D:Middle_Metacarpal_R", "Armature/Skeleton3D:Middle_Proximal_R", "Armature/Skeleton3D:Ring_Distal_R", "Armature/Skeleton3D:Ring_Intermediate_R", "Armature/Skeleton3D:Ring_Metacarpal_R", "Armature/Skeleton3D:Ring_Proximal_R", "Armature/Skeleton3D:Thumb_Distal_R", "Armature/Skeleton3D:Thumb_Metacarpal_R", "Armature/Skeleton3D:Thumb_Proximal_R", "Armature/Skeleton:Little_Distal_R", "Armature/Skeleton:Little_Intermediate_R", "Armature/Skeleton:Little_Proximal_R", "Armature/Skeleton:Middle_Distal_R", "Armature/Skeleton:Middle_Intermediate_R", "Armature/Skeleton:Middle_Proximal_R", "Armature/Skeleton:Ring_Distal_R", "Armature/Skeleton:Ring_Intermediate_R", "Armature/Skeleton:Ring_Proximal_R", "Armature/Skeleton:Thumb_Distal_R", "Armature/Skeleton:Thumb_Proximal_R"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tcevc"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6t6jf"]
 animation = &"Grip 5"
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_bek8w"]
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_207ab"]
 filter_enabled = true
 filters = ["Armature/Skeleton3D:Index_Distal_R", "Armature/Skeleton3D:Index_Intermediate_R", "Armature/Skeleton3D:Index_Metacarpal_R", "Armature/Skeleton3D:Index_Proximal_R", "Armature/Skeleton:Index_Distal_R", "Armature/Skeleton:Index_Intermediate_R", "Armature/Skeleton:Index_Proximal_R"]
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_gd25d"]
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_3bx3h"]
 graph_offset = Vector2(-552.664, 107.301)
-nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_c2741")
+nodes/ClosedHand1/node = SubResource("AnimationNodeAnimation_0qaaq")
 nodes/ClosedHand1/position = Vector2(-600, 300)
-nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_3epj2")
+nodes/ClosedHand2/node = SubResource("AnimationNodeAnimation_34211")
 nodes/ClosedHand2/position = Vector2(-360, 300)
-nodes/Grip/node = SubResource("AnimationNodeBlend2_pytoi")
+nodes/Grip/node = SubResource("AnimationNodeBlend2_k1ijf")
 nodes/Grip/position = Vector2(0, 40)
-nodes/OpenHand/node = SubResource("AnimationNodeAnimation_tcevc")
+nodes/OpenHand/node = SubResource("AnimationNodeAnimation_6t6jf")
 nodes/OpenHand/position = Vector2(-600, 100)
-nodes/Trigger/node = SubResource("AnimationNodeBlend2_bek8w")
+nodes/Trigger/node = SubResource("AnimationNodeBlend2_207ab")
 nodes/Trigger/position = Vector2(-360, 40)
 node_connections = [&"Grip", 0, &"Trigger", &"Grip", 1, &"ClosedHand2", &"Trigger", 0, &"OpenHand", &"Trigger", 1, &"ClosedHand1", &"output", 0, &"Grip"]
 
@@ -1544,7 +1545,7 @@ root_node = NodePath("../Hand_Nails_low_L")
 libraries = {
 "": SubResource("AnimationLibrary_kw48d")
 }
-tree_root = SubResource("AnimationNodeBlendTree_plwvh")
+tree_root = SubResource("AnimationNodeBlendTree_cbhfd")
 
 [node name="FunctionPointer" parent="XROrigin3D/LeftHand/CollisionHandLeft" index="2" instance=ExtResource("6_gh13s")]
 show_laser = 2
@@ -1633,7 +1634,7 @@ root_node = NodePath("../Hand_Nails_low_R")
 libraries = {
 "": SubResource("AnimationLibrary_reqae")
 }
-tree_root = SubResource("AnimationNodeBlendTree_gd25d")
+tree_root = SubResource("AnimationNodeBlendTree_3bx3h")
 
 [node name="FunctionPointer" parent="XROrigin3D/RightHand/CollisionHandRight" index="2" instance=ExtResource("6_gh13s")]
 show_laser = 2
@@ -1665,7 +1666,27 @@ physics_rate_multiplier = 1
 [node name="Terrain" type="NavigationRegion3D" parent="World" index="0"]
 navigation_mesh = SubResource("NavigationMesh_q3tvq")
 
-[node name="Hall - Pipes - Texture" type="Node3D" parent="World/Terrain" index="0"]
+[node name="chaser" parent="World/Terrain" index="0" instance=ExtResource("126_n0jl5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89797, -1.44234, -81.6768)
+player_path = NodePath("../../../XROrigin3D")
+
+[node name="chaser2" parent="World/Terrain" index="1" instance=ExtResource("126_n0jl5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.54161, -1.44234, -81.6768)
+player_path = NodePath("../../../XROrigin3D")
+
+[node name="chaser3" parent="World/Terrain" index="2" instance=ExtResource("126_n0jl5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.59082, -1.44234, -79.2575)
+player_path = NodePath("../../../XROrigin3D")
+
+[node name="chaser4" parent="World/Terrain" index="3" instance=ExtResource("126_n0jl5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1403, -1.44234, -83.2796)
+player_path = NodePath("../../../XROrigin3D")
+
+[node name="chaser5" parent="World/Terrain" index="4" instance=ExtResource("126_n0jl5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74463, -1.44234, -84.2439)
+player_path = NodePath("../../../XROrigin3D")
+
+[node name="Hall - Pipes - Texture" type="Node3D" parent="World/Terrain" index="5"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -9)
 
 [node name="Pipes" type="MeshInstance3D" parent="World/Terrain/Hall - Pipes - Texture" index="0"]
@@ -1711,7 +1732,7 @@ shape = SubResource("BoxShape3D_6li01")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_pifp8")
 
-[node name="Hall - Pipes - Texture2" type="Node3D" parent="World/Terrain" index="1"]
+[node name="Hall - Pipes - Texture2" type="Node3D" parent="World/Terrain" index="6"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 0, 0, -21)
 
 [node name="Pipes" type="MeshInstance3D" parent="World/Terrain/Hall - Pipes - Texture2" index="0"]
@@ -1757,7 +1778,7 @@ shape = SubResource("BoxShape3D_6li01")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_pifp8")
 
-[node name="Hall - Default_Light" type="Node3D" parent="World/Terrain" index="2"]
+[node name="Hall - Default_Light" type="Node3D" parent="World/Terrain" index="7"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -13)
 
 [node name="Default_L" type="MeshInstance3D" parent="World/Terrain/Hall - Default_Light" index="0"]
@@ -1813,7 +1834,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.524, -2.614)
 light_color = Color(1, 0.988235, 0.890196, 1)
 omni_range = 10.0
 
-[node name="Hall - Default_Light2" type="Node3D" parent="World/Terrain" index="3"]
+[node name="Hall - Default_Light2" type="Node3D" parent="World/Terrain" index="8"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -25)
 
 [node name="Default_L" type="MeshInstance3D" parent="World/Terrain/Hall - Default_Light2" index="0"]
@@ -1869,7 +1890,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.524, -2.614)
 light_color = Color(1, 0.988235, 0.890196, 1)
 omni_range = 10.0
 
-[node name="Hall - Default_Light4" type="Node3D" parent="World/Terrain" index="4"]
+[node name="Hall - Default_Light4" type="Node3D" parent="World/Terrain" index="9"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, -69)
 
 [node name="Default_L" type="MeshInstance3D" parent="World/Terrain/Hall - Default_Light4" index="0"]
@@ -1925,7 +1946,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.524, -2.614)
 light_color = Color(1, 0.988235, 0.890196, 1)
 omni_range = 10.0
 
-[node name="Hall - Default_Light5" type="Node3D" parent="World/Terrain" index="5"]
+[node name="Hall - Default_Light5" type="Node3D" parent="World/Terrain" index="10"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14, 0, -9)
 
 [node name="Default_L" type="MeshInstance3D" parent="World/Terrain/Hall - Default_Light5" index="0"]
@@ -1981,7 +2002,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.524, -2.614)
 light_color = Color(1, 0.988235, 0.890196, 1)
 omni_range = 10.0
 
-[node name="Hall - Default_Light3" type="Node3D" parent="World/Terrain" index="6"]
+[node name="Hall - Default_Light3" type="Node3D" parent="World/Terrain" index="11"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14, 0, -29)
 
 [node name="Default_L" type="MeshInstance3D" parent="World/Terrain/Hall - Default_Light3" index="0"]
@@ -2037,7 +2058,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.524, -2.614)
 light_color = Color(1, 0.988235, 0.890196, 1)
 omni_range = 10.0
 
-[node name="Hall - Window - Texture" type="Node3D" parent="World/Terrain" index="7"]
+[node name="Hall - Window - Texture" type="Node3D" parent="World/Terrain" index="12"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -17)
 
 [node name="Window" type="MeshInstance3D" parent="World/Terrain/Hall - Window - Texture" index="0"]
@@ -2083,7 +2104,7 @@ shape = SubResource("BoxShape3D_owuu3")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_0fnje")
 
-[node name="Hall - Window - Texture3" type="Node3D" parent="World/Terrain" index="8"]
+[node name="Hall - Window - Texture3" type="Node3D" parent="World/Terrain" index="13"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -14, 0, -25)
 
 [node name="Window" type="MeshInstance3D" parent="World/Terrain/Hall - Window - Texture3" index="0"]
@@ -2129,7 +2150,7 @@ shape = SubResource("BoxShape3D_owuu3")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_0fnje")
 
-[node name="Hall - Window - Texture4" type="Node3D" parent="World/Terrain" index="9"]
+[node name="Hall - Window - Texture4" type="Node3D" parent="World/Terrain" index="14"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -14, 0, -17)
 
 [node name="Window" type="MeshInstance3D" parent="World/Terrain/Hall - Window - Texture4" index="0"]
@@ -2175,7 +2196,7 @@ shape = SubResource("BoxShape3D_owuu3")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_0fnje")
 
-[node name="Hall - Window - Texture6" type="Node3D" parent="World/Terrain" index="10"]
+[node name="Hall - Window - Texture6" type="Node3D" parent="World/Terrain" index="15"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -14, 0, -21)
 
 [node name="Window" type="MeshInstance3D" parent="World/Terrain/Hall - Window - Texture6" index="0"]
@@ -2221,7 +2242,7 @@ shape = SubResource("BoxShape3D_owuu3")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_0fnje")
 
-[node name="Hall - Window - Texture5" type="Node3D" parent="World/Terrain" index="11"]
+[node name="Hall - Window - Texture5" type="Node3D" parent="World/Terrain" index="16"]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -14, 0, -13)
 
 [node name="Window" type="MeshInstance3D" parent="World/Terrain/Hall - Window - Texture5" index="0"]
@@ -2267,7 +2288,7 @@ shape = SubResource("BoxShape3D_owuu3")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_0fnje")
 
-[node name="Hall - Window - Texture2" type="Node3D" parent="World/Terrain" index="12"]
+[node name="Hall - Window - Texture2" type="Node3D" parent="World/Terrain" index="17"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -29)
 
 [node name="Window" type="MeshInstance3D" parent="World/Terrain/Hall - Window - Texture2" index="0"]
@@ -2313,7 +2334,7 @@ shape = SubResource("BoxShape3D_owuu3")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_0fnje")
 
-[node name="Hall - Curve" type="Node3D" parent="World/Terrain" index="13"]
+[node name="Hall - Curve" type="Node3D" parent="World/Terrain" index="18"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5, 0, -38)
 
 [node name="Corner" type="MeshInstance3D" parent="World/Terrain/Hall - Curve" index="0"]
@@ -2479,7 +2500,7 @@ shape = SubResource("BoxShape3D_6vyqf")
 transform = Transform3D(0.725287, 0.680468, 0.104506, -0.685668, 0.727613, 0.0209424, -0.0617889, -0.0868453, 0.994304, -3.76062, 0.858, -3.06015)
 shape = SubResource("BoxShape3D_6vyqf")
 
-[node name="Hall - Curve3" type="Node3D" parent="World/Terrain" index="14"]
+[node name="Hall - Curve3" type="Node3D" parent="World/Terrain" index="19"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14, 0, -47)
 
 [node name="Corner" type="MeshInstance3D" parent="World/Terrain/Hall - Curve3" index="0"]
@@ -2645,7 +2666,7 @@ shape = SubResource("BoxShape3D_6vyqf")
 transform = Transform3D(0.725287, 0.680468, 0.104506, -0.685668, 0.727613, 0.0209424, -0.0617889, -0.0868453, 0.994304, -3.76062, 0.858, -3.06015)
 shape = SubResource("BoxShape3D_6vyqf")
 
-[node name="Hall - Curve4" type="Node3D" parent="World/Terrain" index="15"]
+[node name="Hall - Curve4" type="Node3D" parent="World/Terrain" index="20"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, -57)
 
 [node name="Corner" type="MeshInstance3D" parent="World/Terrain/Hall - Curve4" index="0"]
@@ -2811,7 +2832,7 @@ shape = SubResource("BoxShape3D_6vyqf")
 transform = Transform3D(0.725287, 0.680468, 0.104506, -0.685668, 0.727613, 0.0209424, -0.0617889, -0.0868453, 0.994304, -3.76062, 0.858, -3.06015)
 shape = SubResource("BoxShape3D_6vyqf")
 
-[node name="Hall - Junction2" type="Node3D" parent="World/Terrain" index="16"]
+[node name="Hall - Junction2" type="Node3D" parent="World/Terrain" index="21"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14, 0, -33)
 
 [node name="Junction" type="MeshInstance3D" parent="World/Terrain/Hall - Junction2" index="0"]
@@ -2917,7 +2938,7 @@ shape = SubResource("BoxShape3D_dcjaw")
 transform = Transform3D(-0.584161, -0.415192, -0.697403, -0.56565, 0.824469, -0.0170371, 0.582061, 0.384534, -0.716476, -1.05018, 0.905537, -1.43828)
 shape = SubResource("BoxShape3D_dcjaw")
 
-[node name="Hall - Pipes - Texture3" type="Node3D" parent="World/Terrain" index="17"]
+[node name="Hall - Pipes - Texture3" type="Node3D" parent="World/Terrain" index="22"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -52)
 
 [node name="Pipes" type="MeshInstance3D" parent="World/Terrain/Hall - Pipes - Texture3" index="0"]
@@ -2963,7 +2984,7 @@ shape = SubResource("BoxShape3D_6li01")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_pifp8")
 
-[node name="Hall - Pipes - Texture4" type="Node3D" parent="World/Terrain" index="18"]
+[node name="Hall - Pipes - Texture4" type="Node3D" parent="World/Terrain" index="23"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -52)
 
 [node name="Pipes" type="MeshInstance3D" parent="World/Terrain/Hall - Pipes - Texture4" index="0"]
@@ -3009,7 +3030,7 @@ shape = SubResource("BoxShape3D_6li01")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_pifp8")
 
-[node name="Hall - Pipes - Texture6" type="Node3D" parent="World/Terrain" index="19"]
+[node name="Hall - Pipes - Texture6" type="Node3D" parent="World/Terrain" index="24"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, -73)
 
 [node name="Pipes" type="MeshInstance3D" parent="World/Terrain/Hall - Pipes - Texture6" index="0"]
@@ -3055,7 +3076,7 @@ shape = SubResource("BoxShape3D_6li01")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 2.003, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_pifp8")
 
-[node name="Hall - Pipes - Texture5" type="Node3D" parent="World/Terrain" index="20"]
+[node name="Hall - Pipes - Texture5" type="Node3D" parent="World/Terrain" index="25"]
 transform = Transform3D(-4.56956e-08, 0, -1, 0, 1, 0, 1, 0, -4.56956e-08, 8, 0, -65)
 
 [node name="Pipes" type="MeshInstance3D" parent="World/Terrain/Hall - Pipes - Texture5" index="0"]
@@ -3101,7 +3122,7 @@ shape = SubResource("BoxShape3D_6li01")
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, -1.997, -0.845814, 1.34355)
 shape = SubResource("BoxShape3D_pifp8")
 
-[node name="Hall - DoorBody - Texture" type="Node3D" parent="World/Terrain" index="21"]
+[node name="Hall - DoorBody - Texture" type="Node3D" parent="World/Terrain" index="26"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
 
 [node name="BlastDoor_003" type="MeshInstance3D" parent="World/Terrain/Hall - DoorBody - Texture" index="0"]
@@ -3195,7 +3216,7 @@ shape = SubResource("BoxShape3D_j6v6e")
 transform = Transform3D(1, 1.06266e-07, -4.37237e-08, -1.06266e-07, 0.710431, -0.703767, -4.37237e-08, 0.703767, 0.710431, 0.998673, 0.207203, -0.20876)
 shape = SubResource("BoxShape3D_1xyrr")
 
-[node name="Hall - DoorBody - Texture2" type="Node3D" parent="World/Terrain" index="22"]
+[node name="Hall - DoorBody - Texture2" type="Node3D" parent="World/Terrain" index="27"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, -85)
 
 [node name="BlastDoor_003" type="MeshInstance3D" parent="World/Terrain/Hall - DoorBody - Texture2" index="0"]
@@ -3289,7 +3310,7 @@ shape = SubResource("BoxShape3D_j6v6e")
 transform = Transform3D(1, 1.06266e-07, -4.37237e-08, -1.06266e-07, 0.710431, -0.703767, -4.37237e-08, 0.703767, 0.710431, 0.998673, 0.207203, -0.20876)
 shape = SubResource("BoxShape3D_1xyrr")
 
-[node name="Hall - Curve_Light -  Texture" type="Node3D" parent="World/Terrain" index="23"]
+[node name="Hall - Curve_Light -  Texture" type="Node3D" parent="World/Terrain" index="28"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
 
 [node name="Corner_L" type="MeshInstance3D" parent="World/Terrain/Hall - Curve_Light -  Texture" index="0"]
@@ -3485,7 +3506,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.909154, 1.68597, -4.03809)
 light_color = Color(1, 0.988235, 0.890196, 1)
 omni_range = 10.0
 
-[node name="Hall - Junction_Light" type="Node3D" parent="World/Terrain" index="24"]
+[node name="Hall - Junction_Light" type="Node3D" parent="World/Terrain" index="29"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
 
 [node name="Junction_L" type="MeshInstance3D" parent="World/Terrain/Hall - Junction_Light" index="0"]
@@ -3628,7 +3649,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96263, 1.52448, 2.53266)
 light_color = Color(1, 0.988235, 0.890196, 1)
 omni_range = 10.0
 
-[node name="Hall - Default_Light6" type="Node3D" parent="World/Terrain" index="25"]
+[node name="Hall - Default_Light6" type="Node3D" parent="World/Terrain" index="30"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, -85)
 
 [node name="Default_L" type="MeshInstance3D" parent="World/Terrain/Hall - Default_Light6" index="0"]
@@ -3684,7 +3705,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.524, -2.614)
 light_color = Color(1, 0.988235, 0.890196, 1)
 omni_range = 10.0
 
-[node name="Hall - Pipes - Texture7" type="Node3D" parent="World/Terrain" index="26"]
+[node name="Hall - Pipes - Texture7" type="Node3D" parent="World/Terrain" index="31"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, -81)
 
 [node name="Pipes" type="MeshInstance3D" parent="World/Terrain/Hall - Pipes - Texture7" index="0"]
@@ -3732,12 +3753,6 @@ shape = SubResource("BoxShape3D_0ts0f")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="World" index="1"]
 environment = ExtResource("93_q2mh7")
-
-[node name="chaser" parent="World" index="2" instance=ExtResource("126_n0jl5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.747921, -10.0978)
-
-[node name="chaser2" parent="World" index="3" instance=ExtResource("126_n0jl5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17719, -0.747921, -12.505)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 12.0408, 0)
@@ -3992,6 +4007,9 @@ target = NodePath("../../../../SliderBody/HandleMesh/GrabPointHandLeft")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00358, 9.93204e-09, -0.00969601)
 script = ExtResource("139_kek6r")
 target = NodePath("../../../../SliderBody/HandleMesh/GrabPointHandRight")
+
+[node name="thefinnsword - Textures" parent="." index="13" instance=ExtResource("141_2h865")]
+unique_name_in_owner = true
 
 [editable path="XROrigin3D/LeftHand/CollisionHandLeft/LeftHand"]
 [editable path="XROrigin3D/LeftHand/CollisionHandLeft/LeftHand/Hand_Nails_low_L"]
