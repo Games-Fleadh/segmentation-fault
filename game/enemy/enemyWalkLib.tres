@@ -1,0 +1,8 @@
+[gd_resource type="AnimationLibrary" load_steps=2 format=3 uid="uid://djq5h1cmgke6m"]
+
+[ext_resource type="Animation" uid="uid://bberivhslhhh0" path="res://game/enemy/enemy_stagger.res" id="1_w3577"]
+
+[resource]
+_data = {
+"enemy_stagger": ExtResource("1_w3577")
+}
