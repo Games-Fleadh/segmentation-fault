@@ -122,6 +122,10 @@ var _controller  : XRController3D
 # The currently active controller
 var _active_controller : XRController3D
 
+# Telekinesis stuff
+var is_grabbing = false
+var initial_offset = Vector3()
+
 
 ## Add support for is_xr_class on XRTools classes
 func is_xr_class(name : String) -> bool:
@@ -212,6 +216,10 @@ func _process(_delta):
 	# If no current or previous collisions then skip
 	if not new_target and not last_target:
 		return
+	
+	# %1%
+	if is_grabbing and target:
+		target.global_transform = _active_controller.global_transform * initial_offset
 
 	# Handle pointer changes
 	if new_target and not last_target:
@@ -417,9 +425,12 @@ func _update_pointer() -> void:
 func _button_pressed() -> void:
 	if $CollisionHandLeft/FunctionPointer/RayCast.is_colliding():
 		# Report pressed
+		# %2%
 		target = $CollisionHandLeft/FunctionPointer/RayCast.get_collider()
 		last_collided_at = $CollisionHandLeft/FunctionPointer/RayCast.get_collision_point()
-		XRToolsPointerEvent.pressed(self, target, last_collided_at)
+		# XRToolsPointerEvent.pressed(self, target, last_collided_at)
+		is_grabbing = true
+		initial_offset = _active_controller.global_transform.affine_inverse() * target.global_transform
 
 
 # Pointer-activation button released handler
