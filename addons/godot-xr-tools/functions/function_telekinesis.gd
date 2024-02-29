@@ -399,7 +399,7 @@ func _update_collide_with_areas() -> void:
 
 # Pointer suppress_radius update handler
 func _update_suppress_radius() -> void:
-	$CollisionShape3D.shape.radius = suppress_radius
+	$SuppressArea/CollisionShape3D.shape.radius = suppress_radius
 
 
 # Pointer suppress_mask update handler
