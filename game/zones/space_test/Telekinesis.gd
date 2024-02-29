@@ -4,14 +4,10 @@ class_name Telekinesis
 extends Node3D
 
 
-## XR Tools Function Pointer Script
+## Telekinesis
 ##
-## This script implements a pointer function for a players controller. Pointer
-## events (entered, exited, pressed, release, and movement) are delivered by
-## invoking signals on the target node.
-##
-## Pointer target nodes commonly extend from [XRToolsInteractableArea] or
-## [XRToolsInteractableBody].
+## This script is based from the function_pointer script
+## It allows items in group 31 and 32 to be picked up from a distance
 
 
 ## Signal emitted when this object points at another object
@@ -32,10 +28,8 @@ enum LaserLength {
 }
 
 
-## Default pointer collision mask of 21:pointable and 23:ui-objects
+## Default pointer collision mask of 31 & 32, telekinetic objects
 const DEFAULT_MASK := 0b11 << 30
-
-## Default pointer collision mask of 23:ui-objects
 const SUPPRESS_MASK := 0b11 << 30
 
 
