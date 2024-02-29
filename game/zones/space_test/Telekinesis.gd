@@ -1,17 +1,13 @@
 @tool
 @icon("res://addons/godot-xr-tools/editor/icons/function.svg")
-class_name XRToolsFunctionPointer
+class_name Telekinesis
 extends Node3D
 
 
-## XR Tools Function Pointer Script
+## Telekinesis
 ##
-## This script implements a pointer function for a players controller. Pointer
-## events (entered, exited, pressed, release, and movement) are delivered by
-## invoking signals on the target node.
-##
-## Pointer target nodes commonly extend from [XRToolsInteractableArea] or
-## [XRToolsInteractableBody].
+## This script is based from the function_pointer script
+## It allows items in group 31 and 32 to be picked up from a distance
 
 
 ## Signal emitted when this object points at another object
@@ -32,11 +28,9 @@ enum LaserLength {
 }
 
 
-## Default pointer collision mask of 21:pointable and 23:ui-objects
-const DEFAULT_MASK := 0b0000_0000_0101_0000_0000_0000_0000_0000
-
-## Default pointer collision mask of 23:ui-objects
-const SUPPRESS_MASK := 0b0000_0000_0100_0000_0000_0000_0000_0000
+## Default pointer collision mask of 31 & 32, telekinetic objects
+const DEFAULT_MASK := 0b11 << 30
+const SUPPRESS_MASK := 0b11 << 30
 
 
 @export_group("General")
@@ -122,10 +116,14 @@ var _controller  : XRController3D
 # The currently active controller
 var _active_controller : XRController3D
 
+# Telekinesis stuff
+var is_grabbing = false
+var initial_offset = Vector3()
+
 
 ## Add support for is_xr_class on XRTools classes
 func is_xr_class(name : String) -> bool:
-	return name == "XRToolsFunctionPointer"
+	return name == "Telekinesis"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -196,22 +194,26 @@ func _process(_delta):
 	# Find the new pointer target
 	var new_target : Node3D
 	var new_at : Vector3
-	var suppress_area := $SuppressArea
+	var suppress_area := $CollisionHandLeft/FunctionPointer/SuppressArea
 	if (enabled and
-		not $SuppressArea.has_overlapping_bodies() and
-		not $SuppressArea.has_overlapping_areas() and
-		$RayCast.is_colliding()):
-		new_at = $RayCast.get_collision_point()
+		not $CollisionHandLeft/FunctionPointer/SuppressArea.has_overlapping_bodies() and
+		not $CollisionHandLeft/FunctionPointer/SuppressArea.has_overlapping_areas() and
+		$CollisionHandLeft/FunctionPointer/RayCast.is_colliding()):
+		new_at = $CollisionHandLeft/FunctionPointer/RayCast.get_collision_point()
 		if target:
 			# Locked to 'target' even if we're colliding with something else
 			new_target = target
 		else:
 			# Target is whatever the raycast is colliding with
-			new_target = $RayCast.get_collider()
+			new_target = $CollisionHandLeft/FunctionPointer/RayCast.get_collider()
 
 	# If no current or previous collisions then skip
 	if not new_target and not last_target:
 		return
+	
+	# %1%
+	if is_grabbing and target:
+		target.global_transform = _active_controller.global_transform * initial_offset
 
 	# Handle pointer changes
 	if new_target and not last_target:
@@ -306,7 +308,7 @@ func set_laser_hit_material(p_laser_hit_material : StandardMaterial3D) -> void:
 func set_show_target(p_show_target : bool) -> void:
 	show_target = p_show_target
 	if is_inside_tree():
-		$Target.visible = enabled and show_target and last_target
+		$CollisionHandLeft/FunctionPointer/Target.visible = enabled and show_target and last_target
 
 
 # Set pointer target_radius property
@@ -359,50 +361,50 @@ func set_suppress_mask(p_suppress_mask : int) -> void:
 
 # Pointer Y offset update handler
 func _update_y_offset() -> void:
-	$Laser.position.y = y_offset * _world_scale
-	$RayCast.position.y = y_offset * _world_scale
+	$CollisionHandLeft/FunctionPointer/Laser.position.y = y_offset * _world_scale
+	$CollisionHandLeft/FunctionPointer/RayCast.position.y = y_offset * _world_scale
 
 
 # Pointer distance update handler
 func _update_distance() -> void:
-	$RayCast.target_position.z = -distance
+	$CollisionHandLeft/FunctionPointer/RayCast.target_position.z = -distance
 	_update_pointer()
 
 
 # Pointer target radius update handler
 func _update_target_radius() -> void:
-	$Target.mesh.radius = target_radius
-	$Target.mesh.height = target_radius * 2
+	$CollisionHandLeft/FunctionPointer/Target.mesh.radius = target_radius
+	$CollisionHandLeft/FunctionPointer/Target.mesh.height = target_radius * 2
 
 
 # Pointer target_material update handler
 func _update_target_material() -> void:
-	$Target.set_surface_override_material(0, target_material)
+	$CollisionHandLeft/FunctionPointer/Target.set_surface_override_material(0, target_material)
 
 
 # Pointer collision_mask update handler
 func _update_collision_mask() -> void:
-	$RayCast.collision_mask = collision_mask
+	$CollisionHandLeft/FunctionPointer/RayCast.collision_mask = collision_mask
 
 
 # Pointer collide_with_bodies update handler
 func _update_collide_with_bodies() -> void:
-	$RayCast.collide_with_bodies = collide_with_bodies
+	$CollisionHandLeft/FunctionPointer/RayCast.collide_with_bodies = collide_with_bodies
 
 
 # Pointer collide_with_areas update handler
 func _update_collide_with_areas() -> void:
-	$RayCast.collide_with_areas = collide_with_areas
+	$CollisionHandLeft/FunctionPointer/RayCast.collide_with_areas = collide_with_areas
 
 
 # Pointer suppress_radius update handler
 func _update_suppress_radius() -> void:
-	$SuppressArea/CollisionShape3D.shape.radius = suppress_radius
+	$CollisionHandLeft/FunctionPointer/SuppressArea/CollisionShape3D.shape.radius = suppress_radius
 
 
 # Pointer suppress_mask update handler
 func _update_suppress_mask() -> void:
-	$SuppressArea.collision_mask = suppress_mask
+	$CollisionHandLeft/FunctionPointer/SuppressArea.collision_mask = suppress_mask
 
 
 # Pointer visible artifacts update handler
@@ -415,11 +417,14 @@ func _update_pointer() -> void:
 
 # Pointer-activation button pressed handler
 func _button_pressed() -> void:
-	if $RayCast.is_colliding():
+	if $CollisionHandLeft/FunctionPointer/RayCast.is_colliding():
 		# Report pressed
-		target = $RayCast.get_collider()
-		last_collided_at = $RayCast.get_collision_point()
-		XRToolsPointerEvent.pressed(self, target, last_collided_at)
+		# %2%
+		target = $CollisionHandLeft/FunctionPointer/RayCast.get_collider()
+		last_collided_at = $CollisionHandLeft/FunctionPointer/RayCast.get_collision_point()
+		# XRToolsPointerEvent.pressed(self, target, last_collided_at)
+		is_grabbing = true
+		initial_offset = _active_controller.global_transform.affine_inverse() * target.global_transform
 
 
 # Pointer-activation button released handler
@@ -449,17 +454,17 @@ func _on_button_released(p_button : String, _controller : XRController3D) -> voi
 # Update the laser active material
 func _update_laser_active_material(hit : bool) -> void:
 	if hit and laser_hit_material:
-		$Laser.set_surface_override_material(0, laser_hit_material)
+		$CollisionHandLeft/FunctionPointer/Laser.set_surface_override_material(0, laser_hit_material)
 	else:
-		$Laser.set_surface_override_material(0, laser_material)
+		$CollisionHandLeft/FunctionPointer/Laser.set_surface_override_material(0, laser_material)
 
 
 # Update the visible artifacts to show a hit
 func _visible_hit(at : Vector3) -> void:
 	# Show target if enabled
 	if show_target:
-		$Target.global_transform.origin = at
-		$Target.visible = true
+		$CollisionHandLeft/FunctionPointer/Target.global_transform.origin = at
+		$CollisionHandLeft/FunctionPointer/Target.visible = true
 
 	# Control laser visibility
 	if show_laser != LaserShow.HIDE:
@@ -469,43 +474,43 @@ func _visible_hit(at : Vector3) -> void:
 		# Adjust laser length
 		if laser_length == LaserLength.COLLIDE:
 			var collide_len : float = at.distance_to(global_transform.origin)
-			$Laser.mesh.size.z = collide_len
-			$Laser.position.z = collide_len * -0.5
+			$CollisionHandLeft/FunctionPointer/Laser.mesh.size.z = collide_len
+			$CollisionHandLeft/FunctionPointer/Laser.position.z = collide_len * -0.5
 		else:
-			$Laser.mesh.size.z = distance
-			$Laser.position.z = distance * -0.5
+			$CollisionHandLeft/FunctionPointer/Laser.mesh.size.z = distance
+			$CollisionHandLeft/FunctionPointer/Laser.position.z = distance * -0.5
 
 		# Show laser
-		$Laser.visible = true
+		$CollisionHandLeft/FunctionPointer/Laser.visible = true
 	else:
 		# Ensure laser is hidden
-		$Laser.visible = false
+		$CollisionHandLeft/FunctionPointer/Laser.visible = false
 
 
 # Move the visible pointer artifacts to the target
 func _visible_move(at : Vector3) -> void:
 	# Move target if configured
 	if show_target:
-		$Target.global_transform.origin = at
+		$CollisionHandLeft/FunctionPointer/Target.global_transform.origin = at
 
 	# Adjust laser length if set to collide-length
 	if laser_length == LaserLength.COLLIDE:
 		var collide_len : float = at.distance_to(global_transform.origin)
-		$Laser.mesh.size.z = collide_len
-		$Laser.position.z = collide_len * -0.5
+		$CollisionHandLeft/FunctionPointer/Laser.mesh.size.z = collide_len
+		$CollisionHandLeft/FunctionPointer/Laser.position.z = collide_len * -0.5
 
 
 # Update the visible artifacts to show a miss
 func _visible_miss() -> void:
 	# Ensure target is hidden
-	$Target.visible = false
+	$CollisionHandLeft/FunctionPointer/Target.visible = false
 
 	# Ensure the correct laser material is set
 	_update_laser_active_material(false)
 
 	# Hide laser if not set to show always
-	$Laser.visible = show_laser == LaserShow.SHOW
+	$CollisionHandLeft/FunctionPointer/Laser.visible = show_laser == LaserShow.SHOW
 
 	# Restore laser length if set to collide-length
-	$Laser.mesh.size.z = distance
-	$Laser.position.z = distance * -0.5
+	$CollisionHandLeft/FunctionPointer/Laser.mesh.size.z = distance
+	$CollisionHandLeft/FunctionPointer/Laser.position.z = distance * -0.5
