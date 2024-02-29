@@ -15,5 +15,4 @@ func _ready():
 
 func _process(delta):
 	# Update the position of the dialogue balloon UI to stay in front of the camera or controller
-	$Balloon.transform.origin = vr_camera.transform.origin + vr_camera.transform.basis.z * 2.0
-
+	$Balloon.transform.origin = vr_camera.transform.origin + vr_camera.basis.z * 2.0
