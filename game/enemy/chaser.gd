@@ -1,14 +1,14 @@
 extends CharacterBody3D
 
 var player = null
-var animator
 var rng = RandomNumberGenerator.new()
+var animator
 var my_random_number = rng.randf_range(0, 2)
+var alive = true
 
-const SPEED : float = 2.5
+var SPEED : float = 2.5
 
 @export var player_path : NodePath
-
 @onready var nav_agent = $NavigationAgent3D
 
 
@@ -38,9 +38,13 @@ func _process(_delta):
 		print("I collided with ", collision.get_collider().name)
 		
 		if collision.get_collider().name == "thefinnsword - Textures":
-			queue_free()
+			SPEED = 0
+			if alive == true:
+				animator.play("enemyWalkLib/death")
+			alive = false
 		
-		
+	if animator.is_playing() == false && alive == false:
+		queue_free()
 
 	turn_face(player, _delta)
 
