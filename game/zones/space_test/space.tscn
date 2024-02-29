@@ -3913,6 +3913,8 @@ environment = ExtResource("93_q2mh7")
 
 [node name="chaser" parent="World" index="2" instance=ExtResource("126_n0jl5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.747921, -10.0978)
+collision_layer = 3221225473
+collision_mask = 3221225473
 
 [node name="chaser2" parent="World" index="3" instance=ExtResource("126_n0jl5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.17719, -0.747921, -12.505)
@@ -3922,6 +3924,8 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 12.
 
 [node name="Crate - Texture" parent="." index="4" instance=ExtResource("115_ksgao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.31629, -4)
+collision_layer = 3221225473
+collision_mask = 3221225473
 
 [node name="Lid - Texture" parent="." index="5" instance=ExtResource("114_tokwt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.05457, -4)
