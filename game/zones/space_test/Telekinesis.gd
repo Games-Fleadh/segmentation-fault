@@ -1,6 +1,6 @@
 @tool
 @icon("res://addons/godot-xr-tools/editor/icons/function.svg")
-class_name XRToolsFunctionPointer
+class_name Telekinesis
 extends Node3D
 
 
@@ -125,7 +125,7 @@ var _active_controller : XRController3D
 
 ## Add support for is_xr_class on XRTools classes
 func is_xr_class(name : String) -> bool:
-	return name == "XRToolsFunctionPointer"
+	return name == "Telekinesis"
 
 
 # Called when the node enters the scene tree for the first time.
