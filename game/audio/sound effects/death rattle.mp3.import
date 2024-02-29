@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cslmcq7h64hlp"
+path="res://.godot/imported/death rattle.mp3-43ac586771792aff56513581a9df5ce1.mp3str"
+
+[deps]
+
+source_file="res://game/audio/sound effects/death rattle.mp3"
+dest_files=["res://.godot/imported/death rattle.mp3-43ac586771792aff56513581a9df5ce1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
