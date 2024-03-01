@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://51i5kefutqkx"
+path="res://.godot/imported/enemy step double.mp3-dc386d817546153a7c00d4f423b3e034.mp3str"
+
+[deps]
+
+source_file="res://game/audio/sound effects/enemy step double.mp3"
+dest_files=["res://.godot/imported/enemy step double.mp3-dc386d817546153a7c00d4f423b3e034.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
