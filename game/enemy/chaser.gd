@@ -13,9 +13,9 @@ var SPEED : float = 2.5
 
 
 func _ready():
-	push_warning("player_path ::::: ", player_path)
+	
 	player = get_node(player_path)
-	push_warning("player", player)
+	
 
 	animator = get_node("AnimationPlayer")
 	await get_tree().create_timer(my_random_number).timeout
@@ -25,17 +25,16 @@ func _process(_delta):
 	velocity = Vector3.ZERO
 	
 	nav_agent.set_target_position(player.global_position)
-	push_warning()
+	
 	var next_nav_point  = nav_agent.get_next_path_position()
 	velocity = (next_nav_point - self.global_position).normalized() * SPEED
 
-	push_warning(next_nav_point, self.global_position, velocity)
+	
 
 	move_and_slide()
 	for i in get_slide_collision_count():
 		
 		var collision = get_slide_collision(i)
-		print("I collided with ", collision.get_collider().name)
 		
 		if collision.get_collider().name == "thefinnsword - Textures":
 			SPEED = 0
