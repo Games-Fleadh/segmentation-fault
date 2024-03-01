@@ -14,5 +14,6 @@ func _ready():
 	# vr_camera.add_child($Balloon)
 
 func _process(delta):
+	pass
 	# Update the position of the dialogue balloon UI to stay in front of the camera or controller
-	$Balloon.transform.origin = vr_camera.transform.origin + vr_camera.basis.z * 2.0
+	# %BalloonControl.transform.origin = vr_camera.transform.origin + vr_camera.basis.z * 2.0
