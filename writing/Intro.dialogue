@@ -1,0 +1,18 @@
+~ Intro
+# Game Intro:
+
+# (screen is black, it is silent in the cryopod. You are alone)
+# (Text appears on screen)
+PAL: Hello? Hello? [wait=1.5] Oh! Hello! Welcome back to consciousness.
+	It is most fortunate that your brain is firing as normal. [next=auto]
+PAL: Do try not to panic, you haven't quite got the energy for that. [next=auto]
+# RETHINK THIS LINE Pal: I'm reading confusion in your brain waves, this is normal. Very normal. 
+PAL: Memory loss, disorientation and ⍰⍰⍰⍰⍰ are common symptoms of cryonics. 
+	Especially for someone who has been frozen as long as you have. [next=auto]
+
+# (Pause)
+PAL: Can you turn on your visor? [next=auto]
+
+(*PROMPT* >> Turn on your visor using [A]) [next=auto]
+
+=> END
