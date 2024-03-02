@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pa3p1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22cpq"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 3
 border_width_top = 3
@@ -16,7 +16,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohd4w"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jj1mt"]
 bg_color = Color(0.121569, 0.121569, 0.121569, 1)
 border_width_left = 3
 border_width_top = 3
@@ -28,7 +28,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ea4k"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_majuy"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 3
 border_width_top = 3
@@ -40,7 +40,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mx5k"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4osx"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 3
 border_width_top = 3
@@ -53,15 +53,15 @@ corner_radius_bottom_left = 5
 
 [sub_resource type="Theme" id="Theme_qq3yp"]
 default_font_size = 20
-Button/styles/disabled = SubResource("StyleBoxFlat_pa3p1")
-Button/styles/focus = SubResource("StyleBoxFlat_ohd4w")
-Button/styles/hover = SubResource("StyleBoxFlat_5ea4k")
-Button/styles/normal = SubResource("StyleBoxFlat_5ea4k")
+Button/styles/disabled = SubResource("StyleBoxFlat_22cpq")
+Button/styles/focus = SubResource("StyleBoxFlat_jj1mt")
+Button/styles/hover = SubResource("StyleBoxFlat_majuy")
+Button/styles/normal = SubResource("StyleBoxFlat_majuy")
 MarginContainer/constants/margin_bottom = 15
 MarginContainer/constants/margin_left = 30
 MarginContainer/constants/margin_right = 30
 MarginContainer/constants/margin_top = 15
-Panel/styles/panel = SubResource("StyleBoxFlat_8mx5k")
+Panel/styles/panel = SubResource("StyleBoxFlat_h4osx")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xk0rb"]
 bg_color = Color(0, 0, 0, 0.737255)
