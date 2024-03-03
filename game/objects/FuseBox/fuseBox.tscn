@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dm7y2jwebbpmj"]
+
+[ext_resource type="PackedScene" uid="uid://bwn3g73oh3ics" path="res://game/objects/FuseBox/FuseBox - Texture.gltf" id="1_sevs8"]
+[ext_resource type="Material" uid="uid://c1uh4100soh7e" path="res://game/objects/FuseBox/fuseBox.tres" id="2_or0dd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e0jdn"]
+size = Vector3(0.413025, 0.509949, 0.155762)
+
+[node name="FuseBox - Texture" instance=ExtResource("1_sevs8")]
+
+[node name="Plane" parent="." index="0"]
+material_override = ExtResource("2_or0dd")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000396729, 9.15527e-05, 0.000488281)
+shape = SubResource("BoxShape3D_e0jdn")

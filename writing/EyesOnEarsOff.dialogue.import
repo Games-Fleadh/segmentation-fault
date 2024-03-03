@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://dhqmtueb885k5"
+path="res://.godot/imported/EyesOnEarsOff.dialogue-657ef3d1dabdfff2a7fabcb33763ff49.tres"
+
+[deps]
+
+source_file="res://writing/EyesOnEarsOff.dialogue"
+dest_files=["res://.godot/imported/EyesOnEarsOff.dialogue-657ef3d1dabdfff2a7fabcb33763ff49.tres"]
+
+[params]
+
+defaults=true
