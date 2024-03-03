@@ -115,6 +115,7 @@ func _do_move_slider(position: float) -> float:
 	# Move if necessary
 	if position != slider_position:
 		transform.origin.x = position
+		
 
 	# Return the updated position
 	return position

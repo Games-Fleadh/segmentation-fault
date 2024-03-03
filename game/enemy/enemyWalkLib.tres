@@ -1,8 +1,24 @@
-[gd_resource type="AnimationLibrary" load_steps=2 format=3 uid="uid://djq5h1cmgke6m"]
+[gd_resource type="AnimationLibrary" load_steps=3 format=3 uid="uid://djq5h1cmgke6m"]
 
 [ext_resource type="Animation" uid="uid://bberivhslhhh0" path="res://game/enemy/enemy_stagger.res" id="1_w3577"]
 
+[sub_resource type="Animation" id="Animation_poh3c"]
+resource_name = "death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Armature/Skeleton3D/Cube_001_Cube:surface_material_override/0:emission")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
 [resource]
 _data = {
+"death": SubResource("Animation_poh3c"),
 "enemy_stagger": ExtResource("1_w3577")
 }
