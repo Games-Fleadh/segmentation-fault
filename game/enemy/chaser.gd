@@ -14,14 +14,16 @@ var SPEED : float = 2.5
 
 func _ready():
 	
+	# Get the player's node.
 	player = get_node(player_path)
 	
-
+	# Get the animator node, then wait a random delay before playing.
 	animator = get_node("AnimationPlayer")
 	await get_tree().create_timer(my_random_number).timeout
 	animator.play("enemyWalkLib/enemy_stagger")
 
 func _process(_delta):
+	# Set velocity, move towards player position at that velocity.
 	velocity = Vector3.ZERO
 	
 	nav_agent.set_target_position(player.global_position)
@@ -30,24 +32,30 @@ func _process(_delta):
 	velocity = (next_nav_point - self.global_position).normalized() * SPEED
 
 	
-
+	# Move and Slide function also used to detect collisions.
 	move_and_slide()
+	
+	# Get list of all collisions each frame.
 	for i in get_slide_collision_count():
 		
 		var collision = get_slide_collision(i)
 		
+		#If colliding with the finn sword, play death animation
 		if collision.get_collider().name == "thefinnsword - Textures":
 			SPEED = 0
 			if alive == true:
 				animator.play("enemyWalkLib/death")
 			alive = false
-		
+			
+	
+	# If the animator has stopped playing, and you've been killed, die.
 	if animator.is_playing() == false && alive == false:
 		queue_free()
-
+	
+	# Turn to face the player.
 	turn_face(player, _delta)
 
-
+# Turn to face the player.
 func turn_face(target, delta):
 	var rotation_speed = 3
 	var target_pos = target.global_transform.origin

@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://c1uh4100soh7e"]
+
+[ext_resource type="Texture2D" uid="uid://cm3jecniifhi4" path="res://game/objects/FuseBox/FuseBox - Albedo.png" id="1_dmmp6"]
+[ext_resource type="Texture2D" uid="uid://ck37wj3qv5eje" path="res://game/objects/FuseBox/FuseBox - Metallic.png" id="2_p3lt8"]
+[ext_resource type="Texture2D" uid="uid://c8flhbxv5w4ym" path="res://game/objects/FuseBox/FuseBox - Normal.png" id="3_k3jhu"]
+[ext_resource type="Texture2D" uid="uid://nrtr6hw528ps" path="res://game/objects/FuseBox/FuseBox - Roughness.png" id="4_keudr"]
+
+[resource]
+albedo_texture = ExtResource("1_dmmp6")
+metallic = 1.0
+metallic_texture = ExtResource("2_p3lt8")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("4_keudr")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_scale = 2.0
+normal_texture = ExtResource("3_k3jhu")

@@ -1,6 +1,6 @@
 extends Node3D
 var swordScene = preload("res://game/items/swords/finnsword/finnsword.tscn")
-@onready var _controller := XRHelpers.get_xr_controller(self)
+@onready var controller := XRHelpers.get_xr_controller(self)
 var buttonPressed = false
 var world
 var swordInstance
@@ -13,7 +13,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if _controller.is_button_pressed("trigger_click") && buttonPressed == false:
+	if controller.is_button_pressed("trigger_click") && buttonPressed == false:
 		
 		var allSword = get_tree().get_nodes_in_group("swords")
 		
@@ -26,7 +26,7 @@ func _process(delta):
 		buttonPressed = true
 		
 		
-	if !_controller.is_button_pressed("trigger_click"):
+	if !controller.is_button_pressed("trigger_click"):
 		buttonPressed = false
 		
 	

@@ -1,8 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cxxfu363jemin"]
+[gd_scene load_steps=16 format=3 uid="uid://cxxfu363jemin"]
 
 [ext_resource type="Script" path="res://game/player_versions/gauntlet/gauntlet.gd" id="1_lvl6v"]
 [ext_resource type="Material" uid="uid://b651rljcela5h" path="res://game/player_versions/gauntlet/gauntletGlow.tres" id="2_a741l"]
 [ext_resource type="Script" path="res://game/player_versions/gauntlet/SwordSpawn.gd" id="3_lro2i"]
+[ext_resource type="Script" path="res://game/player_versions/gauntlet/Telekinesis.gd" id="4_t2b6r"]
+[ext_resource type="Script" path="res://game/player_versions/gauntlet/LoadToDeath.gd" id="5_b08ui"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsi2a"]
 resource_name = "WhitePlastic"
@@ -214,3 +216,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0157851, -0.330587)
 script = ExtResource("3_lro2i")
 
 [node name="TelekinesisPoint" type="Node3D" parent="."]
+script = ExtResource("4_t2b6r")
+show_laser = 2
+show_target = true
+
+[node name="Killer" type="Node3D" parent="."]
+script = ExtResource("5_b08ui")

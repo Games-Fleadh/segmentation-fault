@@ -77,7 +77,7 @@ radius = 0.02
 
 [node name="thefinnsword - Textures" type="RigidBody3D" groups=["swords"]]
 collision_layer = 8196
-collision_mask = 12295
+collision_mask = 7
 gravity_scale = 0.0
 script = ExtResource("1_myob1")
 picked_up_layer = 73728
