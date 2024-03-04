@@ -1,26 +1,15 @@
 extends CharacterBody3D
 
 var player = null
-var music = null
 var rng = RandomNumberGenerator.new()
 var animator
 var my_random_number = rng.randf_range(0, 2)
 var alive = true
 
-signal combatMusicPlay
-
-#combat music file
-#var c_music = null
-
 var SPEED : float = 2.5
 
 @export var player_path : NodePath
 @onready var nav_agent = $NavigationAgent3D
-
-#@export var mus_path : NodePath
-#@onready var mus_nav_agent = $AudioStreamPlayer
-
-const enemy_detection_distance = 5.0
 
 
 func _ready():
@@ -28,40 +17,23 @@ func _ready():
 	# Get the player's node.
 	player = get_node(player_path)
 	
-	#c_music.stream = load("res://game/music/mainTheme.mp3")
-	#music = get_node(mus_path)
-	
 	# Get the animator node, then wait a random delay before playing.
 	animator = get_node("AnimationPlayer")
 	await get_tree().create_timer(my_random_number).timeout
 	animator.play("enemyWalkLib/enemy_stagger")
-	
-	#connect("combatMusicPlay", _process)
 
 func _process(_delta):
+	# Set velocity, move towards player position at that velocity.
+	velocity = Vector3.ZERO
 	
-	#new code added to try to trigger combat music
-	var distance = (global_position - player.global_position)
+	nav_agent.set_target_position(player.global_position)
 	
-	if(distance.length() < enemy_detection_distance):
-		# Set velocity, move towards player position at that velocity.
-		velocity = Vector3.ZERO
+	var next_nav_point  = nav_agent.get_next_path_position()
+	velocity = (next_nav_point - self.global_position).normalized() * SPEED
 
-		nav_agent.set_target_position(player.global_position)
-
-		var next_nav_point  = nav_agent.get_next_path_position()
-		velocity = (next_nav_point - self.global_position).normalized() * SPEED
-		
-		var allEnemy = get_tree().get_nodes_in_group("enemy")
-		
-		for i in allEnemy:
-			##this does kinda work but crashes bc it cant find the node
-			#c_music.play()
-			emit_signal("combatMusicPlay")
-
-
-		# Move and Slide function also used to detect collisions.
-		move_and_slide()
+	
+	# Move and Slide function also used to detect collisions.
+	move_and_slide()
 	
 	# Get list of all collisions each frame.
 	for i in get_slide_collision_count():
