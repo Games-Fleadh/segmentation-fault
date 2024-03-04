@@ -25,8 +25,8 @@ func is_xr_class(p_name : String) -> bool:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Call the Intro Dialogue Script
-	#DialogueManager.show_dialogue_balloon(load("res://writing/Intro.dialogue"), "Intro")
-	Dialogic.start("Intro_Timeline")
+	DialogueManager.show_dialogue_balloon(load("res://writing/Intro.dialogue"), "Intro")
+	#Dialogic.start("Intro_Timeline")
 	# call the base
 	super()
 
