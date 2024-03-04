@@ -1,12 +1,15 @@
 extends Node3D
 @onready var _controller := XRHelpers.get_xr_controller(self)
+var deathScene = preload("res://game/player_versions/gauntlet/telekinesis_point.tscn")
+var deathInstance
 var buttonPressed = false
 var state = "State 1"
 var colorAnimator
 var wristUI
 var playerHealth = 100
-var playerBody
+@export var playerBody : Node
 var collisionsList
+var world
 
 # var _scene_base : XRToolsSceneBase
 
@@ -14,10 +17,9 @@ var collisionsList
 func _ready():
 	colorAnimator = get_node("AnimationPlayer")
 	wristUI = get_parent().get_node("WristUI")
-	playerBody = get_parent().get_parent().get_parent().get_node("PlayerBody")
-	$TelekinesisPoint.set_process(false)
+	$TelekinesisPoint.set_process(true)
 	$SwordSpawn.set_process(true)
-	# _scene_base = XRTools.find_xr_ancestor(self, "*", "XRToolsSceneBase")
+	world = get_node("/root/Main/Scene/Scene")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,3 +59,11 @@ func _process(delta):
 	#Reset button after it is pressed.
 	if !_controller.is_button_pressed("by_button"):
 		buttonPressed = false
+		
+	if playerHealth < 0:
+		$TelekinesisPoint.set_enabled(true)
+		$TelekinesisPoint.set_process(false)
+		remove_child($TelekinesisPoint)
+		deathInstance = deathScene.instantiate()
+		world.add_child(deathInstance)
+		get_node("/root/Main/Scene/Scene/DeathTeleporter").global_position = global_position

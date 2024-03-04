@@ -95,11 +95,13 @@ func auto_save_game() -> bool:
 func save_world_state() -> bool:
 	# Fail if not in a zone
 	if not PersistentStaging.instance or not current_zone:
+		print("Failed: 98")
 		return false
 
 	# Fail if no player body
 	var body := XRToolsPlayerBody.find_instance(current_zone)
 	if not body:
+		print("Failed: 104")
 		return false
 
 	# Save the current zone-state, difficulty, and spawn-info
@@ -114,6 +116,7 @@ func save_world_state() -> bool:
 func load_world_state() -> bool:
 	# Fail if no staging
 	if not PersistentStaging.instance:
+		print("Failed: 119")
 		return false
 
 	# Get the zone ID
@@ -134,6 +137,7 @@ func load_world_state() -> bool:
 	# Get the zone
 	var zone := zone_database.get_zone(zone_id)
 	if not zone:
+		print("Failed: 140")
 		return false
 
 	# Start transition to scene

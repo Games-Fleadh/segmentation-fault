@@ -8,7 +8,7 @@ var swordInstance
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	swordInstance = swordScene.instantiate()
-	world = get_node("/root/Scene")
+	world = get_node("/root/Main/Scene/Scene")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,7 +22,7 @@ func _process(delta):
 		
 		swordInstance = swordScene.instantiate()
 		world.add_child(swordInstance)
-		get_node("/root/Scene/thefinnsword - Textures").position = global_position
+		get_node("/root/Main/Scene/Scene/thefinnsword - Textures").position = global_position
 		buttonPressed = true
 		
 		

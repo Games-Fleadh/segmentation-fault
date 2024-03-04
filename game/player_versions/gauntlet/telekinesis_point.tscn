@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://x2v12vnvkt14"]
+
+[ext_resource type="Script" path="res://game/player_versions/gauntlet/Telekinesis.gd" id="1_nvxym"]
+
+[node name="TelekinesisPoint" type="Node3D"]
+script = ExtResource("1_nvxym")
+show_target = true
