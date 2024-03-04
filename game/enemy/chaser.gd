@@ -1,6 +1,7 @@
 extends CharacterBody3D
 
 var player = null
+var music = null
 var rng = RandomNumberGenerator.new()
 var animator
 var my_random_number = rng.randf_range(0, 2)
@@ -11,11 +12,18 @@ var SPEED : float = 2.5
 @export var player_path : NodePath
 @onready var nav_agent = $NavigationAgent3D
 
+@export var mus_path : NodePath
+@onready var mus_nav_agent = $AudioStreamPlayer
+
+const enemy_detection_distance = 5.0
+
 
 func _ready():
 	
 	# Get the player's node.
 	player = get_node(player_path)
+	
+	music = get_node(mus_path)
 	
 	# Get the animator node, then wait a random delay before playing.
 	animator = get_node("AnimationPlayer")
@@ -23,17 +31,27 @@ func _ready():
 	animator.play("enemyWalkLib/enemy_stagger")
 
 func _process(_delta):
-	# Set velocity, move towards player position at that velocity.
-	velocity = Vector3.ZERO
 	
-	nav_agent.set_target_position(player.global_position)
+	#new code added to try to trigger combat music
+	var distance = (global_position - player.global_position)
 	
-	var next_nav_point  = nav_agent.get_next_path_position()
-	velocity = (next_nav_point - self.global_position).normalized() * SPEED
+	if(distance.length() < enemy_detection_distance):
+		# Set velocity, move towards player position at that velocity.
+		velocity = Vector3.ZERO
 
-	
-	# Move and Slide function also used to detect collisions.
-	move_and_slide()
+		nav_agent.set_target_position(player.global_position)
+
+		var next_nav_point  = nav_agent.get_next_path_position()
+		velocity = (next_nav_point - self.global_position).normalized() * SPEED
+		
+		var allEnemy = get_tree().get_nodes_in_group("enemy")
+		
+		for i in allEnemy:
+			mus_nav_agent.play()
+
+
+		# Move and Slide function also used to detect collisions.
+		move_and_slide()
 	
 	# Get list of all collisions each frame.
 	for i in get_slide_collision_count():
