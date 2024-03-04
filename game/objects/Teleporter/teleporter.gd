@@ -213,3 +213,8 @@ func _on_teleport_area_body_entered(body):
 		_scene_base.load_scene(scene, spawn_point_transform)
 	else:
 		_scene_base.load_scene(scene)
+		
+func teleportToScene(dest : String, spawnLoc : Vector3):
+	_scene_base.load_scene(dest, spawnLoc)
+	
+	

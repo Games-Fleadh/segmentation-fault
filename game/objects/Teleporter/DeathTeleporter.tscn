@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://game/objects/Teleporter/teleporter.gd" id="1_rxa5u"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_rn575"]
+radius = 2.77897
 
 [sub_resource type="SphereMesh" id="SphereMesh_e5tjg"]
 
@@ -13,7 +14,7 @@ albedo_color = Color(1, 0, 0, 0.113725)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
 
-[node name="DeathTeleporter" type="Node3D"]
+[node name="TeleportationManager" type="Node3D"]
 script = ExtResource("1_rxa5u")
 scene = "res://game/start_scene/start_scene.tscn"
 spawn_data = 2
@@ -28,6 +29,7 @@ collision_mask = 524289
 shape = SubResource("SphereShape3D_rn575")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.595, 0, 0, 0, 5.595, 0, 0, 0, 5.595, 0, 0, 0)
 mesh = SubResource("SphereMesh_e5tjg")
 surface_material_override/0 = SubResource("StandardMaterial3D_y43e8")
 

@@ -1,13 +1,12 @@
 extends Node3D
 @onready var _controller := XRHelpers.get_xr_controller(self)
-var deathScene = preload("res://game/player_versions/gauntlet/telekinesis_point.tscn")
-var deathInstance
 var buttonPressed = false
 var state = "State 1"
 var colorAnimator
 var wristUI
 var playerHealth = 100
 @export var playerBody : Node
+@export var deathPort : Node
 var collisionsList
 var world
 
@@ -63,7 +62,5 @@ func _process(delta):
 	if playerHealth < 0:
 		$TelekinesisPoint.set_enabled(true)
 		$TelekinesisPoint.set_process(false)
-		remove_child($TelekinesisPoint)
-		deathInstance = deathScene.instantiate()
-		world.add_child(deathInstance)
-		get_node("/root/Main/Scene/Scene/DeathTeleporter").global_position = global_position
+		playerBody.get_parent().global_position = deathPort.global_position
+		
