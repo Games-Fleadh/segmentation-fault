@@ -1,10 +1,11 @@
-extends Area3D
+extends Area3D 
 
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	#first 0 is the master bus, -80 is the volume level
+	AudioServer.set_bus_volume_db(0, -80)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -19,4 +20,5 @@ func _on_body_entered(body):
 	if(body.name == "audioChip1" ):
 		print("Collision Detected: Audio Chip")
 		body.queue_free()
-		$AudioStreamPlayer.play()
+		#$AudioStreamPlayer.play()
+		AudioServer.set_bus_volume_db(0, 0)
