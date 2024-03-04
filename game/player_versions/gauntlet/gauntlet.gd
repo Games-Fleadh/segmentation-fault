@@ -5,8 +5,10 @@ var state = "State 1"
 var colorAnimator
 var wristUI
 var playerHealth = 100
-var playerBody
+@export var playerBody : Node
+@export var deathPort : Node
 var collisionsList
+var world
 
 # var _scene_base : XRToolsSceneBase
 
@@ -14,10 +16,9 @@ var collisionsList
 func _ready():
 	colorAnimator = get_node("AnimationPlayer")
 	wristUI = get_parent().get_node("WristUI")
-	playerBody = get_parent().get_parent().get_parent().get_node("PlayerBody")
-	$TelekinesisPoint.set_process(false)
+	$TelekinesisPoint.set_process(true)
 	$SwordSpawn.set_process(true)
-	# _scene_base = XRTools.find_xr_ancestor(self, "*", "XRToolsSceneBase")
+	world = get_node("/root/Main/Scene/Scene")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -43,7 +44,6 @@ func _process(delta):
 		colorAnimator.play("gauntletLib/toTelekinesis")
 		$SwordSpawn.set_process(false)
 		$TelekinesisPoint.set_enabled(true)
-		$TelekinesisPoint.set_process(true)
 
 	#Check if button pressed and in Telekinesis state, switch to Sword.
 	if _controller.is_button_pressed("by_button") && buttonPressed == false && state == "State 2":
@@ -53,9 +53,14 @@ func _process(delta):
 		buttonPressed = true
 		colorAnimator.play("gauntletLib/toSword")
 		$TelekinesisPoint.set_enabled(false)
-		$TelekinesisPoint.set_process(false)
 		$SwordSpawn.set_process(true)
 
 	#Reset button after it is pressed.
 	if !_controller.is_button_pressed("by_button"):
 		buttonPressed = false
+		
+	if playerHealth < 0:
+		$TelekinesisPoint.set_enabled(true)
+		$TelekinesisPoint.set_process(false)
+		playerBody.get_parent().global_position = deathPort.global_position
+		

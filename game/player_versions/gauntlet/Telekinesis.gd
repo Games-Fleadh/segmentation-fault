@@ -183,30 +183,30 @@ func _process(_delta):
 		return
 
 	# Track the active controller (if this pointer is not childed to a controller)
-	if _controller == null and _active_controller != null and enabled:
+	if _controller == null and _active_controller != null:
 		transform = _active_controller.transform
 
 	# Handle world-scale changes
 	var new_world_scale := XRServer.world_scale
-	if (_world_scale != new_world_scale and enabled):
+	if (_world_scale != new_world_scale):
 		_world_scale = new_world_scale
 		_update_y_offset()
 
 	# Find the new pointer target
 	var new_target : Node3D
 	var new_at : Vector3
-	var suppress_area := $"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/SuppressArea"
+	var suppress_area := $"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/SuppressArea"
 	if (enabled and
-		not $"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/SuppressArea".has_overlapping_bodies() and
-		not $"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/SuppressArea".has_overlapping_areas() and
-		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".is_colliding()):
-		new_at = $"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".get_collision_point()
+		not $"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/SuppressArea".has_overlapping_bodies() and
+		not $"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/SuppressArea".has_overlapping_areas() and
+		$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".is_colliding()):
+		new_at = $"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".get_collision_point()
 		if target:
 			# Locked to 'target' even if we're colliding with something else
 			new_target = target
 		else:
 			# Target is whatever the raycast is colliding with
-			new_target = $"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".get_collider()
+			new_target = $"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".get_collider()
 
 	# If no current or previous collisions then skip
 	if not new_target and not last_target:
@@ -217,7 +217,7 @@ func _process(_delta):
 		target.global_transform = _active_controller.global_transform * initial_offset
 
 	# Handle pointer changes
-	if new_target and not last_target and enabled:
+	if new_target and not last_target:
 		# Pointer entered new_target
 		XRToolsPointerEvent.entered(self, new_target, new_at)
 
@@ -226,13 +226,13 @@ func _process(_delta):
 
 		# Update visible artifacts for hit
 		_visible_hit(new_at)
-	elif not new_target and last_target and enabled:
+	elif not new_target and last_target:
 		# Pointer exited last_target
 		XRToolsPointerEvent.exited(self, last_target, last_collided_at)
 
 		# Update visible artifacts for miss
 		_visible_miss()
-	elif new_target != last_target and enabled:
+	elif new_target != last_target:
 		# Pointer exited last_target
 		XRToolsPointerEvent.exited(self, last_target, last_collided_at)
 
@@ -244,7 +244,7 @@ func _process(_delta):
 
 		# Move visible artifacts
 		_visible_move(new_at)
-	elif new_at != last_collided_at and enabled:
+	elif new_at != last_collided_at:
 		# Pointer moved on new_target
 		XRToolsPointerEvent.moved(self, new_target, new_at, last_collided_at)
 
@@ -362,50 +362,50 @@ func set_suppress_mask(p_suppress_mask : int) -> void:
 
 # Pointer Y offset update handler
 func _update_y_offset() -> void:
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".position.y = y_offset * _world_scale
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".position.y = y_offset * _world_scale
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".position.y = y_offset * _world_scale
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".position.y = y_offset * _world_scale
 
 
 # Pointer distance update handler
 func _update_distance() -> void:
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".target_position.z = -distance
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".target_position.z = -distance
 	_update_pointer()
 
 
 # Pointer target radius update handler
 func _update_target_radius() -> void:
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".mesh.radius = target_radius
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".mesh.height = target_radius * 2
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".mesh.radius = target_radius
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".mesh.height = target_radius * 2
 
 
 # Pointer target_material update handler
 func _update_target_material() -> void:
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".set_surface_override_material(0, target_material)
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".set_surface_override_material(0, target_material)
 
 
 # Pointer collision_mask update handler
 func _update_collision_mask() -> void:
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".collision_mask = collision_mask
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".collision_mask = collision_mask
 
 
 # Pointer collide_with_bodies update handler
 func _update_collide_with_bodies() -> void:
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".collide_with_bodies = collide_with_bodies
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".collide_with_bodies = collide_with_bodies
 
 
 # Pointer collide_with_areas update handler
 func _update_collide_with_areas() -> void:
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".collide_with_areas = collide_with_areas
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".collide_with_areas = collide_with_areas
 
 
 # Pointer suppress_radius update handler
 func _update_suppress_radius() -> void:
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/SuppressArea/CollisionShape3D".shape.radius = suppress_radius
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/SuppressArea/CollisionShape3D".shape.radius = suppress_radius
 
 
 # Pointer suppress_mask update handler
 func _update_suppress_mask() -> void:
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/SuppressArea".collision_mask = suppress_mask
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/SuppressArea".collision_mask = suppress_mask
 
 
 # Pointer visible artifacts update handler
@@ -418,11 +418,11 @@ func _update_pointer() -> void:
 
 # Pointer-activation button pressed handler
 func _button_pressed() -> void:
-	if $"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".is_colliding():
+	if $"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".is_colliding():
 		# Report pressed
 		# %2%
-		target = $"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".get_collider()
-		last_collided_at = $"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".get_collision_point()
+		target = $"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".get_collider()
+		last_collided_at = $"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/RayCast".get_collision_point()
 		# XRToolsPointerEvent.pressed(self, target, last_collided_at)
 		is_grabbing = true
 		initial_offset = _active_controller.global_transform.affine_inverse() * target.global_transform
@@ -454,65 +454,65 @@ func _on_button_released(p_button : String, _controller : XRController3D) -> voi
 
 # Update the laser active material
 func _update_laser_active_material(hit : bool) -> void:
-	if hit and laser_hit_material and enabled:
-		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".set_surface_override_material(0, laser_hit_material)
+	if hit and laser_hit_material:
+		$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".set_surface_override_material(0, laser_hit_material)
 	else:
-		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".set_surface_override_material(0, laser_material)
+		$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".set_surface_override_material(0, laser_material)
 
 
 # Update the visible artifacts to show a hit
 func _visible_hit(at : Vector3) -> void:
 	# Show target if enabled
-	if show_target and enabled:
-		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".global_transform.origin = at
-		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".visible = true
+	if show_target:
+		$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".global_transform.origin = at
+		$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".visible = true
 		get_parent().get_parent()
 
 	# Control laser visibility
-	if show_laser != LaserShow.HIDE and enabled:
+	if show_laser != LaserShow.HIDE:
 		# Ensure the correct laser material is set
 		_update_laser_active_material(true)
 
 		# Adjust laser length
-		if laser_length == LaserLength.COLLIDE and enabled:
+		if laser_length == LaserLength.COLLIDE:
 			var collide_len : float = at.distance_to(global_transform.origin)
-			$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".mesh.size.z = collide_len
-			$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".position.z = collide_len * -0.5
+			$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".mesh.size.z = collide_len
+			$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".position.z = collide_len * -0.5
 		else:
-			$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".mesh.size.z = distance
-			$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".position.z = distance * -0.5
+			$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".mesh.size.z = distance
+			$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".position.z = distance * -0.5
 
 		# Show laser
-		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".visible = true
+		$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".visible = true
 	else:
 		# Ensure laser is hidden
-		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".visible = false
+		$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".visible = false
 
 
 # Move the visible pointer artifacts to the target
 func _visible_move(at : Vector3) -> void:
 	# Move target if configured
-	if show_target and enabled:
-		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".global_transform.origin = at
+	if show_target:
+		$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".global_transform.origin = at
 
 	# Adjust laser length if set to collide-length
-	if laser_length == LaserLength.COLLIDE and enabled:
+	if laser_length == LaserLength.COLLIDE:
 		var collide_len : float = at.distance_to(global_transform.origin)
-		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".mesh.size.z = collide_len
-		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".position.z = collide_len * -0.5
+		$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".mesh.size.z = collide_len
+		$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".position.z = collide_len * -0.5
 
 
 # Update the visible artifacts to show a miss
 func _visible_miss() -> void:
 	# Ensure target is hidden
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".visible = false
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".visible = false
 
 	# Ensure the correct laser material is set
 	_update_laser_active_material(false)
 
 	# Hide laser if not set to show always
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".visible = show_laser == LaserShow.SHOW
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".visible = show_laser == LaserShow.SHOW
 
 	# Restore laser length if set to collide-length
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".mesh.size.z = distance
-	$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".position.z = distance * -0.5
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".mesh.size.z = distance
+	$"/root/Main/Scene/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".position.z = distance * -0.5

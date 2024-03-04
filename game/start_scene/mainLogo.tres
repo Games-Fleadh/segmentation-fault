@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bq544lgf6nqe5"]
+
+[ext_resource type="Texture2D" uid="uid://wru1q38knbgj" path="res://game/start_scene/logoImage.png" id="1_yyakv"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+depth_draw_mode = 1
+albedo_texture = ExtResource("1_yyakv")

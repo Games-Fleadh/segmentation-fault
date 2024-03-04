@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b07hdh1hld7oi"]
+
+[ext_resource type="Script" path="res://game/objects/Teleporter/teleporter.gd" id="1_rxa5u"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_rn575"]
+radius = 2.77897
+
+[sub_resource type="SphereMesh" id="SphereMesh_e5tjg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y43e8"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(1, 0, 0, 0.113725)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
+[node name="TeleportationManager" type="Node3D"]
+script = ExtResource("1_rxa5u")
+scene = "res://game/start_scene/start_scene.tscn"
+spawn_data = 2
+spawn_point_name = ""
+spawn_point_position = Vector3(0, 0, 3)
+spawn_point_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="TeleportArea" type="Area3D" parent="."]
+collision_mask = 524289
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleportArea"]
+shape = SubResource("SphereShape3D_rn575")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.595, 0, 0, 0, 5.595, 0, 0, 0, 5.595, 0, 0, 0)
+mesh = SubResource("SphereMesh_e5tjg")
+surface_material_override/0 = SubResource("StandardMaterial3D_y43e8")
+
+[connection signal="body_entered" from="TeleportArea" to="." method="_on_teleport_area_body_entered"]
