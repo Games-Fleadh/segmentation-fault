@@ -8,13 +8,13 @@
 resource_local_to_scene = true
 size = Vector2(3, 2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_u1blr"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_6oncc"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_337e8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyam7"]
 transparency = 1
 cull_mode = 2
-albedo_texture = SubResource("ViewportTexture_u1blr")
+albedo_texture = SubResource("ViewportTexture_6oncc")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="4"]
@@ -31,17 +31,18 @@ filter = true
 
 [node name="Viewport" type="SubViewport" parent="."]
 disable_3d = true
+use_xr = true
 transparent_bg = true
 gui_embed_subwindows = true
-size = Vector2i(800, 300)
+size = Vector2i(0, 0)
 render_target_update_mode = 1
 
 [node name="Screen" type="MeshInstance3D" parent="."]
 mesh = SubResource("1")
-surface_material_override/0 = SubResource("StandardMaterial3D_337e8")
+surface_material_override/0 = SubResource("StandardMaterial3D_gyam7")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-collision_layer = 0
+collision_layer = 5242881
 collision_mask = 0
 script = ExtResource("2")
 viewport_size = Vector2(800, 300)
