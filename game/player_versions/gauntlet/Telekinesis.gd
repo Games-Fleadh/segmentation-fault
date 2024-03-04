@@ -183,12 +183,12 @@ func _process(_delta):
 		return
 
 	# Track the active controller (if this pointer is not childed to a controller)
-	if _controller == null and _active_controller != null:
+	if _controller == null and _active_controller != null and enabled:
 		transform = _active_controller.transform
 
 	# Handle world-scale changes
 	var new_world_scale := XRServer.world_scale
-	if (_world_scale != new_world_scale):
+	if (_world_scale != new_world_scale and enabled):
 		_world_scale = new_world_scale
 		_update_y_offset()
 
@@ -217,7 +217,7 @@ func _process(_delta):
 		target.global_transform = _active_controller.global_transform * initial_offset
 
 	# Handle pointer changes
-	if new_target and not last_target:
+	if new_target and not last_target and enabled:
 		# Pointer entered new_target
 		XRToolsPointerEvent.entered(self, new_target, new_at)
 
@@ -226,13 +226,13 @@ func _process(_delta):
 
 		# Update visible artifacts for hit
 		_visible_hit(new_at)
-	elif not new_target and last_target:
+	elif not new_target and last_target and enabled:
 		# Pointer exited last_target
 		XRToolsPointerEvent.exited(self, last_target, last_collided_at)
 
 		# Update visible artifacts for miss
 		_visible_miss()
-	elif new_target != last_target:
+	elif new_target != last_target and enabled:
 		# Pointer exited last_target
 		XRToolsPointerEvent.exited(self, last_target, last_collided_at)
 
@@ -244,7 +244,7 @@ func _process(_delta):
 
 		# Move visible artifacts
 		_visible_move(new_at)
-	elif new_at != last_collided_at:
+	elif new_at != last_collided_at and enabled:
 		# Pointer moved on new_target
 		XRToolsPointerEvent.moved(self, new_target, new_at, last_collided_at)
 
@@ -454,7 +454,7 @@ func _on_button_released(p_button : String, _controller : XRController3D) -> voi
 
 # Update the laser active material
 func _update_laser_active_material(hit : bool) -> void:
-	if hit and laser_hit_material:
+	if hit and laser_hit_material and enabled:
 		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".set_surface_override_material(0, laser_hit_material)
 	else:
 		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".set_surface_override_material(0, laser_material)
@@ -463,18 +463,18 @@ func _update_laser_active_material(hit : bool) -> void:
 # Update the visible artifacts to show a hit
 func _visible_hit(at : Vector3) -> void:
 	# Show target if enabled
-	if show_target:
+	if show_target and enabled:
 		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".global_transform.origin = at
 		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".visible = true
 		get_parent().get_parent()
 
 	# Control laser visibility
-	if show_laser != LaserShow.HIDE:
+	if show_laser != LaserShow.HIDE and enabled:
 		# Ensure the correct laser material is set
 		_update_laser_active_material(true)
 
 		# Adjust laser length
-		if laser_length == LaserLength.COLLIDE:
+		if laser_length == LaserLength.COLLIDE and enabled:
 			var collide_len : float = at.distance_to(global_transform.origin)
 			$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".mesh.size.z = collide_len
 			$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".position.z = collide_len * -0.5
@@ -492,11 +492,11 @@ func _visible_hit(at : Vector3) -> void:
 # Move the visible pointer artifacts to the target
 func _visible_move(at : Vector3) -> void:
 	# Move target if configured
-	if show_target:
+	if show_target and enabled:
 		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Target".global_transform.origin = at
 
 	# Adjust laser length if set to collide-length
-	if laser_length == LaserLength.COLLIDE:
+	if laser_length == LaserLength.COLLIDE and enabled:
 		var collide_len : float = at.distance_to(global_transform.origin)
 		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".mesh.size.z = collide_len
 		$"/root/Scene/XROrigin3D/RightHand/CollisionHandRight/FunctionPointer/Laser".position.z = collide_len * -0.5
