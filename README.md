@@ -1,4 +1,4 @@
- 
+![Seg Fault Logo](https://github.com/Games-Fleadh/segmentation-fault/blob/main/Images/SegFaultLogo.png) 
 # Segmentation Fault
 ## Design Document
 ### A VR action-adventure game in Space
@@ -51,6 +51,8 @@ This involves the movement of the enemies or chasers to the player. It requires 
 The AI crashes into objects but it was felt that that aspect was enjoyable as it makes the player feel strong. The AI can traverse onto higher ground if provided with an appropriate slope so as to not limit the game design.  A navMesh was used as we aren’t doing random level generation, if we were spacial nodes could be used to make a trail for the AI like Pacman.
 
 ## Weapons
+
+![The Debugger](https://github.com/Games-Fleadh/segmentation-fault/blob/main/Images/TheDebugger.png) 
  
 This is the “The Debugger”, the sword used by the player in the game. It is also a hard light projection, made of the same material and process as the Exceptions. The blue of FutureSight Technologies is inset in the hilt.
 
@@ -87,18 +89,32 @@ The player character is a maintenance worker on the space station. They wear a p
  **Enemies (“Exceptions”):**
 The Exceptions are Hard Light Projections made by PALATINE. They are humanoid bodies the colour FutureSight technology blue. Their walking is deeply uncanny as they ramble towards the player, attempting to cause harm.
 
+![Enemy Example](https://github.com/Games-Fleadh/segmentation-fault/blob/main/Images/EnemyBody.png) 
+![Enemy Example 2](https://github.com/Games-Fleadh/segmentation-fault/blob/main/Images/EnemyBody.png) 
+
 
 **Upgrades:** 
  
 The software discs and the gauntlet are two upgrades available to the player. The software disc is a futuristic floppy disc, containing a version of the pirated software the player and their co-workers used for work. Due to a lack of commercialisation opportunities coming from the space station, FutureSight  Technologies refused to renew the licenses on what they considered to be “non-essential” software available to their employees, like the ability to hear. The employees not in cryo-freeze left the discs around the spaceship, knowing it would be needed again in the future. 
 The gauntlet is a multi-tool.
 
+![Audio Software](https://github.com/Games-Fleadh/segmentation-fault/blob/main/Images/AudioSoftware.png) 
+![Gauntlet](https://github.com/Games-Fleadh/segmentation-fault/blob/main/Images/Gauntlet.png) 
+
 
 **Tycho Brahe Space Station:** 
  
 The Space Station is a research vessel however, this is not the part of the station that the player sees. The player character is a maintenance worker, and the game is set in the maintenance tunnels. With harsh lighting, exposed pipes, practical floors, and hazard tape, it’s a wonder you were even allowed the luxury of windows. 
 Furniture:
- 
+
+![Corridor 1](https://github.com/Games-Fleadh/segmentation-fault/blob/main/Images/Corridor1.png) 
+![Corridor 2](https://github.com/Games-Fleadh/segmentation-fault/blob/main/Images/Corridor2.png) 
+
+**Furniture:**
+
+
+![Crate](https://github.com/Games-Fleadh/segmentation-fault/blob/main/Images/Crate.png) 
+![Lever](https://github.com/Games-Fleadh/segmentation-fault/blob/main/Images/Lever.png) 
  
 ## Themes:
 
