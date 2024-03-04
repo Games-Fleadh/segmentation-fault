@@ -3,6 +3,8 @@
 ## Design Document
 ### A VR action-adventure game in Space
 
+[WATCH THE GAME TRAILER HERE](https://youtu.be/krXvI3BdNkw?si=RNBPSAhQoURK-rzY)
+
 **Written By:** James Lawlor, Ruán Murgatroyd, Maryam Al-Ateye, Derv O’Flynn, Ethan Crosbie, Karl Tan 
 
 
