@@ -52,9 +52,6 @@ The AI crashes into objects but it was felt that that aspect was enjoyable as it
  
 This is the “The Debugger”, the sword used by the player in the game. It is also a hard light projection, made of the same material and process as the Exceptions. The blue of FutureSight Technologies is inset in the hilt.
 
- 
-## Music and Sound Effects
-
 ## Music
 The music for Segmentation fault was made with a MIDI keyboard with CakeWalk by BandLab being the Digital Audio Workstation (DAW) used. The music was made with a plug-in called SynthMaster that was on pluginboutique.com. It has presets installed in it that are free to use.
 
