@@ -10,7 +10,7 @@ const SKIP_ACTION = &"ui_cancel"
 @onready var balloon: Control = %Balloon
 @onready var character_label: RichTextLabel = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
-@onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
+#@onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
 
 ## The dialogue resource
 var resource: DialogueResource
@@ -48,8 +48,8 @@ var dialogue_line: DialogueLine:
 		dialogue_label.hide()
 		dialogue_label.dialogue_line = dialogue_line
 
-		responses_menu.hide()
-		responses_menu.set_responses(dialogue_line.responses)
+		#responses_menu.hide()
+		#responses_menu.set_responses(dialogue_line.responses)
 
 		# Show our balloon
 		balloon.show()
@@ -61,10 +61,10 @@ var dialogue_line: DialogueLine:
 			await dialogue_label.finished_typing
 
 		# Wait for input
-		if dialogue_line.responses.size() > 0:
-			balloon.focus_mode = Control.FOCUS_NONE
-			responses_menu.show()
-		elif dialogue_line.time != "":
+		#if dialogue_line.responses.size() > 0:
+			#balloon.focus_mode = Control.FOCUS_NONE
+			#responses_menu.show()
+		if dialogue_line.time != "":
 			var time = dialogue_line.text.length() * 0.02 if dialogue_line.time == "auto" else dialogue_line.time.to_float()
 			await get_tree().create_timer(time).timeout
 			next(dialogue_line.next_id)
@@ -123,7 +123,7 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 			return
 
 	if not is_waiting_for_input: return
-	if dialogue_line.responses.size() > 0: return
+	#if dialogue_line.responses.size() > 0: return
 
 	# When there are no response options the balloon itself is the clickable thing
 	get_viewport().set_input_as_handled()
@@ -134,5 +134,5 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 		next(dialogue_line.next_id)
 
 
-func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
-	next(response.next_id)
+#func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
+	#next(response.next_id)
