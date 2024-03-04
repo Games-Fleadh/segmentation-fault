@@ -8,12 +8,15 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
 
 
 func _on_body_entered(body):
+	print(body.name)
 	if(body.name == "audioChip1" ):
-		push_warning("yippeeeeee")
+		print("Collision Detected: Audio Chip")
+		body.queue_free()
+		$AudioStreamPlayer.play()
