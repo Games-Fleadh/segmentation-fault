@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://73jm5qjy52vq"]
+[gd_scene load_steps=11 format=3 uid="uid://73jm5qjy52vq"]
 
 [ext_resource type="Script" path="res://addons/dialogue_manager/example_balloon/example_balloon.gd" id="1_36de5"]
 [ext_resource type="PackedScene" uid="uid://ckvgyvclnwggo" path="res://addons/dialogue_manager/dialogue_label.tscn" id="2_a8ve6"]
+[ext_resource type="LabelSettings" uid="uid://ckqhiebo7bj3w" path="res://game/player_versions/WristUI_LabelSettings.tres" id="2_ud13w"]
 [ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_reponses_menu.gd" id="3_72ixx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_spyqn"]
@@ -70,6 +71,29 @@ bg_color = Color(0, 0, 0, 0.737255)
 layer = 100
 follow_viewport_enabled = true
 script = ExtResource("1_36de5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 31.0
+offset_bottom = 115.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="DialogueLabel" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_a8ve6")]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Dialogue..."
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "million agonies"
+label_settings = ExtResource("2_ud13w")
+autowrap_mode = 2
 
 [node name="Balloon" type="Control" parent="."]
 unique_name_in_owner = true
