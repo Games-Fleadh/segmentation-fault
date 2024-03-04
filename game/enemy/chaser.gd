@@ -7,13 +7,18 @@ var animator
 var my_random_number = rng.randf_range(0, 2)
 var alive = true
 
+signal combatMusicPlay
+
+#combat music file
+#var c_music = null
+
 var SPEED : float = 2.5
 
 @export var player_path : NodePath
 @onready var nav_agent = $NavigationAgent3D
 
-@export var mus_path : NodePath
-@onready var mus_nav_agent = $AudioStreamPlayer
+#@export var mus_path : NodePath
+#@onready var mus_nav_agent = $AudioStreamPlayer
 
 const enemy_detection_distance = 5.0
 
@@ -23,12 +28,15 @@ func _ready():
 	# Get the player's node.
 	player = get_node(player_path)
 	
-	music = get_node(mus_path)
+	#c_music.stream = load("res://game/music/mainTheme.mp3")
+	#music = get_node(mus_path)
 	
 	# Get the animator node, then wait a random delay before playing.
 	animator = get_node("AnimationPlayer")
 	await get_tree().create_timer(my_random_number).timeout
 	animator.play("enemyWalkLib/enemy_stagger")
+	
+	#connect("combatMusicPlay", _process)
 
 func _process(_delta):
 	
@@ -47,7 +55,9 @@ func _process(_delta):
 		var allEnemy = get_tree().get_nodes_in_group("enemy")
 		
 		for i in allEnemy:
-			mus_nav_agent.play()
+			##this does kinda work but crashes bc it cant find the node
+			#c_music.play()
+			emit_signal("combatMusicPlay")
 
 
 		# Move and Slide function also used to detect collisions.
