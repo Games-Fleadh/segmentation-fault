@@ -79,3 +79,30 @@ Your help is needed to stop it. Please go through this door and the tools to sto
 (The player kills the projection)
 
 "Good job. I think we work well as a team. Now that that's sorted, please dispose of the rest of them"
+
+
+LABELS!!!
+
+IntroLabel:
+	Welcome back to consciousness.
+	My name is PAL. 
+	Grab a health pack 
+	with the trigger button
+	to leave the pod.
+	
+LeverTutorialLabel:
+	Use the grip button
+	to grab the lever and 
+	pull it down
+	
+UhOhLabel:
+	Uh Oh! 
+	Those hard light projections want you dead.
+	Use the grip and trigger button
+	to summon a hard-light sword.
+	Mind your health.
+	
+TelekinesisLabel:
+	Use the trigger button to 
+	move the crate lids 
+	with your telekinesis laser.
