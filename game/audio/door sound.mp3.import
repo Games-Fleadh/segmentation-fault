@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dw7wjldxkuxlq"
+path="res://.godot/imported/door sound.mp3-8ca6f70486c5cc11d7e3d25a574d000e.mp3str"
+
+[deps]
+
+source_file="res://game/audio/door sound.mp3"
+dest_files=["res://.godot/imported/door sound.mp3-8ca6f70486c5cc11d7e3d25a574d000e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
