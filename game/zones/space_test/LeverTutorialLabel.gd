@@ -15,9 +15,10 @@ func _process(delta):
 
 func _on_area_3d_body_entered(body):
 	var distance = (global_position - player.global_position )
-	if(distance.length() < 10):
+	if(distance.length() < 15):
 		visible = true # Replace with function body.
 	
+
 
 func _on_area_3d_body_exited(body):
 	visible = false # Replace with function body.
