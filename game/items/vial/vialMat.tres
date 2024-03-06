@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bqqeh5ha7ar4s"]
+
+[ext_resource type="Texture2D" uid="uid://bm35eusm1bgn4" path="res://game/items/vial/Vial - Albedo - Trs2.png" id="1_uuynu"]
+[ext_resource type="Texture2D" uid="uid://dqcvvn3yo8sgo" path="res://game/items/vial/Vial - Metallic.png" id="2_o3seu"]
+[ext_resource type="Texture2D" uid="uid://ce77susncd1rv" path="res://game/items/vial/Vial - Roughness.png" id="3_p8qc0"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.333
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_uuynu")
+albedo_texture_force_srgb = true
+metallic = 1.0
+metallic_texture = ExtResource("2_o3seu")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("3_p8qc0")
+roughness_texture_channel = 4

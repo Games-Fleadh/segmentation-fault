@@ -4,6 +4,7 @@ var buttonPressed = false
 var state = "State 1"
 var colorAnimator
 var wristUI
+var maxHealth = 100
 var playerHealth = 100
 @export var playerBody : Node
 @export var deathPort : Node
@@ -33,7 +34,7 @@ func _process(delta):
 			playerHealth -= 1
 	
 	#Updating wrist UI with HP value.
-	wristUI.scene_node.get_child(0).get_child(0).get_child(0).set_text("Health: " + str(playerHealth) + "/100")
+	wristUI.scene_node.get_child(0).get_child(0).get_child(0).set_text("Health: " + str(playerHealth) + "/" + str(maxHealth))
 	
 	#Check if button pressed and in Sword state, switch to Telekinesis.
 	if _controller.is_button_pressed("by_button") && buttonPressed == false && state == "State 1":
