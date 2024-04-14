@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b64v7w5y3yghi"]
+[gd_scene load_steps=17 format=3 uid="uid://b64v7w5y3yghi"]
 
 [ext_resource type="PackedScene" uid="uid://qbmx03iibuuu" path="res://addons/godot-xr-tools/staging/scene_base.tscn" id="1_2sv0p"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="3_du2hn"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cl8q8f32imusk" path="res://game/start_scene/start_ui.tscn" id="5_grt1o"]
 [ext_resource type="Environment" uid="uid://bixn6h57neddm" path="res://game/zones/space_test/space_envir.tres" id="5_t5xvl"]
 [ext_resource type="Material" uid="uid://bq544lgf6nqe5" path="res://game/start_scene/mainLogo.tres" id="8_555ah"]
+[ext_resource type="Material" uid="uid://bc6deovae0hbq" path="res://game/start_scene/controlScheme.tres" id="9_j5tp1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ap0s"]
 size = Vector3(12, 1, 12)
@@ -19,14 +20,14 @@ size = Vector3(12, 4, 1)
 resource_local_to_scene = true
 size = Vector2(3, 2)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xhbr0"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_0se1i"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcb24"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_moosy"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_xhbr0")
+albedo_texture = SubResource("ViewportTexture_0se1i")
 texture_filter = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iru2p"]
@@ -119,7 +120,7 @@ unshaded = true
 [node name="Screen" parent="Screen" index="1"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 mesh = SubResource("QuadMesh_44p7b")
-surface_material_override/0 = SubResource("StandardMaterial3D_tcb24")
+surface_material_override/0 = SubResource("StandardMaterial3D_moosy")
 
 [node name="CollisionShape3D" parent="Screen/StaticBody3D" index="0"]
 shape = SubResource("BoxShape3D_iru2p")
@@ -127,6 +128,12 @@ shape = SubResource("BoxShape3D_iru2p")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 3.92776, -3.87758)
 material_override = ExtResource("8_555ah")
+mesh = SubResource("PlaneMesh_k8x2y")
+surface_material_override/0 = ExtResource("8_555ah")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="4"]
+transform = Transform3D(1.03798, -1.09667, 4.79372e-08, 0, -6.60042e-08, -1.51, 1.09667, 1.03798, -4.53716e-08, 3.78841, 1.76126, -1.53493)
+material_override = ExtResource("9_j5tp1")
 mesh = SubResource("PlaneMesh_k8x2y")
 surface_material_override/0 = ExtResource("8_555ah")
 

@@ -1,0 +1,20 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://b4vrnh1ql85ni"]
+
+[ext_resource type="Texture2D" uid="uid://2fbg5fiqtqvs" path="res://game/corridors/podRoom/pod/Pod - Albedo.png" id="1_1nj2w"]
+[ext_resource type="Texture2D" uid="uid://bhcupx0bfviqh" path="res://game/corridors/podRoom/pod/Pod - Emmission.png" id="2_bs3jc"]
+[ext_resource type="Texture2D" uid="uid://chixb4h8gc4xr" path="res://game/corridors/podRoom/pod/Pod - Metallic.png" id="3_c1suv"]
+[ext_resource type="Texture2D" uid="uid://cbaprseyn21b4" path="res://game/corridors/podRoom/pod/Pod - Normal.png" id="4_xumn6"]
+[ext_resource type="Texture2D" uid="uid://ca5tbvf2xpvie" path="res://game/corridors/podRoom/pod/Pod - Roughness.png" id="5_o5jxy"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_1nj2w")
+metallic = 1.0
+metallic_texture = ExtResource("3_c1suv")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("5_o5jxy")
+roughness_texture_channel = 4
+emission_enabled = true
+emission_texture = ExtResource("2_bs3jc")
+normal_enabled = true
+normal_texture = ExtResource("4_xumn6")

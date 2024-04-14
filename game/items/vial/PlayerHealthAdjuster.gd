@@ -1,10 +1,10 @@
 extends Node3D
-@export var player : Node
-var gauntlet
+@export var gauntlet : Node
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	gauntlet = player.get_child(2).get_child(0).get_child(8)
+	pass
 	
 
 

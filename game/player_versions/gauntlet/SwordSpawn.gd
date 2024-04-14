@@ -25,6 +25,9 @@ func _process(delta):
 		var allSword = get_tree().get_nodes_in_group("swords")
 		
 		for sword in allSword:
+			sword.linear_velocity = Vector3(0, 0, 0)
+			sword.angular_velocity = Vector3(0, 0, 0)
+			sword.rotation = Vector3(0, 0, 0)
 			sword.position = global_position
 			
 		buttonPressed = true

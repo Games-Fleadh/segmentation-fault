@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://415s32ldr0yd"]
+
+[ext_resource type="Texture2D" uid="uid://cbgnp73c6423d" path="res://game/corridors/podRoom/room/PodRoom - Albedo.png" id="1_hsmxr"]
+[ext_resource type="Texture2D" uid="uid://dchtlugyr4otk" path="res://game/corridors/podRoom/room/PodRoom - Metallic.png" id="2_0jx81"]
+[ext_resource type="Texture2D" uid="uid://ba7b1usvef7cr" path="res://game/corridors/podRoom/room/PodRoom - Normal.png" id="3_ifd84"]
+[ext_resource type="Texture2D" uid="uid://bg3a3xp7c2e5" path="res://game/corridors/podRoom/room/PodRoom - Roughness.png" id="4_i16ac"]
+
+[resource]
+cull_mode = 2
+albedo_texture = ExtResource("1_hsmxr")
+metallic = 1.0
+metallic_texture = ExtResource("2_0jx81")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("4_i16ac")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("3_ifd84")

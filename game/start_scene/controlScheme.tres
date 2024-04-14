@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bc6deovae0hbq"]
+
+[ext_resource type="Texture2D" uid="uid://cj1fjd7b8x23t" path="res://game/theControls.png" id="1_02owt"]
+
+[resource]
+transparency = 1
+cull_mode = 2
+depth_draw_mode = 1
+albedo_texture = ExtResource("1_02owt")
+emission_enabled = true
+emission_texture = ExtResource("1_02owt")
