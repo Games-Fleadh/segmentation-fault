@@ -212,7 +212,7 @@ libraries = {
 }
 
 [node name="SwordSpawn" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0157851, -0.653464)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0157851, -0.798352)
 script = ExtResource("3_lro2i")
 
 [node name="TelekinesisPoint" type="Node3D" parent="."]

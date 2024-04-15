@@ -1,4 +1,5 @@
 extends Area3D
+@export var event : Node
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,5 +15,7 @@ func _process(delta):
 #when the audio chip collides with the gauntlet slot collider, restore all sound
 func _on_body_entered(body):
 	if(body.name == "audioChip"):
+		event.flag1 = true
 		print("AAAAAAH")
 		AudioServer.set_bus_volume_db(0,0)
+		body.position = Vector3(25, 25, 25)
