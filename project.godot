@@ -60,7 +60,7 @@ common/drop_mouse_on_gui_input_disabled=true
 [rendering]
 
 renderer/rendering_method="mobile"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method.web="mobile"
 textures/vram_compression/import_etc2_astc=true
 occlusion_culling/use_occlusion_culling=true
 environment/defaults/default_environment="res://default_env.tres"

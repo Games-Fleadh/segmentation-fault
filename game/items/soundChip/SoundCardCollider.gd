@@ -16,6 +16,6 @@ func _process(delta):
 func _on_body_entered(body):
 	if(body.name == "audioChip"):
 		event.flag1 = true
-		print("AAAAAAH")
+		body.queue_free()
 		AudioServer.set_bus_volume_db(0,0)
 		body.position = Vector3(25, 25, 25)
