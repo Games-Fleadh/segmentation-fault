@@ -4,6 +4,7 @@ var buttonPressed = false
 var state = "State 1"
 var colorAnimator
 var wristUI
+var collected = false
 var maxHealth = 100
 var playerHealth = 100
 @export var playerBody : Node
@@ -37,7 +38,7 @@ func _process(delta):
 	wristUI.scene_node.get_child(0).get_child(0).get_child(0).set_text("Health: " + str(playerHealth) + "/" + str(maxHealth))
 	
 	#Check if button pressed and in Sword state, switch to Telekinesis.
-	if _controller.is_button_pressed("by_button") && buttonPressed == false && state == "State 1":
+	if collected == true && _controller.is_button_pressed("by_button") && buttonPressed == false && state == "State 1":
 		print("Now in State 2")
 		state = "State 2"
 		wristUI.scene_node.get_child(0).get_child(1).get_child(0).set_text("Telekinesis")
@@ -48,7 +49,7 @@ func _process(delta):
 		$TelekinesisPoint.set_process(true)
 
 	#Check if button pressed and in Telekinesis state, switch to Sword.
-	if _controller.is_button_pressed("by_button") && buttonPressed == false && state == "State 2":
+	if collected == true && _controller.is_button_pressed("by_button") && buttonPressed == false && state == "State 2":
 		print("Now in State 1")
 		state = "State 1"
 		wristUI.scene_node.get_child(0).get_child(1).get_child(0).set_text("Summon Sword")

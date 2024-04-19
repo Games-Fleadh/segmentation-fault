@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://dwapxebln6act"]
+
+[ext_resource type="Texture2D" uid="uid://c4j8wi88wab2i" path="res://game/corridors/podRoom/audioBox/SoundBox - Albedo.png" id="1_r1ipx"]
+[ext_resource type="Texture2D" uid="uid://ce02btxq4b121" path="res://game/corridors/podRoom/audioBox/SoundBox - Emission.png" id="2_d6fvm"]
+[ext_resource type="Texture2D" uid="uid://cp5rl88x57jwj" path="res://game/corridors/podRoom/audioBox/SoundBox - Metallic.png" id="3_s15uj"]
+[ext_resource type="Texture2D" uid="uid://b3pse0wprsmwq" path="res://game/corridors/podRoom/audioBox/SoundBox - Normal.png" id="4_jax0y"]
+[ext_resource type="Texture2D" uid="uid://chj42wslu0iku" path="res://game/corridors/podRoom/audioBox/SoundBox - Roughness.png" id="5_8837u"]
+
+[resource]
+albedo_texture = ExtResource("1_r1ipx")
+metallic = 1.0
+metallic_texture = ExtResource("3_s15uj")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("5_8837u")
+roughness_texture_channel = 4
+emission_enabled = true
+emission_energy_multiplier = 3.0
+emission_texture = ExtResource("2_d6fvm")
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource("4_jax0y")
