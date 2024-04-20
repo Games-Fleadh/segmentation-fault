@@ -21,7 +21,7 @@ func _process(delta):
 	if handInside == true:
 		progress += 1
 		
-	if progress > 300:
+	if progress > 300 && event.flag1 == false:
 		complete = true
 		screenText.set_text("Upload Complete!")
 		event.flag1 = true
@@ -29,7 +29,7 @@ func _process(delta):
 
 #when the audio chip collides with the gauntlet slot collider, restore all sound
 func _on_detection_body_body_entered(body):
-	if body.name == "CollisionHandRight" && complete == false:
+	if body.name == "CollisionHandRight" && complete == false && event.flag2 == true:
 		handInside = true
 		screenText.set_text("Uploading Audio 
 Software...")
@@ -37,7 +37,7 @@ Software...")
 
 
 func _on_detection_body_body_exited(body):
-	if body.name == "CollisionHandRight" && complete == false:
+	if body.name == "CollisionHandRight" && complete == false && event.flag2 == true:
 		handInside = false
 		screenText.set_text("Awaiting Gauntlet 
 Insertion...")

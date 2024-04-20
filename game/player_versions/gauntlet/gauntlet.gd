@@ -7,10 +7,12 @@ var wristUI
 var collected = false
 var maxHealth = 100
 var playerHealth = 100
-@export var playerBody : Node
-@export var deathPort : Node
+var playerBody : Node
+var deathPort : Node
+var events
 var collisionsList
 var world
+
 
 # var _scene_base : XRToolsSceneBase
 
@@ -21,6 +23,9 @@ func _ready():
 	$TelekinesisPoint.set_process(false)
 	$SwordSpawn.set_process(true)
 	world = get_node("/root/Main/Scene/Scene")
+	playerBody = get_parent().get_parent().get_parent().get_node("PlayerBody")
+	deathPort = world.get_node("DeathTeleporter")
+	events = world.get_node("EVENT FLAGS")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

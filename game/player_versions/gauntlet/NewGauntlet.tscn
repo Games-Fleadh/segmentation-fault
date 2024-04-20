@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cav3pxq8uvmyd"]
+[gd_scene load_steps=16 format=3 uid="uid://cw52d03q2xd0x"]
 
-[ext_resource type="Script" path="res://game/player_versions/gauntlet/gauntletPickup.gd" id="1_ek5xk"]
-[ext_resource type="Material" uid="uid://b651rljcela5h" path="res://game/player_versions/gauntlet/gauntletGlow.tres" id="2_15yh8"]
+[ext_resource type="Script" path="res://game/player_versions/gauntlet/gauntlet.gd" id="1_2b5wy"]
+[ext_resource type="Material" uid="uid://b651rljcela5h" path="res://game/player_versions/gauntlet/gauntletGlow.tres" id="2_ga1nm"]
+[ext_resource type="Script" path="res://game/player_versions/gauntlet/SwordSpawn.gd" id="3_m5jni"]
+[ext_resource type="Script" path="res://game/player_versions/gauntlet/Telekinesis.gd" id="4_vv1bb"]
+[ext_resource type="Script" path="res://game/player_versions/gauntlet/LoadToDeath.gd" id="5_51ach"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hsi2a"]
 resource_name = "WhitePlastic"
@@ -23,7 +26,7 @@ resource_name = "Material.009"
 cull_mode = 2
 albedo_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_en5q6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_h3ygi"]
 _surfaces = [{
 "aabb": AABB(-0.0815337, -0.0819819, -0.166071, 0.173269, 0.151087, 0.296224),
 "format": 34896613377,
@@ -99,31 +102,125 @@ _surfaces = [{
 "vertex_data": PackedByteArray(217, 17, 4, 63, 209, 117, 165, 72, 217, 17, 4, 63, 209, 117, 228, 102, 188, 8, 192, 45, 123, 124, 201, 97, 0, 0, 191, 5, 86, 142, 254, 74, 28, 215, 150, 8, 176, 153, 26, 77, 3, 202, 212, 50, 92, 134, 188, 92, 101, 194, 174, 66, 219, 126, 5, 94, 101, 194, 174, 66, 219, 126, 22, 64, 50, 43, 210, 115, 131, 249, 165, 72, 50, 43, 210, 115, 131, 249, 189, 252, 188, 30, 156, 80, 227, 250, 141, 251, 27, 23, 199, 38, 21, 253, 54, 250, 27, 23, 199, 38, 21, 253, 87, 198, 255, 255, 131, 51, 194, 254, 188, 193, 255, 255, 131, 51, 194, 254, 244, 243, 198, 246, 71, 88, 206, 252, 187, 243, 121, 231, 24, 124, 181, 250, 98, 243, 121, 231, 24, 124, 181, 250, 22, 64, 75, 55, 180, 151, 79, 2, 159, 203, 75, 55, 180, 151, 79, 2, 234, 202, 34, 60, 59, 162, 65, 1, 211, 194, 34, 60, 59, 162, 65, 1, 165, 61, 241, 66, 63, 166, 105, 0, 109, 65, 228, 73, 173, 162, 0, 0, 140, 63, 31, 79, 122, 152, 33, 0, 125, 56, 31, 79, 122, 152, 33, 0, 165, 29, 59, 81, 97, 138, 198, 0, 228, 42, 167, 79, 43, 124, 192, 1, 173, 54, 167, 79, 43, 124, 192, 1, 221, 53, 207, 74, 164, 113, 206, 2, 22, 61, 207, 74, 164, 113, 206, 2, 126, 195, 0, 68, 160, 109, 166, 3, 144, 193, 13, 61, 50, 113, 16, 4, 203, 196, 210, 55, 101, 123, 238, 3, 170, 204, 210, 55, 101, 123, 238, 3, 170, 227, 183, 53, 126, 137, 73, 3, 76, 214, 176, 62, 59, 158, 66, 58, 90, 204, 176, 62, 59, 158, 66, 58, 90, 5, 176, 62, 59, 158, 66, 58, 160, 203, 179, 67, 193, 168, 176, 57, 4, 195, 179, 67, 193, 168, 176, 57, 90, 5, 179, 67, 193, 168, 176, 57, 120, 61, 157, 74, 197, 172, 132, 57, 90, 5, 157, 74, 197, 172, 132, 57, 114, 65, 148, 81, 51, 169, 201, 57, 90, 5, 148, 81, 51, 169, 201, 57, 63, 63, 186, 86, 0, 159, 110, 58, 90, 5, 186, 86, 0, 159, 110, 58, 173, 55, 186, 86, 0, 159, 110, 58, 220, 30, 174, 88, 232, 144, 69, 59, 90, 5, 174, 88, 232, 144, 69, 59, 19, 44, 234, 86, 177, 130, 21, 60, 90, 5, 234, 86, 177, 130, 21, 60, 64, 55, 234, 86, 177, 130, 21, 60, 125, 54, 231, 81, 43, 120, 167, 60, 90, 5, 231, 81, 43, 120, 167, 60, 55, 61, 231, 81, 43, 120, 167, 60, 92, 195, 253, 74, 39, 116, 211, 60, 90, 5, 253, 74, 39, 116, 211, 60, 141, 193, 6, 68, 185, 119, 142, 60, 90, 5, 6, 68, 185, 119, 142, 60, 124, 196, 224, 62, 236, 129, 233, 59, 90, 5, 224, 62, 236, 129, 233, 59, 225, 203, 224, 62, 236, 129, 233, 59, 227, 228, 236, 60, 4, 144, 18, 59, 90, 5, 236, 60, 4, 144, 18, 59, 94, 215, 202, 101, 204, 212, 145, 96, 130, 251, 13, 138, 90, 255, 153, 244, 113, 251, 46, 115, 149, 254, 143, 244, 198, 251, 155, 157, 255, 255, 151, 244, 43, 251, 179, 84, 112, 212, 79, 97, 205, 251, 229, 121, 178, 213, 105, 97, 35, 251, 34, 36, 72, 73, 171, 250, 109, 251, 235, 13, 200, 37, 81, 124, 4, 98, 52, 241, 144, 82, 1, 254, 178, 243, 191, 196, 233, 43, 132, 135, 132, 92, 188, 22, 67, 54, 184, 117, 165, 72, 188, 22, 67, 54, 184, 117, 228, 102, 208, 5, 0, 0, 255, 141, 107, 75, 58, 209, 131, 4, 237, 154, 164, 76, 93, 189, 4, 59, 251, 127, 5, 94, 93, 189, 4, 59, 251, 127, 22, 64, 21, 48, 18, 107, 106, 249, 165, 72, 21, 48, 18, 107, 106, 249, 189, 252, 235, 28, 7, 33, 190, 252, 54, 250, 235, 28, 7, 33, 190, 252, 87, 198, 28, 250, 112, 47, 255, 255, 188, 193, 28, 250, 112, 47, 255, 255, 244, 243, 112, 226, 109, 116, 212, 251, 98, 243, 112, 226, 109, 116, 212, 251, 22, 64, 193, 34, 192, 162, 168, 218, 169, 90, 132, 222, 133, 94, 212, 229, 212, 101, 242, 239, 12, 144, 60, 239, 194, 144, 227, 235, 27, 148, 162, 31, 92, 96, 193, 34, 192, 162, 161, 56, 160, 184, 195, 51, 195, 179, 191, 48, 190, 176, 219, 232, 219, 104, 125, 237, 129, 146, 68, 34, 68, 162, 250, 28, 250, 156, 242, 22, 241, 150, 162, 31, 92, 96, 12, 35, 179, 60, 134, 36, 71, 60, 161, 23, 175, 83, 250, 25, 118, 83, 158, 10, 37, 122, 43, 44, 225, 145, 155, 68, 98, 159, 9, 208, 3, 229, 50, 215, 9, 215, 10, 222, 155, 198, 103, 223, 64, 198, 43, 234, 113, 174, 69, 236, 64, 174, 140, 252, 85, 118, 224, 212, 160, 102, 136, 188, 165, 91, 217, 51, 93, 29, 225, 44, 161, 43, 149, 35, 134, 59, 21, 53, 50, 186, 10, 37, 23, 59, 2, 24, 228, 82, 21, 53, 50, 186, 92, 26, 168, 82, 21, 53, 50, 186, 170, 10, 178, 122, 21, 53, 50, 186, 6, 46, 222, 146, 21, 53, 50, 186, 71, 70, 80, 160, 161, 208, 220, 227, 21, 53, 50, 186, 192, 215, 192, 213, 21, 53, 50, 186, 179, 222, 66, 197, 8, 224, 239, 196, 21, 53, 50, 186, 150, 234, 138, 173, 193, 236, 90, 173, 21, 53, 50, 186, 1, 253, 81, 118, 21, 53, 50, 186, 158, 214, 106, 103, 21, 53, 50, 186, 29, 190, 84, 92, 74, 52, 83, 28, 21, 53, 50, 186, 126, 45, 96, 42, 67, 132, 191, 192, 87, 132, 181, 192, 244, 131, 231, 192, 166, 132, 140, 192, 237, 131, 235, 192, 175, 132, 135, 192, 103, 51, 102, 179, 94, 222, 94, 94, 65, 28, 65, 156, 200, 239, 53, 144, 193, 34, 192, 162, 168, 218, 169, 90, 190, 229, 191, 101, 220, 239, 33, 144, 227, 235, 27, 148, 162, 31, 92, 96, 193, 34, 192, 162, 161, 56, 160, 184, 191, 48, 190, 176, 219, 232, 219, 104, 125, 237, 129, 146, 68, 34, 68, 162, 242, 22, 241, 150, 162, 31, 92, 96)
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_en5q6")
+shadow_mesh = SubResource("ArrayMesh_h3ygi")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_t64ka"]
-size = Vector3(0.117798, 0.0588379, 0.146729)
+[sub_resource type="Animation" id="Animation_kkv6n"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model:surface_material_override/1:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.129412, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model:surface_material_override/1:emission")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.129412, 1, 1, 1)]
+}
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lbxm6"]
-size = Vector3(0.161682, 0.137817, 0.260559)
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dif2w"]
+_data = {
+"RESET": SubResource("Animation_kkv6n")
+}
 
-[node name="Gauntlet" type="RigidBody3D"]
-script = ExtResource("1_ek5xk")
+[sub_resource type="Animation" id="Animation_me2qv"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model:surface_material_override/1:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.854902, 0, 0.117647, 1), Color(0.129412, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model:surface_material_override/1:emission")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.854902, 0, 0.117647, 1), Color(0.129412, 1, 1, 1)]
+}
 
-[node name="Circle_003" type="MeshInstance3D" parent="."]
+[sub_resource type="Animation" id="Animation_3ecvq"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Model:surface_material_override/1:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.129412, 1, 1, 1), Color(0.854902, 0, 0.117647, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Model:surface_material_override/1:emission")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.129412, 1, 1, 1), Color(0.854902, 0, 0.117647, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_36vp1"]
+_data = {
+"toSword": SubResource("Animation_me2qv"),
+"toTelekinesis": SubResource("Animation_3ecvq")
+}
+
+[node name="Gauntlet" type="Node3D"]
+transform = Transform3D(-0.0164391, 0.993171, -0.115507, -0.990024, -4.32753e-08, 0.140901, 0.139939, 0.116671, 0.983262, 0.038, -0.058, 0.285)
+script = ExtResource("1_2b5wy")
+
+[node name="Model" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+layers = 2
 mesh = SubResource("ArrayMesh_5fnmn")
 skeleton = NodePath("")
-surface_material_override/1 = ExtResource("2_15yh8")
+surface_material_override/1 = ExtResource("2_ga1nm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00152588, -0.0443115, 0.00622559)
-shape = SubResource("BoxShape3D_t64ka")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dif2w"),
+"gauntletLib": SubResource("AnimationLibrary_36vp1")
+}
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="SwordSpawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0157851, -0.330587)
+script = ExtResource("3_m5jni")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00595093, -0.00482178, -0.0143738)
-shape = SubResource("BoxShape3D_lbxm6")
+[node name="TelekinesisPoint" type="Node3D" parent="."]
+script = ExtResource("4_vv1bb")
+show_target = true
 
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[node name="PlayerKiller" type="Node3D" parent="."]
+transform = Transform3D(1, 7.45058e-09, 5.96046e-08, 7.45058e-09, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("5_51ach")

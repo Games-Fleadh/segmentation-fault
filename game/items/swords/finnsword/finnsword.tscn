@@ -81,6 +81,7 @@ collision_mask = 7
 gravity_scale = 0.0
 script = ExtResource("1_myob1")
 picked_up_layer = 73728
+second_hand_grab = 1
 
 [node name="Cylinder" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 0, 0)

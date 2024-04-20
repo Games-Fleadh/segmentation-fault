@@ -370,7 +370,7 @@ _data = {
 
 [node name="chaser" type="CharacterBody3D"]
 collision_layer = 8392705
-collision_mask = 8396801
+collision_mask = 8388609
 script = ExtResource("1_ml7oa")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -626,3 +626,13 @@ libraries = {
 "": SubResource("AnimationLibrary_hlkcm"),
 "enemyWalkLib": ExtResource("4_ll6ha")
 }
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 73728
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.663019, -0.194439)
+shape = SubResource("CapsuleShape3D_gcafd")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

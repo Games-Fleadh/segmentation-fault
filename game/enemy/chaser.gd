@@ -6,7 +6,7 @@ var animator
 var my_random_number = rng.randf_range(0, 2)
 var alive = true
 
-var SPEED : float = 2.5
+var SPEED : float = 1
 
 @export var player_path : NodePath
 @onready var nav_agent = $NavigationAgent3D
@@ -20,6 +20,7 @@ func _ready():
 	# Get the animator node, then wait a random delay before playing.
 	animator = get_node("AnimationPlayer")
 	await get_tree().create_timer(my_random_number).timeout
+	animator.set_speed_scale(0.4)
 	animator.play("enemyWalkLib/enemy_stagger")
 
 func _process(_delta):
@@ -35,6 +36,7 @@ func _process(_delta):
 	# Move and Slide function also used to detect collisions.
 	move_and_slide()
 	
+	"""
 	# Get list of all collisions each frame.
 	for i in get_slide_collision_count():
 		
@@ -46,7 +48,7 @@ func _process(_delta):
 			if alive == true:
 				animator.play("enemyWalkLib/death")
 			alive = false
-			
+	"""	
 	
 	# If the animator has stopped playing, and you've been killed, die.
 	if animator.is_playing() == false && alive == false:
@@ -68,3 +70,10 @@ func turn_face(target, delta):
 	var rot_step = rot_length * rotation_speed * delta
 	rotation = origin_rot + rot_step
 	
+
+func _on_area_3d_body_entered(body):
+	if body.name == "thefinnsword - Textures":
+		if alive == true:
+			animator.play("enemyWalkLib/death")
+			alive = false
+			SPEED = 0
