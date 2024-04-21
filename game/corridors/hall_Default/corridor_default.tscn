@@ -1,0 +1,117 @@
+[gd_scene load_steps=15 format=3 uid="uid://dgta26cdeui6s"]
+
+[ext_resource type="Material" uid="uid://bhqpsc68ynbrx" path="res://game/corridors/AllCorridorsMaterial.tres" id="1_kyrql"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/audio/surface_audio.gd" id="2_jsupi"]
+[ext_resource type="Resource" uid="uid://dm7aegfduwfbg" path="res://game/audio/surfaceAudio.tres" id="3_50d35"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ffmsb"]
+resource_name = "_NewMaterial"
+cull_mode = 2
+metallic = 1.0
+metallic_texture_channel = 2
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_07ihq"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1.5, 2, 2, 3.00001),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray(19, 0, 5, 0, 11, 0, 19, 0, 14, 0, 5, 0, 5, 0, 9, 0, 11, 0, 5, 0, 4, 0, 9, 0, 0, 0, 8, 0, 7, 0, 0, 0, 2, 0, 8, 0, 3, 0, 9, 0, 4, 0, 3, 0, 10, 0, 9, 0, 12, 0, 18, 0, 17, 0, 12, 0, 15, 0, 18, 0, 6, 0, 0, 0, 7, 0, 6, 0, 1, 0, 0, 0, 3, 0, 6, 0, 10, 0, 3, 0, 1, 0, 6, 0, 18, 0, 14, 0, 19, 0, 18, 0, 15, 0, 14, 0, 12, 0, 16, 0, 13, 0, 12, 0, 17, 0, 16, 0, 13, 0, 8, 0, 2, 0, 13, 0, 16, 0, 8, 0),
+"name": "_NewMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray(0, 0, 84, 213, 254, 255, 0, 0, 0, 0, 255, 255, 141, 227, 0, 0, 0, 0, 170, 42, 254, 255, 0, 0, 0, 0, 255, 255, 113, 28, 0, 0, 0, 0, 84, 213, 0, 0, 0, 0, 0, 0, 170, 42, 0, 0, 0, 0, 255, 255, 255, 255, 141, 227, 0, 0, 255, 255, 84, 213, 254, 255, 0, 0, 255, 255, 170, 42, 254, 255, 0, 0, 255, 255, 84, 213, 0, 0, 0, 0, 255, 255, 255, 255, 113, 28, 0, 0, 255, 255, 170, 42, 0, 0, 0, 0, 0, 0, 0, 0, 188, 224, 0, 0, 0, 0, 252, 2, 138, 229, 0, 0, 0, 0, 252, 2, 115, 26, 0, 0, 0, 0, 0, 0, 66, 31, 0, 0, 255, 255, 252, 2, 138, 229, 0, 0, 255, 255, 0, 0, 188, 224, 0, 0, 255, 255, 0, 0, 66, 31, 0, 0, 255, 255, 252, 2, 115, 26, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ggtrb"]
+resource_name = "Default_Plane_001"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1.5, 2, 2, 3.00001),
+"attribute_data": PackedByteArray(161, 45, 245, 186, 161, 45, 245, 186, 161, 45, 215, 179, 155, 219, 217, 126, 161, 45, 105, 215, 161, 45, 105, 215, 62, 90, 216, 179, 155, 219, 229, 76, 62, 90, 244, 186, 62, 90, 244, 186, 62, 90, 101, 215, 62, 90, 101, 215, 242, 2, 215, 179, 37, 254, 217, 126, 242, 2, 245, 186, 242, 2, 245, 186, 242, 2, 105, 215, 242, 2, 105, 215, 149, 47, 244, 186, 149, 47, 244, 186, 149, 47, 216, 179, 37, 254, 229, 76, 149, 47, 101, 215, 149, 47, 101, 215, 209, 32, 83, 240, 33, 219, 43, 182, 215, 32, 68, 240, 161, 45, 7, 222, 209, 32, 83, 240, 62, 90, 1, 222, 215, 32, 68, 240, 33, 219, 38, 130, 242, 2, 7, 222, 198, 34, 17, 241, 192, 34, 32, 241, 57, 254, 43, 182, 198, 34, 17, 241, 57, 254, 38, 130, 192, 34, 32, 241, 149, 47, 1, 222),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray(39, 0, 11, 0, 23, 0, 39, 0, 29, 0, 11, 0, 10, 0, 19, 0, 22, 0, 10, 0, 9, 0, 19, 0, 1, 0, 16, 0, 15, 0, 1, 0, 4, 0, 16, 0, 6, 0, 18, 0, 8, 0, 6, 0, 20, 0, 18, 0, 25, 0, 37, 0, 35, 0, 25, 0, 31, 0, 37, 0, 12, 0, 0, 0, 14, 0, 12, 0, 2, 0, 0, 0, 7, 0, 13, 0, 21, 0, 7, 0, 3, 0, 13, 0, 36, 0, 28, 0, 38, 0, 36, 0, 30, 0, 28, 0, 24, 0, 33, 0, 26, 0, 24, 0, 34, 0, 33, 0, 27, 0, 17, 0, 5, 0, 27, 0, 32, 0, 17, 0),
+"material": SubResource("StandardMaterial3D_ffmsb"),
+"name": "_NewMaterial",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 40,
+"vertex_data": PackedByteArray(0, 0, 84, 213, 254, 255, 255, 255, 0, 0, 84, 213, 254, 255, 255, 255, 0, 0, 255, 255, 141, 227, 255, 255, 0, 0, 255, 255, 141, 227, 255, 63, 0, 0, 170, 42, 254, 255, 255, 255, 0, 0, 170, 42, 254, 255, 255, 255, 0, 0, 255, 255, 113, 28, 0, 0, 0, 0, 255, 255, 113, 28, 255, 63, 0, 0, 84, 213, 0, 0, 0, 0, 0, 0, 84, 213, 0, 0, 0, 0, 0, 0, 170, 42, 0, 0, 0, 0, 0, 0, 170, 42, 0, 0, 0, 0, 255, 255, 255, 255, 141, 227, 255, 255, 255, 255, 255, 255, 141, 227, 255, 63, 255, 255, 84, 213, 254, 255, 255, 255, 255, 255, 84, 213, 254, 255, 255, 255, 255, 255, 170, 42, 254, 255, 255, 255, 255, 255, 170, 42, 254, 255, 255, 255, 255, 255, 84, 213, 0, 0, 0, 0, 255, 255, 84, 213, 0, 0, 0, 0, 255, 255, 255, 255, 113, 28, 0, 0, 255, 255, 255, 255, 113, 28, 255, 63, 255, 255, 170, 42, 0, 0, 0, 0, 255, 255, 170, 42, 0, 0, 0, 0, 0, 0, 0, 0, 188, 224, 193, 54, 0, 0, 0, 0, 188, 224, 255, 199, 0, 0, 252, 2, 138, 229, 47, 39, 0, 0, 252, 2, 138, 229, 255, 255, 0, 0, 252, 2, 115, 26, 60, 85, 0, 0, 252, 2, 115, 26, 0, 0, 0, 0, 0, 0, 66, 31, 42, 70, 0, 0, 0, 0, 66, 31, 255, 183, 255, 255, 252, 2, 138, 229, 255, 255, 255, 255, 252, 2, 138, 229, 47, 39, 255, 255, 0, 0, 188, 224, 193, 54, 255, 255, 0, 0, 188, 224, 255, 199, 255, 255, 0, 0, 66, 31, 42, 70, 255, 255, 0, 0, 66, 31, 255, 183, 255, 255, 252, 2, 115, 26, 60, 85, 255, 255, 252, 2, 115, 26, 0, 0, 124, 165, 255, 255, 255, 127, 255, 255, 124, 165, 255, 255, 0, 0, 255, 127, 255, 127, 255, 255, 255, 127, 129, 218, 255, 127, 130, 90, 0, 0, 255, 127, 255, 127, 130, 90, 255, 127, 255, 127, 255, 127, 255, 127, 255, 127, 124, 165, 124, 165, 255, 255, 0, 0, 255, 127, 124, 165, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 129, 218, 255, 127, 130, 90, 255, 127, 255, 127, 255, 127, 130, 90, 0, 0, 255, 127, 255, 127, 255, 127, 255, 127, 124, 165, 79, 222, 127, 146, 255, 255, 255, 127, 97, 226, 76, 147, 255, 127, 105, 211, 225, 209, 15, 144, 255, 127, 149, 172, 46, 217, 126, 145, 255, 255, 255, 127, 255, 127, 105, 211, 97, 226, 76, 147, 79, 222, 127, 146, 255, 255, 255, 127, 46, 217, 126, 145, 255, 255, 255, 127, 225, 209, 15, 144, 255, 127, 149, 172)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_07ihq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r4fa0"]
+size = Vector3(2.01782, 0.0603027, 2.508)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_frobv"]
+size = Vector3(2.01782, 0.0603027, 2.49702)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vy0lu"]
+size = Vector3(2.01782, 0.0603027, 1.51093)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jjr3s"]
+size = Vector3(2.01782, 0.0603027, 1.50861)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gpkda"]
+size = Vector3(2.01782, 0.0603027, 0.630562)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2vurg"]
+size = Vector3(2.01782, 0.0603027, 0.644722)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_irt42"]
+size = Vector3(2.01782, 0.0603027, 0.625231)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6tpe2"]
+size = Vector3(2.01782, 0.0603027, 0.631599)
+
+[node name="Corridor_Default" type="Node3D"]
+
+[node name="Model" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = ExtResource("1_kyrql")
+mesh = SubResource("ArrayMesh_ggtrb")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00256348, 1.01951, -0.00266647)
+shape = SubResource("BoxShape3D_r4fa0")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00256348, -1.01194, 0.00019455)
+shape = SubResource("BoxShape3D_frobv")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.003, 0.00927573, 1.517)
+shape = SubResource("BoxShape3D_vy0lu")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.003, 0.00750571, -1.517)
+shape = SubResource("BoxShape3D_jjr3s")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0.003, 0.851672, 1.34688)
+shape = SubResource("BoxShape3D_gpkda")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0.003, -0.840047, -1.34781)
+shape = SubResource("BoxShape3D_2vurg")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, 0.849433, -1.34912)
+shape = SubResource("BoxShape3D_irt42")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0.003, -0.845814, 1.34355)
+shape = SubResource("BoxShape3D_6tpe2")
+
+[node name="XRToolsSurfaceAudio" type="Node" parent="StaticBody3D"]
+script = ExtResource("2_jsupi")
+surface_audio_type = ExtResource("3_50d35")

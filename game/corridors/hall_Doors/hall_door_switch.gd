@@ -1,20 +1,24 @@
 extends Node3D
 
-var sliderObject
+@export var triggerObject : Node
 var leftDoorAnim
 var rightDoorAnim
+var audioPlayer
 var doorOpened = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	sliderObject = get_node("SliderSmooth/SliderOrigin/XRToolsInteractableSlider")
-	leftDoorAnim = get_node("DoorLeft/AnimationPlayerLeft")
-	rightDoorAnim = get_node("DoorRight/AnimationPlayerRight")
+	
+	leftDoorAnim = get_node("Left/AnimationPlayerLeft")
+	rightDoorAnim = get_node("Right/AnimationPlayerRight")
+	audioPlayer = get_node("AudioStreamPlayer3D")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if sliderObject.slider_position == sliderObject.slider_limit_min && leftDoorAnim.is_playing() != true && doorOpened == false:
-		leftDoorAnim.play("LeftDoorOpen")
-		rightDoorAnim.play("RightDoorOpen")
-		doorOpened = true
+	if triggerObject != null:
+		if triggerObject.trigger == true && leftDoorAnim.is_playing() != true && doorOpened == false:
+			leftDoorAnim.play("LeftDoorOpen")
+			rightDoorAnim.play("RightDoorOpen")
+			audioPlayer.play()
+			doorOpened = true

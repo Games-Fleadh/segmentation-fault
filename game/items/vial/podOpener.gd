@@ -1,5 +1,6 @@
 extends Node3D
 @export var podDoor : Node
+@export var event : Node
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,4 +19,6 @@ func _on_vial_picked_up(pickable):
 	podDoor.global_position = (Vector3(podDoor.global_position.x, podDoor.global_position.y, podDoor.global_position.z + 0.1))
 	podDoor.apply_central_impulse(Vector3(0, 0, 10))
 	print("Vial picked up: Trigger.")
+	event.flag3 = true
 	get_parent().queue_free()
+	

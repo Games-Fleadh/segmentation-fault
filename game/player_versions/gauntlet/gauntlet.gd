@@ -26,6 +26,7 @@ func _ready():
 	playerBody = get_parent().get_parent().get_parent().get_node("PlayerBody")
 	deathPort = world.get_node("DeathTeleporter")
 	events = world.get_node("EVENT FLAGS")
+	collected = true
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

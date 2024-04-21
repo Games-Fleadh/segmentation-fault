@@ -36,7 +36,7 @@ func _process(_delta):
 	# Move and Slide function also used to detect collisions.
 	move_and_slide()
 	
-	"""
+	
 	# Get list of all collisions each frame.
 	for i in get_slide_collision_count():
 		
@@ -48,7 +48,7 @@ func _process(_delta):
 			if alive == true:
 				animator.play("enemyWalkLib/death")
 			alive = false
-	"""	
+	
 	
 	# If the animator has stopped playing, and you've been killed, die.
 	if animator.is_playing() == false && alive == false:
@@ -70,10 +70,3 @@ func turn_face(target, delta):
 	var rot_step = rot_length * rotation_speed * delta
 	rotation = origin_rot + rot_step
 	
-
-func _on_area_3d_body_entered(body):
-	if body.name == "thefinnsword - Textures":
-		if alive == true:
-			animator.play("enemyWalkLib/death")
-			alive = false
-			SPEED = 0

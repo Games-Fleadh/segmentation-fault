@@ -12,8 +12,8 @@ var doorOpened = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sliderObject = get_node("SliderSmooth/SliderOrigin/XRToolsInteractableSlider")
-	leftDoorAnim = get_node("DoorLeft/AnimationPlayerLeft")
-	rightDoorAnim = get_node("DoorRight/AnimationPlayerRight")
+	leftDoorAnim = get_node("Left/AnimationPlayerLeft")
+	rightDoorAnim = get_node("Right/AnimationPlayerRight")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
