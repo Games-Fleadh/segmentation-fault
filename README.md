@@ -3,11 +3,14 @@
 ## Design Document
 ### A VR action-adventure game in Space
 
-[WATCH THE GAME TRAILER HERE](https://youtu.be/krXvI3BdNkw?si=RNBPSAhQoURK-rzY)
+## GAME TRAILER:
+
+[![WATCH THE GAME TRAILER HERE](https://img.youtube.com/vi/krXvI3BdNkw/0.jpg)](https://youtu.be/krXvI3BdNkw)
+
+## GAMEPLAY DEMO:
+[![WATCH THE GAMEPLAY DEMO HERE](https://img.youtube.com/vi/mjAd5gKvVNQ/0.jpg)](https://youtu.be/mjAd5gKvVNQ)
 
 **Written By:** James Lawlor, Ruán Murgatroyd, Maryam Al-Ateye, Derv O’Flynn, Ethan Crosbie, Karl Tan 
-
-
  
 # Game Overview
 
@@ -34,10 +37,10 @@ Features
 
 ## Telekinesis
 
-Telekinesis is one of the powers that will be present in the gauntlet, It will have the ability to pick up objects from a distance.
-The finalised version of Telekinesis will take the weight of the object into consideration and apply forces to the object, meaning the player can grab and throw the object around the room, magneto style. For the Games Fleadh edition, this physics-based approach will be replaced with a 1:1 position update.
-The heavier the object, the more the telekinetic beams bend, trailing behind where the player is pointing. This will cause the beam to spark, sputter, and flash.
-Using the other hand will make it easier for the player to lift and carry heavy items. 
+Telekinesis is one of the powers that will be present in the gauntlet, It will have the ability to pick up objects from a distance. The finalised version of Telekinesis will take the weight of the object into consideration and apply forces to the object, meaning the player can grab and throw the object around the room, magneto style. For the Games Fleadh edition, this physics-based approach will be replaced with a 1:1 position update.
+
+The heavier the object, the more the telekinetic beams bend, trailing behind where the player is pointing. This will cause the beam to spark, sputter, and flash. Using the other hand will make it easier for the player to lift and carry heavy items. 
+
 Not all objects will be able to be moved by the power of the gauntlet. This opt-in system will allow us to choose what the player can throw about.
 
 
@@ -75,13 +78,25 @@ The other sound that was made by putting together various sound effects was the 
 
 Something that was an issue that was run into however was the implementation of footsteps in the terrain itself. As we were using the Godot XR Tools plugin a fair bit of time was spent learning how it all worked along with its scripts. After a bit of digging it turned out that there was a script which was included that gave us footsteps depending on the type of material stepped on. Equipped with that information, it was all just a matter of setting up the nodes that the audio script uses and attaching it to the collision shapes of the floor.
 
+
+## Upgrades:
+ 
+**The Gauntlet:** The Gauntlet is obtained by the player after they exit the pod. It enables them to switch between different modes like Sword Mode (Blue) and Telekinesis Mode (Red). It also displays the player's health.
+
+![The Gauntlet](https://i.imgur.com/uxTf0sp.png)
+
+**The Update Stations:** Update Stations are postitioned in different areas around the ship. They contain pirated software, which was uploaded by the player's previous coworkers after Future Sight Technologies stopped paying for the subscriptions. The player sticks their right hand in the tube, they are given an update.
+
+![Update Station](https://i.imgur.com/6tnu2Xs.png)
+
 ## Art and Design Philosophy
 
 **Game Name:**
  
 A “Segmentation Fault” is an error that can occur when compiling C code, because a program attempts to access memory that it is not allowed to access. If this is not caught by the compiler, the memory may become corrupted. 
 This name was chosen to fit with the technological theme of the game and to signify that the game’s events were caused by errors; both technical and human.
-Player:
+
+**Player:** 
  
 The player character is a maintenance worker on the space station. They wear a permanent spacesuit. This is a VR game, the player only sees the character’s hands, so it is important that they are representative of the character. The black of the underlying space suit and the grey of the metallic protection follows the same colour scheme as the other FutureSight branded paraphernalia in the game. If it were a temporary suit, it would be a uniform. However, the player character is sealed inside the suit; it is a branded skin.
 
@@ -89,17 +104,7 @@ The player character is a maintenance worker on the space station. They wear a p
  **Enemies (“Exceptions”):**
 The Exceptions are Hard Light Projections made by PALATINE. They are humanoid bodies the colour FutureSight technology blue. Their walking is deeply uncanny as they ramble towards the player, attempting to cause harm.
 
-![Enemy Example](https://github.com/Games-Fleadh/segmentation-fault/blob/main/Images/EnemyBody.png) 
-![Enemy Example 2](https://github.com/Games-Fleadh/segmentation-fault/blob/main/Images/EnemyBody.png) 
-
-
-**Upgrades:** 
- 
-The software discs and the gauntlet are two upgrades available to the player. The software disc is a futuristic floppy disc, containing a version of the pirated software the player and their co-workers used for work. Due to a lack of commercialisation opportunities coming from the space station, FutureSight  Technologies refused to renew the licenses on what they considered to be “non-essential” software available to their employees, like the ability to hear. The employees not in cryo-freeze left the discs around the spaceship, knowing it would be needed again in the future. 
-The gauntlet is a multi-tool.
-
-![Audio Software](https://github.com/Games-Fleadh/segmentation-fault/blob/main/Images/AudioSoftware.png) 
-![Gauntlet](https://github.com/Games-Fleadh/segmentation-fault/blob/main/Images/Gauntlet.png) 
+![Enemy Example](https://i.imgur.com/Zj5g5Jn.png)
 
 
 **Tycho Brahe Space Station:** 
@@ -129,4 +134,14 @@ Corruption is the overall theme of Segmentation Fault. Almost all the events lea
 A few names in the games evoke an image of Royalty; Tycho Brahe, who died after not wanting to break etiquette at a royal banquet, and the A.I. named PALATINE, named after the position of a high-level administrative advisor in a royal court. Royalty was the original class of people who exploited others in history but, we see a transition to billionaires in our current society, which has continued in the history of the game’s world. 
 Both PALATINE and the player are products of a system engineered by a corporation that does not care about them. PALATINE’s corruption was an inevitability once FutureSight began neglecting it. The player character experiences similar neglect; the vital audio processing software in their suit is taken from them after FutureSight did not renew the license. 
 Despite the similarities between PALATINE and the player, the player must still play their role in preventing PALATINE from destroying the station and preserving the research done by the scientists previously.
+
+## Level Design:
+
+**Starting Area:** The player begins in a pod inside a square room. The room is grey and a large window shows the purple of the infinite galxy outside. There are six pods, only the one that holds the player is occupied. There is a table with a data transfer station to the left and a door opened by a large lever on the right.
+
+**Corridors:** The corridors are made up of sections that all interconnect to eachother seamlessly, allowing for future levels to be rapidly built.
+
+**Doors:** The doors are large and industrial looking. They have a zig-zag split down the middle and are opened by pulling down the levers adjacent to them
+
+**Windows:** Large and square. Remidns the player of the vastness of the universe they are isolated from. With nothing in sight, the player knows that there is no help coming. 
 
