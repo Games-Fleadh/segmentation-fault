@@ -10,7 +10,13 @@
 ## GAMEPLAY DEMO:
 [![WATCH THE GAMEPLAY DEMO HERE](https://img.youtube.com/vi/mjAd5gKvVNQ/0.jpg)](https://youtu.be/mjAd5gKvVNQ)
 
-**Written By:** James Lawlor, Ruán Murgatroyd, Maryam Al-Ateye, Derv O’Flynn, Ethan Crosbie, Karl Tan 
+**Written By:**
+- James Lawlor, C22388703, TU856/2, [Github](https://github.com/CaptainComedy749)
+- Ruán Murgatroyd, C22400846, TU856/2, [Github](https://github.com/RJMurg)
+- Maryam Al-Ateye, D21124256, TU856/2, [Github](https://github.com/maryamalateye)
+- Derv O’Flynn, C22344363, TU 856/2, [Github](https://github.com/Derv-OFlynn)
+- Ethan Crosbie, C22351646, TU856/2, [Github](https://github.com/ethanEverel123)
+- Karl Tan, D21124157, TU856/2, [Github](https://github.com/yourjeanss)
  
 # Game Overview
 
@@ -31,8 +37,7 @@ Re-learn how to use your body, find upgrades around the ship that your old co-wo
 ## Rendering
 
 The game uses a 3D render engine, with relatively low-poly models that are shaded smooth, to give them an appearance of having more geometry. The materials used to render the models use PBR textures, meaning that the rendering is physics-based. Each material has an albedo texture which provides, the basic colour of the model. They then also have a metallic texture, which defines how metallic different parts of the model look, and a roughness map, which does the same for how rough the model should appear. 
-Some of the materials have an emission map, which tells the renderer which parts should be brighter, and appear as though they are emitting light. Finally, each material has a normal map, also known as a bump map. The normal map can make the render display a model as though it has extra geometry, which does not exist. This saves on resources and makes a scene less heavy for a renderer to deal with. The seams in the metal panels, the floor tiles, and many more visuals in Segmentation Fault are achieved this way. 
-Features
+Some of the materials have an emission map, which tells the renderer which parts should be brighter, and appear as though they are emitting light. Finally, each material has a normal map, also known as a bump map. The normal map can make the render display a model as though it has extra geometry, which does not exist. This saves on resources and makes a scene less heavy for a renderer to deal with. The seams in the metal panels, the floor tiles, and many more visuals in Segmentation Fault are achieved this way.
 
 
 ## Telekinesis
