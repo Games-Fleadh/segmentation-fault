@@ -11,7 +11,7 @@
 [![WATCH THE GAMEPLAY DEMO HERE](https://img.youtube.com/vi/mjAd5gKvVNQ/0.jpg)](https://youtu.be/mjAd5gKvVNQ)
 
 **Written By:**
-- James Lawlor, C22388703, TU856/2, [Github](https://github.com/CaptainComedy749)
+- James Lawlor, C22388703, TU856/2, [Github](https://github.com/JLawlor749)
 - Ruán Murgatroyd, C22400846, TU856/2, [Github](https://github.com/RJMurg)
 - Maryam Al-Ateye, D21124256, TU856/2, [Github](https://github.com/maryamalateye)
 - Derv O’Flynn, C22344363, TU 856/2, [Github](https://github.com/Derv-OFlynn)
